@@ -8,6 +8,7 @@ import (
 	"github.com/redis/go-redis/v9"
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
+	"net/http"
 	"strings"
 	"time"
 	"webook/internal/repository"
@@ -95,13 +96,21 @@ func initUserHandler(db *gorm.DB, server *gin.Engine) {
 
 func main() {
 
-	// 初始化DB
-	db := initDB()
+	//// 初始化DB
+	//db := initDB()
+	//
+	//server := initWebServer()
+	//
+	//initUserHandler(db, server)
 
-	server := initWebServer()
-
-	initUserHandler(db, server)
+	server := gin.Default()
+	server.GET("/hello", func(ctx *gin.Context) {
+		ctx.String(http.StatusOK, "hello world")
+	})
 
 	//启动服务
-	server.Run(":8080")
+	err := server.Run(":8080")
+	if err != nil {
+		return
+	}
 }

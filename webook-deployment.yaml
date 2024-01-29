@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: webook-service
+spec:
+  # 值为3,意味着这个Deployment有3个副本，实际就是3个pod
+  replicas: 3
+  # 筛选器，就是在K8S的一大堆pod里面我怎么知道哪些是我管理的那3个pod
+  selector:
+    matchLabels:
+      app: webook-service
+  #  创建的pod模板
+  template:
+    metadata:
+      labels:
+        # webook-service 一定要和前面的selector的matchLables 匹配
+        app: webook-service
+        # 这个是deployment管理的pod模板
+    spec:
+      # 这个pod里面运行的所有的 contain
+      containers:
+        - name: webook-service
+          image: zzm/webook:v0.0.1
+          ports:
+            - containerPort: 8080
+
