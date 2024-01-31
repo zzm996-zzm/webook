@@ -111,6 +111,6 @@ func main() {
 	//启动服务
 	err := server.Run(":8080")
 	if err != nil {
-		return
+		panic(err)
 	}
 }
