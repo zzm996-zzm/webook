@@ -5,23 +5,22 @@ import (
 	"github.com/gin-contrib/sessions"
 	"github.com/gin-contrib/sessions/cookie"
 	"github.com/gin-gonic/gin"
-	"github.com/redis/go-redis/v9"
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
 	"net/http"
 	"strings"
 	"time"
+	"webook/config"
 	"webook/internal/repository"
 	"webook/internal/repository/dao"
 	"webook/internal/service"
 	"webook/internal/web"
 	"webook/internal/web/middleware"
-	"webook/pkg/ginx/middleware/ratelimit"
 )
 
 func initDB() *gorm.DB {
 	// 初始化数据库连接
-	db, err := gorm.Open(mysql.Open("root:root@tcp(localhost:13316)/webook"))
+	db, err := gorm.Open(mysql.Open(config.Config.DB.DNS))
 	if err != nil {
 		panic(err)
 	}
@@ -56,11 +55,11 @@ func initWebServer() *gin.Engine {
 	}))
 
 	//reids 限流
-	redisClient := redis.NewClient(&redis.Options{
-		Addr: "localhost:6379",
-	})
+	//redisClient := redis.NewClient(&redis.Options{
+	//	Addr: config.Config.Redis.Addr,
+	//})
 
-	server.Use(ratelimit.NewBuilder(redisClient, time.Second, 100).Build())
+	//server.Use(ratelimit.NewBuilder(redisClient, time.Second, 100).Build())
 
 	UseJWT(server)
 
@@ -96,14 +95,14 @@ func initUserHandler(db *gorm.DB, server *gin.Engine) {
 
 func main() {
 
-	//// 初始化DB
-	//db := initDB()
-	//
-	//server := initWebServer()
-	//
-	//initUserHandler(db, server)
+	// 初始化DB
+	db := initDB()
 
-	server := gin.Default()
+	server := initWebServer()
+
+	initUserHandler(db, server)
+
+	//server := gin.Default()
 	server.GET("/hello", func(ctx *gin.Context) {
 		ctx.String(http.StatusOK, "hello world")
 	})

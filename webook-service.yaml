@@ -7,6 +7,6 @@ spec:
     app: webook-record
   ports:
     - protocol: TCP
-      port: 98
+      port: 80
       targetPort: 8080
-  type: LoadBalancer
+  type: ClusterIP

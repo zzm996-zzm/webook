@@ -46,12 +46,12 @@ func (*LoginJWTMiddlewareBuilder) CheckLogin() gin.HandlerFunc {
 			return
 		}
 
-		// user-agent不同
-		if ctx.GetHeader("User-Agent") != uc.UserAgent {
-			// 后期监控告警的时候埋点
-			ctx.AbortWithStatus(http.StatusUnauthorized)
-			return
-		}
+		//// user-agent不同
+		//if ctx.GetHeader("User-Agent") != uc.UserAgent {
+		//	// 后期监控告警的时候埋点
+		//	ctx.AbortWithStatus(http.StatusUnauthorized)
+		//	return
+		//}
 
 		// 剩余过期时间 < 50s 就要刷新
 		expireTime := uc.ExpiresAt
