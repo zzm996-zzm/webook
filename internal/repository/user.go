@@ -5,6 +5,7 @@ import (
 	"github.com/gin-gonic/gin"
 	"time"
 	"webook/internal/domain"
+	"webook/internal/repository/cache"
 	"webook/internal/repository/dao"
 )
 
@@ -14,12 +15,14 @@ var (
 )
 
 type UserRepository struct {
-	dao *dao.UserDAO
+	dao   *dao.UserDAO
+	cache *cache.UserCache
 }
 
-func NewUserRepository(dao *dao.UserDAO) *UserRepository {
+func NewUserRepository(dao *dao.UserDAO, c *cache.UserCache) *UserRepository {
 	return &UserRepository{
-		dao: dao,
+		dao:   dao,
+		cache: c,
 	}
 }
 
@@ -70,12 +73,22 @@ func (repo *UserRepository) toEntity(u domain.User) dao.User {
 }
 
 func (repo *UserRepository) FindById(ctx *gin.Context, uid int64) (domain.User, error) {
-	u, err := repo.dao.FindById(ctx, uid)
+	// 先查询缓存
+	u, err := repo.cache.Get(ctx, uid)
+	if err == nil {
+		return u, err
+	}
+	//缓存查询失败的情况,查询数据库
+
+	ue, err := repo.dao.FindById(ctx, uid)
 	if err != nil {
 		return domain.User{}, err
 	}
-	
-	du := repo.toDomain(u)
 
+	du := repo.toDomain(ue)
+
+	// 忽略掉redis插入数据的错误，回写缓存
+	_ = repo.cache.Set(ctx, du)
+	
 	return du, nil
 }

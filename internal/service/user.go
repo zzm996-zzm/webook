@@ -27,7 +27,7 @@ func NewUserService(repo *repository.UserRepository) *UserService {
 
 func (svc *UserService) Signup(ctx context.Context, u domain.User) error {
 	// 密码加密
-	hash, err := bcrypt.GenerateFromPassword([]byte(u.Password), bcrypt.DefaultCost)
+	hash, err := bcrypt.GenerateFromPassword([]byte(u.Password), bcrypt.MinCost)
 
 	if err != nil {
 		return err
