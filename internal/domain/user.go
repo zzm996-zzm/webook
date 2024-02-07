@@ -6,7 +6,6 @@ type User struct {
 	Id       int64
 	Email    string
 	Password string
-
 	Nickname string
 	// YYYY-MM-DD
 	Birthday time.Time

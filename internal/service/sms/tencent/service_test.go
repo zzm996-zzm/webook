@@ -18,8 +18,11 @@ func TestSender(t *testing.T) {
 	}
 	secretKey, ok := os.LookupEnv("SMS_SECRET_KEY")
 
+	secretId = "AKIDDIAnGcy7FIA752rtnaGk4GVhmzEWglMz"
+	secretKey = "Xr3IGD0c2GKQNIJHLPL9oR4shOrCc7Y3"
+
 	c, err := sms.NewClient(common.NewCredential(secretId, secretKey),
-		"ap-nanjing",
+		"ap-guangzhou",
 		profile.NewClientProfile())
 	if err != nil {
 		t.Fatal(err)
@@ -37,7 +40,7 @@ func TestSender(t *testing.T) {
 		{
 			name:   "发送验证码",
 			tplId:  "577583",
-			params: []string{"123456"},
+			params: []string{"123456", "5"},
 			// 改成你的手机号码
 			numbers: []string{"17674123135"},
 		},

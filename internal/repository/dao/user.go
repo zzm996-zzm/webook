@@ -2,6 +2,7 @@ package dao
 
 import (
 	"context"
+	"database/sql"
 	"errors"
 	"github.com/gin-gonic/gin"
 	"time"
@@ -67,13 +68,21 @@ func (dao *UserDAO) FindById(ctx *gin.Context, uid int64) (User, error) {
 	return u, err
 }
 
+func (dao *UserDAO) FindByPhone(ctx *gin.Context, phone string) (User, error) {
+	var u User
+	err := dao.db.WithContext(ctx).Where("phone = ?", phone).First(&u).Error
+	return u, err
+}
+
 type User struct {
-	Id       int64 `gorm:"primaryKey,autoIncrement"`
-	Nickname string
+	Id int64 `gorm:"primaryKey,autoIncrement"`
+	// 代表这是一个可以为 NULL 的列
+	Email    sql.NullString `gorm:"unique"`
+	Nickname string         `gorm:"type=varchar(128)"`
 	Birthday int64
-	AboutMe  string
-	Email    string `gorm:"unique"`
+	AboutMe  string `gorm:"type=varchar(4096)"`
 	Password string
+	Phone    sql.NullString `gorm:"unique"`
 	CTime    int64
 	UTime    int64
 }

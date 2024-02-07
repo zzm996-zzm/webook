@@ -5,6 +5,7 @@ import (
 	"github.com/gin-contrib/sessions"
 	"github.com/gin-contrib/sessions/cookie"
 	"github.com/gin-gonic/gin"
+	"github.com/redis/go-redis/v9"
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
 	"net/http"
@@ -12,8 +13,11 @@ import (
 	"time"
 	"webook/config"
 	"webook/internal/repository"
+	"webook/internal/repository/cache"
 	"webook/internal/repository/dao"
 	"webook/internal/service"
+	"webook/internal/service/sms"
+	"webook/internal/service/sms/localsms"
 	"webook/internal/web"
 	"webook/internal/web/middleware"
 )
@@ -67,6 +71,16 @@ func initWebServer() *gin.Engine {
 
 }
 
+func initCodeSvc(redisClient redis.Cmdable) *service.CodeService {
+	cc := cache.NewCodeCache(redisClient)
+	crepo := repository.NewCodeRepository(cc)
+	return service.NewCodeService(crepo, initMemorySms())
+}
+
+func initMemorySms() sms.Service {
+	return localsms.NewService()
+}
+
 func UseJWT(server *gin.Engine) {
 	login := middleware.LoginJWTMiddlewareBuilder{}
 	server.Use(login.CheckLogin())
@@ -84,12 +98,14 @@ func UseSession(server *gin.Engine) {
 	server.Use(sessions.Sessions("ssid", store), login.CheckLogin())
 }
 
-func initUserHandler(db *gorm.DB, server *gin.Engine) {
+func initUserHandler(db *gorm.DB, redisClient redis.Cmdable, codeSvc *service.CodeService, server *gin.Engine) {
 	//注册用户模块
 	ud := dao.NewUserDAO(db)
-	ur := repository.NewUserRepository(ud)
+	uc := cache.NewUserCache(redisClient)
+	ur := repository.NewUserRepository(ud, uc)
 	us := service.NewUserService(ur)
-	uh := web.NewUserHandler(us)
+
+	uh := web.NewUserHandler(us, codeSvc)
 	uh.RegisterRoutes(server)
 }
 
@@ -97,10 +113,13 @@ func main() {
 
 	// 初始化DB
 	db := initDB()
-
+	redisClient := redis.NewClient(&redis.Options{
+		Addr: config.Config.Redis.Addr,
+	})
 	server := initWebServer()
+	initCodeSvc := initCodeSvc(redisClient)
 
-	initUserHandler(db, server)
+	initUserHandler(db, redisClient, initCodeSvc, server)
 
 	//server := gin.Default()
 	server.GET("/hello", func(ctx *gin.Context) {
