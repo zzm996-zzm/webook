@@ -3,7 +3,6 @@ package service
 import (
 	"context"
 	"errors"
-	"github.com/gin-gonic/gin"
 	"webook/internal/domain"
 	"webook/internal/repository"
 
@@ -15,17 +14,27 @@ var (
 	ErrInvalidUserOrPassword = errors.New("用户名或者密码不对")
 )
 
-type UserService struct {
-	repo *repository.UserRepository
+type UserService interface {
+	Signup(ctx context.Context, u domain.User) error
+	Login(ctx context.Context, email string, password string) (domain.User, error)
+	UpdateNonSensitiveInfo(ctx context.Context,
+		user domain.User) error
+	FindById(ctx context.Context,
+		uid int64) (domain.User, error)
+	FindOrCreate(ctx context.Context, phone string) (domain.User, error)
 }
 
-func NewUserService(repo *repository.UserRepository) *UserService {
-	return &UserService{
+type userService struct {
+	repo repository.UserRepository
+}
+
+func NewUserService(repo repository.UserRepository) UserService {
+	return &userService{
 		repo: repo,
 	}
 }
 
-func (svc *UserService) Signup(ctx context.Context, u domain.User) error {
+func (svc *userService) Signup(ctx context.Context, u domain.User) error {
 	// 密码加密
 	hash, err := bcrypt.GenerateFromPassword([]byte(u.Password), bcrypt.MinCost)
 
@@ -37,7 +46,7 @@ func (svc *UserService) Signup(ctx context.Context, u domain.User) error {
 	return svc.repo.Create(ctx, u)
 }
 
-func (svc *UserService) Login(ctx context.Context, email string, password string) (domain.User, error) {
+func (svc *userService) Login(ctx context.Context, email string, password string) (domain.User, error) {
 	u, err := svc.repo.FindByEmail(ctx, email)
 	if errors.Is(err, repository.ErrUserNotFound) {
 		return domain.User{}, ErrInvalidUserOrPassword
@@ -53,15 +62,15 @@ func (svc *UserService) Login(ctx context.Context, email string, password string
 	return u, nil
 }
 
-func (svc *UserService) UpdateNonSensitiveInfo(ctx *gin.Context, u domain.User) error {
+func (svc *userService) UpdateNonSensitiveInfo(ctx context.Context, u domain.User) error {
 	return svc.repo.UpdateNonZeroFields(ctx, u)
 }
 
-func (svc *UserService) FindById(ctx *gin.Context, uid int64) (domain.User, error) {
+func (svc *userService) FindById(ctx context.Context, uid int64) (domain.User, error) {
 	return svc.repo.FindById(ctx, uid)
 }
 
-func (svc *UserService) FindOrCreate(ctx *gin.Context, phone string) (domain.User, error) {
+func (svc *userService) FindOrCreate(ctx context.Context, phone string) (domain.User, error) {
 	u, err := svc.repo.FindByPhone(ctx, phone)
 	if !errors.Is(err, repository.ErrUserNotFound) {
 		// 有两种情况
@@ -73,7 +82,7 @@ func (svc *UserService) FindOrCreate(ctx *gin.Context, phone string) (domain.Use
 
 	// 有两种可能，一种是 err 恰好是唯一索引冲突（phone）
 	// 一种是 err != nil，系统错误
-	if err != nil && err != repository.ErrDuplicateUser {
+	if err != nil && !errors.Is(err, repository.ErrDuplicateUser) {
 		return domain.User{}, err
 	}
 	// 要么 err ==nil，要么ErrDuplicateUser，也代表用户存在
