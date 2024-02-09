@@ -1,5 +1,7 @@
 package cache
 
+import "sync"
+
 /*
 设计一个本地内存需要有什么功能
 -	存储，并可以读、写；
@@ -19,6 +21,7 @@ type Node[K comparable, V comparable] struct {
 }
 
 type LRUCache[K comparable, V comparable] struct {
+	*sync.RWMutex
 	Head  *Node[K, V]
 	Tail  *Node[K, V]
 	cache map[K]*Node[K, V]
@@ -26,7 +29,7 @@ type LRUCache[K comparable, V comparable] struct {
 	cap   int
 }
 
-func NewLRUCache[K comparable, V comparable](capacity int) LRUCache[K, V] {
+func NewLRUCache[K comparable, V comparable](capacity int) *LRUCache[K, V] {
 	var key K
 	var val V
 	head := &Node[K, V]{key, val, nil, nil}
@@ -34,7 +37,7 @@ func NewLRUCache[K comparable, V comparable](capacity int) LRUCache[K, V] {
 	head.Next = tail
 	tail.Prev = head
 
-	return LRUCache[K, V]{cap: capacity, size: 0, cache: make(map[K]*Node[K, V]), Head: head, Tail: tail}
+	return &LRUCache[K, V]{cap: capacity, size: 0, cache: make(map[K]*Node[K, V]), Head: head, Tail: tail}
 }
 
 func (lru *LRUCache[K, V]) remove(node *Node[K, V]) *Node[K, V] {
@@ -61,11 +64,14 @@ func (lru *LRUCache[K, V]) addToFront(node *Node[K, V]) {
 }
 
 func (lru *LRUCache[K, V]) removeTail() *Node[K, V] {
+
 	tail := lru.Tail.Prev
 	return lru.remove(tail)
 }
 
 func (lru *LRUCache[K, V]) Get(key K) (V, bool) {
+	lru.Lock()
+	defer lru.Unlock()
 	var res V
 	if res, has := lru.cache[key]; has {
 		lru.moveToFront(res)
@@ -77,6 +83,8 @@ func (lru *LRUCache[K, V]) Get(key K) (V, bool) {
 
 func (lru *LRUCache[K, V]) Put(key K, value V) error {
 	//判断是否存在，存在则moveToronto
+	lru.Lock()
+	defer lru.Unlock()
 	if vnode, has := lru.cache[key]; has {
 		if vnode.Value != value {
 			vnode.Value = value //修改
