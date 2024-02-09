@@ -29,6 +29,35 @@ type LRUCache[K comparable, V comparable] struct {
 	cap   int
 }
 
+func (lru *LRUCache[K, V]) Delete(k K) (V, bool) {
+	//TODO implement me
+	panic("implement me")
+}
+
+func (lru *LRUCache[K, V]) Keys() []K {
+	lru.RLock()
+	defer lru.RUnlock()
+
+	res := make([]K, 0, len(lru.cache))
+	for k, _ := range lru.cache {
+		res = append(res, k)
+	}
+
+	return res
+}
+
+func (lru *LRUCache[K, V]) Values() []V {
+	res := make([]V, 0, len(lru.cache))
+	for _, v := range lru.cache {
+		res = append(res, v.Value)
+	}
+	return res
+}
+
+func (lru *LRUCache[K, V]) Len() int64 {
+	return int64(len(lru.cache))
+}
+
 func NewLRUCache[K comparable, V comparable](capacity int) *LRUCache[K, V] {
 	var key K
 	var val V
