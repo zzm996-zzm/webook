@@ -2,6 +2,7 @@ package cache
 
 import (
 	"sync"
+	"time"
 )
 
 /*
@@ -16,14 +17,18 @@ import (
 */
 
 type node[K comparable, V comparable] struct {
-	key   K
-	value V
-	prev  *node[K, V]
-	next  *node[K, V]
+	key    K
+	value  V
+	expire time.Time
+	//是否有过期时间
+	canExpire bool
+	prev      *node[K, V]
+	next      *node[K, V]
 }
 
 type LRUCache[K comparable, V comparable] struct {
 	*sync.RWMutex
+	c     chan node[K, V]
 	head  *node[K, V]
 	tail  *node[K, V]
 	cache map[K]*node[K, V]
@@ -63,12 +68,13 @@ func (lru *LRUCache[K, V]) Len() int64 {
 func NewLRUCache[K comparable, V comparable](capacity int) *LRUCache[K, V] {
 	var key K
 	var val V
-	head := &node[K, V]{key, val, nil, nil}
-	tail := &node[K, V]{key, val, nil, nil}
+
+	head := &node[K, V]{key: key, value: val, expire: time.Time{}, next: nil, prev: nil}
+	tail := &node[K, V]{key: key, value: val, expire: time.Time{}, next: nil, prev: nil}
 	head.next = tail
 	tail.prev = head
 
-	return &LRUCache[K, V]{cap: capacity, size: 0, cache: make(map[K]*node[K, V]), head: head, tail: tail}
+	return &LRUCache[K, V]{cap: capacity, size: 0, cache: make(map[K]*node[K, V]), head: head, tail: tail, RWMutex: &sync.RWMutex{}}
 }
 
 func (lru *LRUCache[K, V]) remove(node *node[K, V]) *node[K, V] {
@@ -100,32 +106,73 @@ func (lru *LRUCache[K, V]) removeTail() *node[K, V] {
 	return lru.remove(tail)
 }
 
+// getExpire 设置节点的过期时间
+func (n *node[K, V]) setExpire(expiration time.Duration) {
+	if expiration <= 0 {
+		// 不可过期
+		n.canExpire = false
+		return
+	}
+
+	n.canExpire = true
+	n.expire = time.Now().Add(expiration)
+}
+
+// getExpire 判断节点是否过期时间
+func (n *node[K, V]) expired() bool {
+	// 没有过期时间，直接返回未过期
+	if !n.canExpire {
+		return false
+	}
+	now := time.Now()
+	// 节点过期了
+	if n.expire.Sub(now) <= 0 {
+		return true
+	}
+
+	return false
+}
+
 func (lru *LRUCache[K, V]) Get(key K) (V, bool) {
 	lru.Lock()
 	defer lru.Unlock()
+
+	// lazy删除 查询的时候判断过期时间 然后实现删除
 	var res V
 	if res, has := lru.cache[key]; has {
-		lru.moveToFront(res)
-		return res.value, true
+		// 如果没过期了则返回
+		if !res.expired() {
+			lru.moveToFront(res)
+			return res.value, true
+		}
+
+		// 过期了则删除节点 以及map中的数据
+		lru.remove(res)
+		delete(lru.cache, res.key)
 	}
 
 	return res, false
 }
 
-func (lru *LRUCache[K, V]) Put(key K, value V) error {
+func (lru *LRUCache[K, V]) Put(key K, value V, expiration time.Duration) error {
 	//判断是否存在，存在则moveToronto
 	lru.Lock()
 	defer lru.Unlock()
 	if vnode, has := lru.cache[key]; has {
+		//如果不相等则更新value即可
 		if vnode.value != value {
-			vnode.value = value //修改
+			vnode.value = value
 		}
+		// 刷新过期时间
+		vnode.setExpire(expiration)
 		lru.moveToFront(vnode)
 		return nil
+
 	}
 
-	//如果不存在则put,addToronto
-	node := &node[K, V]{key: key, value: value}
+	//如果不存在则put,addToronto,并且设置过期时间
+	node := &node[K, V]{key: key, value: value, expire: time.Now().Add(expiration)}
+	node.setExpire(expiration)
 	lru.cache[key] = node
 	lru.addToFront(node)
 	lru.size++

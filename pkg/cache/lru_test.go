@@ -3,6 +3,7 @@ package cache
 import (
 	"fmt"
 	"testing"
+	"time"
 )
 
 type User struct {
@@ -13,9 +14,13 @@ func TestLRU(t *testing.T) {
 	cache := NewLRUCache[User, User](2)
 	var u User
 	u.id = 1
-	cache.Put(u, u)
+	// 设置10S过期时间
+	cache.Put(u, u, time.Second*10)
 	//cache.Put(2, 2)
-	v, _ := cache.Get(u) // 返回  1
+	v, _ := cache.Get(u) // 返回  u
+	fmt.Println(v)
+	time.Sleep(time.Second * 10)
+	v, _ = cache.Get(u) // 返回  u
 	fmt.Println(v)
 	//cache.Put(3, 3)
 	//v, ok := cache.Get(2) // 返回 -1 (未找到)
