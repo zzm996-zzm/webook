@@ -1,6 +1,8 @@
 package cache
 
-import "sync"
+import (
+	"sync"
+)
 
 /*
 设计一个本地内存需要有什么功能
@@ -13,18 +15,18 @@ import "sync"
 	统计监控
 */
 
-type Node[K comparable, V comparable] struct {
-	Key   K
-	Value V
-	Prev  *Node[K, V]
-	Next  *Node[K, V]
+type node[K comparable, V comparable] struct {
+	key   K
+	value V
+	prev  *node[K, V]
+	next  *node[K, V]
 }
 
 type LRUCache[K comparable, V comparable] struct {
 	*sync.RWMutex
-	Head  *Node[K, V]
-	Tail  *Node[K, V]
-	cache map[K]*Node[K, V]
+	head  *node[K, V]
+	tail  *node[K, V]
+	cache map[K]*node[K, V]
 	size  int
 	cap   int
 }
@@ -49,7 +51,7 @@ func (lru *LRUCache[K, V]) Keys() []K {
 func (lru *LRUCache[K, V]) Values() []V {
 	res := make([]V, 0, len(lru.cache))
 	for _, v := range lru.cache {
-		res = append(res, v.Value)
+		res = append(res, v.value)
 	}
 	return res
 }
@@ -61,40 +63,40 @@ func (lru *LRUCache[K, V]) Len() int64 {
 func NewLRUCache[K comparable, V comparable](capacity int) *LRUCache[K, V] {
 	var key K
 	var val V
-	head := &Node[K, V]{key, val, nil, nil}
-	tail := &Node[K, V]{key, val, nil, nil}
-	head.Next = tail
-	tail.Prev = head
+	head := &node[K, V]{key, val, nil, nil}
+	tail := &node[K, V]{key, val, nil, nil}
+	head.next = tail
+	tail.prev = head
 
-	return &LRUCache[K, V]{cap: capacity, size: 0, cache: make(map[K]*Node[K, V]), Head: head, Tail: tail}
+	return &LRUCache[K, V]{cap: capacity, size: 0, cache: make(map[K]*node[K, V]), head: head, tail: tail}
 }
 
-func (lru *LRUCache[K, V]) remove(node *Node[K, V]) *Node[K, V] {
-	node.Prev.Next = node.Next
-	node.Next.Prev = node.Prev
-	node.Next = nil
-	node.Prev = nil
+func (lru *LRUCache[K, V]) remove(node *node[K, V]) *node[K, V] {
+	node.prev.next = node.next
+	node.next.prev = node.prev
+	node.next = nil
+	node.prev = nil
 	return node
 
 }
 
-func (lru *LRUCache[K, V]) moveToFront(node *Node[K, V]) {
+func (lru *LRUCache[K, V]) moveToFront(node *node[K, V]) {
 	lru.remove(node)
 	lru.addToFront(node)
 }
 
-func (lru *LRUCache[K, V]) addToFront(node *Node[K, V]) {
+func (lru *LRUCache[K, V]) addToFront(node *node[K, V]) {
 	// 将当前节点的Next 换成 头节点的Next（即第一个数据）
-	node.Next = lru.Head.Next
-	lru.Head.Next.Prev = node
+	node.next = lru.head.next
+	lru.head.next.prev = node
 
-	lru.Head.Next = node
-	node.Prev = lru.Head
+	lru.head.next = node
+	node.prev = lru.head
 }
 
-func (lru *LRUCache[K, V]) removeTail() *Node[K, V] {
+func (lru *LRUCache[K, V]) removeTail() *node[K, V] {
 
-	tail := lru.Tail.Prev
+	tail := lru.tail.prev
 	return lru.remove(tail)
 }
 
@@ -104,7 +106,7 @@ func (lru *LRUCache[K, V]) Get(key K) (V, bool) {
 	var res V
 	if res, has := lru.cache[key]; has {
 		lru.moveToFront(res)
-		return res.Value, true
+		return res.value, true
 	}
 
 	return res, false
@@ -115,15 +117,15 @@ func (lru *LRUCache[K, V]) Put(key K, value V) error {
 	lru.Lock()
 	defer lru.Unlock()
 	if vnode, has := lru.cache[key]; has {
-		if vnode.Value != value {
-			vnode.Value = value //修改
+		if vnode.value != value {
+			vnode.value = value //修改
 		}
 		lru.moveToFront(vnode)
 		return nil
 	}
 
 	//如果不存在则put,addToronto
-	node := &Node[K, V]{Key: key, Value: value}
+	node := &node[K, V]{key: key, value: value}
 	lru.cache[key] = node
 	lru.addToFront(node)
 	lru.size++
@@ -131,7 +133,7 @@ func (lru *LRUCache[K, V]) Put(key K, value V) error {
 	//超出容量了需要删除
 	if lru.size > lru.cap {
 		delNode := lru.removeTail()
-		delete(lru.cache, delNode.Key)
+		delete(lru.cache, delNode.key)
 		lru.size--
 	}
 	return nil
