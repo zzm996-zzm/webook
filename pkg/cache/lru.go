@@ -133,6 +133,12 @@ func (n *node[K, V]) expired() bool {
 	return false
 }
 
+func (lru *LRUCache[K, V]) GetExpire(key K) (time.Time, bool) {
+	lru.RLock()
+	defer lru.RUnlock()
+	return lru.cache[key].expire, lru.cache[key].expired()
+}
+
 func (lru *LRUCache[K, V]) Get(key K) (V, bool) {
 	lru.Lock()
 	defer lru.Unlock()

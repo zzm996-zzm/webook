@@ -1,8 +1,10 @@
 package cache
 
-// Cache TODO: 改造泛型
-type Cache[K any, V any] interface {
-	Put(key K, val V) error
+import "time"
+
+// Cache
+type Cache[K comparable, V comparable] interface {
+	Put(key K, val V, expiration time.Duration) error
 	Get(key K) (V, bool)
 	// Delete 删除
 	// 第一个返回值是被删除的 key 对应的值
@@ -18,4 +20,6 @@ type Cache[K any, V any] interface {
 	Values() []V
 	// 返回键值对数量
 	Len() int64
+
+	GetExpire(key string) (time.Time, bool)
 }
