@@ -1,6 +1,7 @@
 package cache
 
 import (
+	"errors"
 	"sync"
 	"time"
 )
@@ -20,7 +21,7 @@ type node[K comparable, V comparable] struct {
 	key    K
 	value  V
 	expire time.Time
-	//是否有过期时间
+	//是否有过期时间 true 可以过期 false 不可过期
 	canExpire bool
 	prev      *node[K, V]
 	next      *node[K, V]
@@ -165,6 +166,9 @@ func (lru *LRUCache[K, V]) Put(key K, value V, expiration time.Duration) error {
 	lru.Lock()
 	defer lru.Unlock()
 	if vnode, has := lru.cache[key]; has {
+		if vnode != nil {
+			return errors.New("node is nil")
+		}
 		//如果不相等则更新value即可
 		if vnode.value != value {
 			vnode.value = value

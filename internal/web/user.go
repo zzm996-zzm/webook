@@ -86,7 +86,7 @@ func (h *UserHandler) Login(ctx *gin.Context) {
 
 }
 
-// 注册
+// SignUp 注册
 func (h *UserHandler) SignUp(ctx *gin.Context) {
 	type SignupReq struct {
 		Email           string `json:"email"`
@@ -95,12 +95,12 @@ func (h *UserHandler) SignUp(ctx *gin.Context) {
 	}
 	var req SignupReq
 	if err := ctx.Bind(&req); err != nil {
+		ctx.String(http.StatusOK, "系统错误")
 		return
 	}
 
 	isEmail, err := h.emailRexExp.MatchString(req.Email)
 	if err != nil {
-		ctx.String(http.StatusOK, "系统错误")
 		return
 	}
 
@@ -141,7 +141,7 @@ func (h *UserHandler) SignUp(ctx *gin.Context) {
 	}
 }
 
-// 修改
+// Edit 修改
 func (h *UserHandler) Edit(ctx *gin.Context) {
 	type Req struct {
 		// 邮箱 密码 手机号不允许在这个位置修改

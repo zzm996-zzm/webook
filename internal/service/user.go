@@ -52,6 +52,10 @@ func (svc *userService) Login(ctx context.Context, email string, password string
 		return domain.User{}, ErrInvalidUserOrPassword
 	}
 
+	if err != nil {
+		return domain.User{}, err
+	}
+
 	// 检查密码对不对
 	err = bcrypt.CompareHashAndPassword([]byte(u.Password), []byte(password))
 

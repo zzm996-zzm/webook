@@ -12,7 +12,6 @@ import (
 type UserCache interface {
 	Get(ctx context.Context, uid int64) (domain.User, error)
 	Set(ctx context.Context, du domain.User) error
-	key(uid int64) string
 }
 
 type RedisUserCache struct {
