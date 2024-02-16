@@ -254,9 +254,6 @@ func (h *UserHandler) SendSMSLoginCode(ctx *gin.Context) {
 	}
 
 	err = h.codeSvc.Send(ctx, bizLogin, req.Phone)
-	if err != nil {
-		return
-	}
 	switch err {
 	case nil:
 		ctx.JSON(http.StatusOK, ginx.Result{

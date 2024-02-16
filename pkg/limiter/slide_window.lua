@@ -5,13 +5,17 @@
 -- 限流对象
 local key = KEYS[1]
 -- 窗口大小
+-- 参数为 1秒的 int64表示
 local window = tonumber(ARGV[1])
 -- 阈值
+-- 参数为 1000
 local threshold = tonumber( ARGV[2])
+-- 当前时间的 int64数值
 local now = tonumber(ARGV[3])
 -- 窗口的起始时间
 local min = now - window
 
+-- 移除当前ip
 redis.call('ZREMRANGEBYSCORE', key, '-inf', min)
 local cnt = redis.call('ZCOUNT', key, '-inf', '+inf')
 -- local cnt = redis.call('ZCOUNT', key, min, '+inf')

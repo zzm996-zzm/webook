@@ -8,7 +8,8 @@ import (
 	"webook/internal/service/sms"
 )
 
-var ErrCodeSendTooMany = repository.ErrCodeVerifyTooMany
+var ErrCodeSendTooMany = repository.ErrCodeSendTooMany
+var ErrCodeVerifyTooMany = repository.ErrCodeVerifyTooMany
 
 type CodeService interface {
 	Send(ctx context.Context, biz, phone string) error

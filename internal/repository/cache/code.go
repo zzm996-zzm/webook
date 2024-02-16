@@ -5,6 +5,7 @@ import (
 	_ "embed"
 	"errors"
 	"fmt"
+
 	"github.com/redis/go-redis/v9"
 )
 
@@ -16,7 +17,7 @@ var (
 	luaVerifyCode string
 
 	ErrCodeSendTooMany   = errors.New("发送太频繁")
-	ErrCodeVerifyTooMany = errors.New("发送太频繁")
+	ErrCodeVerifyTooMany = errors.New("验证太频繁")
 )
 
 type CodeCache interface {
