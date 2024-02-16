@@ -5,7 +5,6 @@ import (
 	regexp "github.com/dlclark/regexp2"
 	"github.com/gin-contrib/sessions"
 	"github.com/gin-gonic/gin"
-	"github.com/golang-jwt/jwt/v5"
 	"net/http"
 	"time"
 	"webook/internal/domain"
@@ -21,6 +20,7 @@ const (
 )
 
 type UserHandler struct {
+	jwtHandler
 	emailRexExp    *regexp.Regexp
 	passwordRexExp *regexp.Regexp
 	svc            service.UserService
@@ -312,37 +312,4 @@ func (h *UserHandler) LoginSMS(ctx *gin.Context) {
 		Msg: "登录成功",
 	})
 
-}
-
-func (h *UserHandler) setJWTToken(ctx *gin.Context, id int64) {
-	uc := UserClaims{
-		Uid:       id,
-		UserAgent: ctx.GetHeader("User-Agent"),
-		RegisteredClaims: jwt.RegisteredClaims{
-			// 1分钟过期token
-			ExpiresAt: jwt.NewNumericDate(time.Now().Add(time.Minute * 30)),
-		},
-	}
-	token := jwt.NewWithClaims(jwt.SigningMethodHS512, uc)
-	tokenStr, err := token.SignedString(JWTKEY)
-
-	if err != nil {
-		ctx.String(http.StatusOK, "系统错误")
-	}
-
-	if err != nil {
-		ctx.String(http.StatusOK, "系统错误")
-		return
-	}
-	//token 返回给前端
-	ctx.Header("x-jwt-token", tokenStr)
-	ctx.String(http.StatusOK, "登录成功")
-}
-
-var JWTKEY = []byte("00k2XQmvKq0uYdAtDy0msE6u6wpu8Fw0")
-
-type UserClaims struct {
-	Uid       int64
-	UserAgent string
-	jwt.RegisteredClaims
 }
