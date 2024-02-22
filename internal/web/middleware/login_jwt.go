@@ -1,20 +1,23 @@
 package middleware
 
 import (
-	"fmt"
-	"net/http"
-	"strings"
-	"time"
-	"webook/internal/web"
-
 	"github.com/gin-gonic/gin"
 	"github.com/golang-jwt/jwt/v5"
+	"net/http"
+	ijwt "webook/internal/web/jwt"
 )
 
 type LoginJWTMiddlewareBuilder struct {
+	ijwt.Handler
 }
 
-func (*LoginJWTMiddlewareBuilder) CheckLogin() gin.HandlerFunc {
+func NewLoginJWTMiddlewareBuilder(hdl ijwt.Handler) *LoginJWTMiddlewareBuilder {
+	return &LoginJWTMiddlewareBuilder{
+		Handler: hdl,
+	}
+}
+
+func (m *LoginJWTMiddlewareBuilder) CheckLogin() gin.HandlerFunc {
 	return func(ctx *gin.Context) {
 		// 不需要校验
 		path := ctx.Request.URL.Path
@@ -28,22 +31,11 @@ func (*LoginJWTMiddlewareBuilder) CheckLogin() gin.HandlerFunc {
 			return
 		}
 
-		authCode := ctx.GetHeader("Authorization")
-		if authCode == "" {
-			ctx.AbortWithStatus(http.StatusUnauthorized)
-			return
-		}
+		tokenStr := m.ExtractToken(ctx)
 
-		segs := strings.Split(authCode, " ")
-		if len(segs) != 2 {
-			ctx.AbortWithStatus(http.StatusUnauthorized)
-			return
-		}
-
-		tokenStr := segs[1]
-		var uc = web.UserClaims{}
+		var uc = ijwt.UserClaims{}
 		token, err := jwt.ParseWithClaims(tokenStr, &uc, func(token *jwt.Token) (interface{}, error) {
-			return web.JWTKEY, nil
+			return ijwt.JWTKey, nil
 		})
 		if err != nil {
 			return
@@ -60,16 +52,12 @@ func (*LoginJWTMiddlewareBuilder) CheckLogin() gin.HandlerFunc {
 			return
 		}
 
-		// 剩余过期时间 < 50s 就要刷新
-		expireTime := uc.ExpiresAt
-		if expireTime.Sub(time.Now()) < time.Second*50 {
-			uc.ExpiresAt = jwt.NewNumericDate(time.Now().Add(time.Minute))
-			newToken, err := token.SigningString()
-			if err != nil {
-				fmt.Println("token刷新失败")
-			} else {
-				ctx.Header("x-jwt-token", newToken)
-			}
+		// 这里检测token是否已经退出，设置为无效
+		err = m.CheckSession(ctx, uc.Ssid)
+		if err != nil {
+			// token 无效或者 redis 有问题
+			ctx.AbortWithStatus(http.StatusUnauthorized)
+			return
 		}
 
 		ctx.Set("user", uc)

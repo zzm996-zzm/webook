@@ -199,7 +199,9 @@ func (s *Service) Send(ctx context.Context, tplId string, args []string, numbers
 	errCnt := s.errCnt
 	sucCnt := s.successCnt
 	if s.needAsync(errCnt, sucCnt, stop) {
+
 		//TODO: 将短信数据插入到数据库，再基于异步调度
+		// 调用ADD方法了
 	}
 	return s.svc.Send(ctx, tplId, args, numbers...)
 }

@@ -1,15 +1,18 @@
 package ioc
 
 import (
+	"context"
 	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
 	"github.com/redis/go-redis/v9"
 	"strings"
 	"time"
 	"webook/internal/web"
+	ijwt "webook/internal/web/jwt"
 	"webook/internal/web/middleware"
 	"webook/pkg/ginx/middleware/ratelimit"
 	"webook/pkg/limiter"
+	"webook/pkg/logger"
 )
 
 func InitWebServer(mdls []gin.HandlerFunc,
@@ -21,7 +24,7 @@ func InitWebServer(mdls []gin.HandlerFunc,
 	return server
 }
 
-func InitGinMiddlewares(redisClient redis.Cmdable) []gin.HandlerFunc {
+func InitGinMiddlewares(redisClient redis.Cmdable, hdl ijwt.Handler, l logger.Logger) []gin.HandlerFunc {
 	return []gin.HandlerFunc{
 		cors.New(cors.Config{
 			// 是否允许带上用户认证信息 比如cookie
@@ -29,7 +32,7 @@ func InitGinMiddlewares(redisClient redis.Cmdable) []gin.HandlerFunc {
 			// 业务业务请求中可以带上的头
 			AllowHeaders: []string{"Content-Type", "Authorization"},
 			//允许前端访问自定义返回的token
-			ExposeHeaders: []string{"x-jwt-token"},
+			ExposeHeaders: []string{"x-jwt-token", "x-refresh-token"},
 			//哪些来源是允许的
 			AllowOriginFunc: func(origin string) bool {
 				if strings.Contains(origin, "localhost") {
@@ -42,6 +45,14 @@ func InitGinMiddlewares(redisClient redis.Cmdable) []gin.HandlerFunc {
 
 		ratelimit.NewBuilder(limiter.NewRedisSlidingWindowLimiter(redisClient, time.Second, 1000)).Build(),
 
-		(&middleware.LoginJWTMiddlewareBuilder{}).CheckLogin(),
+		middleware.NewLogMiddlewareBuilder(func(ctx context.Context, al middleware.AccessLog) {
+			l.Debug("middleware", logger.Field{Key: "req", Val: al})
+		}).AllowReqBody().AllowRespBody().Build(),
+
+		middleware.NewLogMiddlewareBuilder(func(ctx context.Context, al middleware.AccessLog) {
+			l.Debug("middleware", logger.Field{Key: "error", Val: al})
+		}).AllowReqBody().AllowRespBody().CatchError(),
+
+		middleware.NewLoginJWTMiddlewareBuilder(hdl).CheckLogin(),
 	}
 }
