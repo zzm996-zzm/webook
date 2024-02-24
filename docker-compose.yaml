@@ -20,11 +20,21 @@ services:
       - ALLOW_EMPTY_PASSWORD=yes
     ports:
       - '6379:6379'
-      -
-  etcd:
-    image: "bitnami/etcd:latest"
+
+
+#  etcd:
+#    image: "bitnami/etcd:latest"
+#    restart: always
+#    entrypoint:
+#      - ALLOW_NON_AUTHENTICATION=yes
+#    ports:
+#      - "12379:2379"
+
+  mongo:
+    image: mongo:6.0
     restart: always
-    entrypoint:
-      - ALLOW_NON_AUTHENTICATION=yes
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
     ports:
-      - "12379:2379"
+      - 27017:27017

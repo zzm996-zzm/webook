@@ -40,7 +40,7 @@ func (m *MockUserRepository) EXPECT() *MockUserRepositoryMockRecorder {
 	return m.recorder
 }
 
-// Create mocks base method.
+// Create mock base method.
 func (m *MockUserRepository) Create(ctx context.Context, u domain.User) error {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "Create", ctx, u)
@@ -54,7 +54,7 @@ func (mr *MockUserRepositoryMockRecorder) Create(ctx, u any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Create", reflect.TypeOf((*MockUserRepository)(nil).Create), ctx, u)
 }
 
-// FindByEmail mocks base method.
+// FindByEmail mock base method.
 func (m *MockUserRepository) FindByEmail(ctx context.Context, email string) (domain.User, error) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "FindByEmail", ctx, email)
@@ -69,7 +69,7 @@ func (mr *MockUserRepositoryMockRecorder) FindByEmail(ctx, email any) *gomock.Ca
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "FindByEmail", reflect.TypeOf((*MockUserRepository)(nil).FindByEmail), ctx, email)
 }
 
-// FindById mocks base method.
+// FindById mock base method.
 func (m *MockUserRepository) FindById(ctx context.Context, uid int64) (domain.User, error) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "FindById", ctx, uid)
@@ -84,7 +84,7 @@ func (mr *MockUserRepositoryMockRecorder) FindById(ctx, uid any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "FindById", reflect.TypeOf((*MockUserRepository)(nil).FindById), ctx, uid)
 }
 
-// FindByPhone mocks base method.
+// FindByPhone mock base method.
 func (m *MockUserRepository) FindByPhone(ctx context.Context, phone string) (domain.User, error) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "FindByPhone", ctx, phone)
@@ -99,7 +99,7 @@ func (mr *MockUserRepositoryMockRecorder) FindByPhone(ctx, phone any) *gomock.Ca
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "FindByPhone", reflect.TypeOf((*MockUserRepository)(nil).FindByPhone), ctx, phone)
 }
 
-// UpdateNonZeroFields mocks base method.
+// UpdateNonZeroFields mock base method.
 func (m *MockUserRepository) UpdateNonZeroFields(ctx context.Context, user domain.User) error {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "UpdateNonZeroFields", ctx, user)

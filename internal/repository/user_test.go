@@ -12,7 +12,7 @@ import (
 	"webook/internal/repository/cache"
 	cachemocks "webook/internal/repository/cache/mocks"
 	"webook/internal/repository/dao"
-	daomocks "webook/internal/repository/dao/mocks"
+	daomocks "webook/internal/repository/dao/mock"
 )
 
 func TestCachedUserRepository_FindById(t *testing.T) {

@@ -41,7 +41,7 @@ func (m *MockCmdable) EXPECT() *MockCmdableMockRecorder {
 	return m.recorder
 }
 
-// ACLDryRun mocks base method.
+// ACLDryRun mock base method.
 func (m *MockCmdable) ACLDryRun(arg0 context.Context, arg1 string, arg2 ...any) *redis.StringCmd {
 	m.ctrl.T.Helper()
 	varargs := []any{arg0, arg1}
@@ -60,7 +60,7 @@ func (mr *MockCmdableMockRecorder) ACLDryRun(arg0, arg1 any, arg2 ...any) *gomoc
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ACLDryRun", reflect.TypeOf((*MockCmdable)(nil).ACLDryRun), varargs...)
 }
 
-// ACLLog mocks base method.
+// ACLLog mock base method.
 func (m *MockCmdable) ACLLog(arg0 context.Context, arg1 int64) *redis.ACLLogCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "ACLLog", arg0, arg1)
@@ -74,7 +74,7 @@ func (mr *MockCmdableMockRecorder) ACLLog(arg0, arg1 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ACLLog", reflect.TypeOf((*MockCmdable)(nil).ACLLog), arg0, arg1)
 }
 
-// ACLLogReset mocks base method.
+// ACLLogReset mock base method.
 func (m *MockCmdable) ACLLogReset(arg0 context.Context) *redis.StatusCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "ACLLogReset", arg0)
@@ -88,7 +88,7 @@ func (mr *MockCmdableMockRecorder) ACLLogReset(arg0 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ACLLogReset", reflect.TypeOf((*MockCmdable)(nil).ACLLogReset), arg0)
 }
 
-// Append mocks base method.
+// Append mock base method.
 func (m *MockCmdable) Append(arg0 context.Context, arg1, arg2 string) *redis.IntCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "Append", arg0, arg1, arg2)
@@ -102,7 +102,7 @@ func (mr *MockCmdableMockRecorder) Append(arg0, arg1, arg2 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Append", reflect.TypeOf((*MockCmdable)(nil).Append), arg0, arg1, arg2)
 }
 
-// BFAdd mocks base method.
+// BFAdd mock base method.
 func (m *MockCmdable) BFAdd(arg0 context.Context, arg1 string, arg2 any) *redis.BoolCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "BFAdd", arg0, arg1, arg2)
@@ -116,7 +116,7 @@ func (mr *MockCmdableMockRecorder) BFAdd(arg0, arg1, arg2 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "BFAdd", reflect.TypeOf((*MockCmdable)(nil).BFAdd), arg0, arg1, arg2)
 }
 
-// BFCard mocks base method.
+// BFCard mock base method.
 func (m *MockCmdable) BFCard(arg0 context.Context, arg1 string) *redis.IntCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "BFCard", arg0, arg1)
@@ -130,7 +130,7 @@ func (mr *MockCmdableMockRecorder) BFCard(arg0, arg1 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "BFCard", reflect.TypeOf((*MockCmdable)(nil).BFCard), arg0, arg1)
 }
 
-// BFExists mocks base method.
+// BFExists mock base method.
 func (m *MockCmdable) BFExists(arg0 context.Context, arg1 string, arg2 any) *redis.BoolCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "BFExists", arg0, arg1, arg2)
@@ -144,7 +144,7 @@ func (mr *MockCmdableMockRecorder) BFExists(arg0, arg1, arg2 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "BFExists", reflect.TypeOf((*MockCmdable)(nil).BFExists), arg0, arg1, arg2)
 }
 
-// BFInfo mocks base method.
+// BFInfo mock base method.
 func (m *MockCmdable) BFInfo(arg0 context.Context, arg1 string) *redis.BFInfoCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "BFInfo", arg0, arg1)
@@ -158,7 +158,7 @@ func (mr *MockCmdableMockRecorder) BFInfo(arg0, arg1 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "BFInfo", reflect.TypeOf((*MockCmdable)(nil).BFInfo), arg0, arg1)
 }
 
-// BFInfoArg mocks base method.
+// BFInfoArg mock base method.
 func (m *MockCmdable) BFInfoArg(arg0 context.Context, arg1, arg2 string) *redis.BFInfoCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "BFInfoArg", arg0, arg1, arg2)
@@ -172,7 +172,7 @@ func (mr *MockCmdableMockRecorder) BFInfoArg(arg0, arg1, arg2 any) *gomock.Call 
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "BFInfoArg", reflect.TypeOf((*MockCmdable)(nil).BFInfoArg), arg0, arg1, arg2)
 }
 
-// BFInfoCapacity mocks base method.
+// BFInfoCapacity mock base method.
 func (m *MockCmdable) BFInfoCapacity(arg0 context.Context, arg1 string) *redis.BFInfoCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "BFInfoCapacity", arg0, arg1)
@@ -186,7 +186,7 @@ func (mr *MockCmdableMockRecorder) BFInfoCapacity(arg0, arg1 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "BFInfoCapacity", reflect.TypeOf((*MockCmdable)(nil).BFInfoCapacity), arg0, arg1)
 }
 
-// BFInfoExpansion mocks base method.
+// BFInfoExpansion mock base method.
 func (m *MockCmdable) BFInfoExpansion(arg0 context.Context, arg1 string) *redis.BFInfoCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "BFInfoExpansion", arg0, arg1)
@@ -200,7 +200,7 @@ func (mr *MockCmdableMockRecorder) BFInfoExpansion(arg0, arg1 any) *gomock.Call 
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "BFInfoExpansion", reflect.TypeOf((*MockCmdable)(nil).BFInfoExpansion), arg0, arg1)
 }
 
-// BFInfoFilters mocks base method.
+// BFInfoFilters mock base method.
 func (m *MockCmdable) BFInfoFilters(arg0 context.Context, arg1 string) *redis.BFInfoCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "BFInfoFilters", arg0, arg1)
@@ -214,7 +214,7 @@ func (mr *MockCmdableMockRecorder) BFInfoFilters(arg0, arg1 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "BFInfoFilters", reflect.TypeOf((*MockCmdable)(nil).BFInfoFilters), arg0, arg1)
 }
 
-// BFInfoItems mocks base method.
+// BFInfoItems mock base method.
 func (m *MockCmdable) BFInfoItems(arg0 context.Context, arg1 string) *redis.BFInfoCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "BFInfoItems", arg0, arg1)
@@ -228,7 +228,7 @@ func (mr *MockCmdableMockRecorder) BFInfoItems(arg0, arg1 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "BFInfoItems", reflect.TypeOf((*MockCmdable)(nil).BFInfoItems), arg0, arg1)
 }
 
-// BFInfoSize mocks base method.
+// BFInfoSize mock base method.
 func (m *MockCmdable) BFInfoSize(arg0 context.Context, arg1 string) *redis.BFInfoCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "BFInfoSize", arg0, arg1)
@@ -242,7 +242,7 @@ func (mr *MockCmdableMockRecorder) BFInfoSize(arg0, arg1 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "BFInfoSize", reflect.TypeOf((*MockCmdable)(nil).BFInfoSize), arg0, arg1)
 }
 
-// BFInsert mocks base method.
+// BFInsert mock base method.
 func (m *MockCmdable) BFInsert(arg0 context.Context, arg1 string, arg2 *redis.BFInsertOptions, arg3 ...any) *redis.BoolSliceCmd {
 	m.ctrl.T.Helper()
 	varargs := []any{arg0, arg1, arg2}
@@ -261,7 +261,7 @@ func (mr *MockCmdableMockRecorder) BFInsert(arg0, arg1, arg2 any, arg3 ...any) *
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "BFInsert", reflect.TypeOf((*MockCmdable)(nil).BFInsert), varargs...)
 }
 
-// BFLoadChunk mocks base method.
+// BFLoadChunk mock base method.
 func (m *MockCmdable) BFLoadChunk(arg0 context.Context, arg1 string, arg2 int64, arg3 any) *redis.StatusCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "BFLoadChunk", arg0, arg1, arg2, arg3)
@@ -275,7 +275,7 @@ func (mr *MockCmdableMockRecorder) BFLoadChunk(arg0, arg1, arg2, arg3 any) *gomo
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "BFLoadChunk", reflect.TypeOf((*MockCmdable)(nil).BFLoadChunk), arg0, arg1, arg2, arg3)
 }
 
-// BFMAdd mocks base method.
+// BFMAdd mock base method.
 func (m *MockCmdable) BFMAdd(arg0 context.Context, arg1 string, arg2 ...any) *redis.BoolSliceCmd {
 	m.ctrl.T.Helper()
 	varargs := []any{arg0, arg1}
@@ -294,7 +294,7 @@ func (mr *MockCmdableMockRecorder) BFMAdd(arg0, arg1 any, arg2 ...any) *gomock.C
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "BFMAdd", reflect.TypeOf((*MockCmdable)(nil).BFMAdd), varargs...)
 }
 
-// BFMExists mocks base method.
+// BFMExists mock base method.
 func (m *MockCmdable) BFMExists(arg0 context.Context, arg1 string, arg2 ...any) *redis.BoolSliceCmd {
 	m.ctrl.T.Helper()
 	varargs := []any{arg0, arg1}
@@ -313,7 +313,7 @@ func (mr *MockCmdableMockRecorder) BFMExists(arg0, arg1 any, arg2 ...any) *gomoc
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "BFMExists", reflect.TypeOf((*MockCmdable)(nil).BFMExists), varargs...)
 }
 
-// BFReserve mocks base method.
+// BFReserve mock base method.
 func (m *MockCmdable) BFReserve(arg0 context.Context, arg1 string, arg2 float64, arg3 int64) *redis.StatusCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "BFReserve", arg0, arg1, arg2, arg3)
@@ -327,7 +327,7 @@ func (mr *MockCmdableMockRecorder) BFReserve(arg0, arg1, arg2, arg3 any) *gomock
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "BFReserve", reflect.TypeOf((*MockCmdable)(nil).BFReserve), arg0, arg1, arg2, arg3)
 }
 
-// BFReserveExpansion mocks base method.
+// BFReserveExpansion mock base method.
 func (m *MockCmdable) BFReserveExpansion(arg0 context.Context, arg1 string, arg2 float64, arg3, arg4 int64) *redis.StatusCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "BFReserveExpansion", arg0, arg1, arg2, arg3, arg4)
@@ -341,7 +341,7 @@ func (mr *MockCmdableMockRecorder) BFReserveExpansion(arg0, arg1, arg2, arg3, ar
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "BFReserveExpansion", reflect.TypeOf((*MockCmdable)(nil).BFReserveExpansion), arg0, arg1, arg2, arg3, arg4)
 }
 
-// BFReserveNonScaling mocks base method.
+// BFReserveNonScaling mock base method.
 func (m *MockCmdable) BFReserveNonScaling(arg0 context.Context, arg1 string, arg2 float64, arg3 int64) *redis.StatusCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "BFReserveNonScaling", arg0, arg1, arg2, arg3)
@@ -355,7 +355,7 @@ func (mr *MockCmdableMockRecorder) BFReserveNonScaling(arg0, arg1, arg2, arg3 an
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "BFReserveNonScaling", reflect.TypeOf((*MockCmdable)(nil).BFReserveNonScaling), arg0, arg1, arg2, arg3)
 }
 
-// BFReserveWithArgs mocks base method.
+// BFReserveWithArgs mock base method.
 func (m *MockCmdable) BFReserveWithArgs(arg0 context.Context, arg1 string, arg2 *redis.BFReserveOptions) *redis.StatusCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "BFReserveWithArgs", arg0, arg1, arg2)
@@ -369,7 +369,7 @@ func (mr *MockCmdableMockRecorder) BFReserveWithArgs(arg0, arg1, arg2 any) *gomo
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "BFReserveWithArgs", reflect.TypeOf((*MockCmdable)(nil).BFReserveWithArgs), arg0, arg1, arg2)
 }
 
-// BFScanDump mocks base method.
+// BFScanDump mock base method.
 func (m *MockCmdable) BFScanDump(arg0 context.Context, arg1 string, arg2 int64) *redis.ScanDumpCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "BFScanDump", arg0, arg1, arg2)
@@ -383,7 +383,7 @@ func (mr *MockCmdableMockRecorder) BFScanDump(arg0, arg1, arg2 any) *gomock.Call
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "BFScanDump", reflect.TypeOf((*MockCmdable)(nil).BFScanDump), arg0, arg1, arg2)
 }
 
-// BLMPop mocks base method.
+// BLMPop mock base method.
 func (m *MockCmdable) BLMPop(arg0 context.Context, arg1 time.Duration, arg2 string, arg3 int64, arg4 ...string) *redis.KeyValuesCmd {
 	m.ctrl.T.Helper()
 	varargs := []any{arg0, arg1, arg2, arg3}
@@ -402,7 +402,7 @@ func (mr *MockCmdableMockRecorder) BLMPop(arg0, arg1, arg2, arg3 any, arg4 ...an
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "BLMPop", reflect.TypeOf((*MockCmdable)(nil).BLMPop), varargs...)
 }
 
-// BLMove mocks base method.
+// BLMove mock base method.
 func (m *MockCmdable) BLMove(arg0 context.Context, arg1, arg2, arg3, arg4 string, arg5 time.Duration) *redis.StringCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "BLMove", arg0, arg1, arg2, arg3, arg4, arg5)
@@ -416,7 +416,7 @@ func (mr *MockCmdableMockRecorder) BLMove(arg0, arg1, arg2, arg3, arg4, arg5 any
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "BLMove", reflect.TypeOf((*MockCmdable)(nil).BLMove), arg0, arg1, arg2, arg3, arg4, arg5)
 }
 
-// BLPop mocks base method.
+// BLPop mock base method.
 func (m *MockCmdable) BLPop(arg0 context.Context, arg1 time.Duration, arg2 ...string) *redis.StringSliceCmd {
 	m.ctrl.T.Helper()
 	varargs := []any{arg0, arg1}
@@ -435,7 +435,7 @@ func (mr *MockCmdableMockRecorder) BLPop(arg0, arg1 any, arg2 ...any) *gomock.Ca
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "BLPop", reflect.TypeOf((*MockCmdable)(nil).BLPop), varargs...)
 }
 
-// BRPop mocks base method.
+// BRPop mock base method.
 func (m *MockCmdable) BRPop(arg0 context.Context, arg1 time.Duration, arg2 ...string) *redis.StringSliceCmd {
 	m.ctrl.T.Helper()
 	varargs := []any{arg0, arg1}
@@ -454,7 +454,7 @@ func (mr *MockCmdableMockRecorder) BRPop(arg0, arg1 any, arg2 ...any) *gomock.Ca
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "BRPop", reflect.TypeOf((*MockCmdable)(nil).BRPop), varargs...)
 }
 
-// BRPopLPush mocks base method.
+// BRPopLPush mock base method.
 func (m *MockCmdable) BRPopLPush(arg0 context.Context, arg1, arg2 string, arg3 time.Duration) *redis.StringCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "BRPopLPush", arg0, arg1, arg2, arg3)
@@ -468,7 +468,7 @@ func (mr *MockCmdableMockRecorder) BRPopLPush(arg0, arg1, arg2, arg3 any) *gomoc
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "BRPopLPush", reflect.TypeOf((*MockCmdable)(nil).BRPopLPush), arg0, arg1, arg2, arg3)
 }
 
-// BZMPop mocks base method.
+// BZMPop mock base method.
 func (m *MockCmdable) BZMPop(arg0 context.Context, arg1 time.Duration, arg2 string, arg3 int64, arg4 ...string) *redis.ZSliceWithKeyCmd {
 	m.ctrl.T.Helper()
 	varargs := []any{arg0, arg1, arg2, arg3}
@@ -487,7 +487,7 @@ func (mr *MockCmdableMockRecorder) BZMPop(arg0, arg1, arg2, arg3 any, arg4 ...an
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "BZMPop", reflect.TypeOf((*MockCmdable)(nil).BZMPop), varargs...)
 }
 
-// BZPopMax mocks base method.
+// BZPopMax mock base method.
 func (m *MockCmdable) BZPopMax(arg0 context.Context, arg1 time.Duration, arg2 ...string) *redis.ZWithKeyCmd {
 	m.ctrl.T.Helper()
 	varargs := []any{arg0, arg1}
@@ -506,7 +506,7 @@ func (mr *MockCmdableMockRecorder) BZPopMax(arg0, arg1 any, arg2 ...any) *gomock
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "BZPopMax", reflect.TypeOf((*MockCmdable)(nil).BZPopMax), varargs...)
 }
 
-// BZPopMin mocks base method.
+// BZPopMin mock base method.
 func (m *MockCmdable) BZPopMin(arg0 context.Context, arg1 time.Duration, arg2 ...string) *redis.ZWithKeyCmd {
 	m.ctrl.T.Helper()
 	varargs := []any{arg0, arg1}
@@ -525,7 +525,7 @@ func (mr *MockCmdableMockRecorder) BZPopMin(arg0, arg1 any, arg2 ...any) *gomock
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "BZPopMin", reflect.TypeOf((*MockCmdable)(nil).BZPopMin), varargs...)
 }
 
-// BgRewriteAOF mocks base method.
+// BgRewriteAOF mock base method.
 func (m *MockCmdable) BgRewriteAOF(arg0 context.Context) *redis.StatusCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "BgRewriteAOF", arg0)
@@ -539,7 +539,7 @@ func (mr *MockCmdableMockRecorder) BgRewriteAOF(arg0 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "BgRewriteAOF", reflect.TypeOf((*MockCmdable)(nil).BgRewriteAOF), arg0)
 }
 
-// BgSave mocks base method.
+// BgSave mock base method.
 func (m *MockCmdable) BgSave(arg0 context.Context) *redis.StatusCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "BgSave", arg0)
@@ -553,7 +553,7 @@ func (mr *MockCmdableMockRecorder) BgSave(arg0 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "BgSave", reflect.TypeOf((*MockCmdable)(nil).BgSave), arg0)
 }
 
-// BitCount mocks base method.
+// BitCount mock base method.
 func (m *MockCmdable) BitCount(arg0 context.Context, arg1 string, arg2 *redis.BitCount) *redis.IntCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "BitCount", arg0, arg1, arg2)
@@ -567,7 +567,7 @@ func (mr *MockCmdableMockRecorder) BitCount(arg0, arg1, arg2 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "BitCount", reflect.TypeOf((*MockCmdable)(nil).BitCount), arg0, arg1, arg2)
 }
 
-// BitField mocks base method.
+// BitField mock base method.
 func (m *MockCmdable) BitField(arg0 context.Context, arg1 string, arg2 ...any) *redis.IntSliceCmd {
 	m.ctrl.T.Helper()
 	varargs := []any{arg0, arg1}
@@ -586,7 +586,7 @@ func (mr *MockCmdableMockRecorder) BitField(arg0, arg1 any, arg2 ...any) *gomock
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "BitField", reflect.TypeOf((*MockCmdable)(nil).BitField), varargs...)
 }
 
-// BitOpAnd mocks base method.
+// BitOpAnd mock base method.
 func (m *MockCmdable) BitOpAnd(arg0 context.Context, arg1 string, arg2 ...string) *redis.IntCmd {
 	m.ctrl.T.Helper()
 	varargs := []any{arg0, arg1}
@@ -605,7 +605,7 @@ func (mr *MockCmdableMockRecorder) BitOpAnd(arg0, arg1 any, arg2 ...any) *gomock
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "BitOpAnd", reflect.TypeOf((*MockCmdable)(nil).BitOpAnd), varargs...)
 }
 
-// BitOpNot mocks base method.
+// BitOpNot mock base method.
 func (m *MockCmdable) BitOpNot(arg0 context.Context, arg1, arg2 string) *redis.IntCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "BitOpNot", arg0, arg1, arg2)
@@ -619,7 +619,7 @@ func (mr *MockCmdableMockRecorder) BitOpNot(arg0, arg1, arg2 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "BitOpNot", reflect.TypeOf((*MockCmdable)(nil).BitOpNot), arg0, arg1, arg2)
 }
 
-// BitOpOr mocks base method.
+// BitOpOr mock base method.
 func (m *MockCmdable) BitOpOr(arg0 context.Context, arg1 string, arg2 ...string) *redis.IntCmd {
 	m.ctrl.T.Helper()
 	varargs := []any{arg0, arg1}
@@ -638,7 +638,7 @@ func (mr *MockCmdableMockRecorder) BitOpOr(arg0, arg1 any, arg2 ...any) *gomock.
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "BitOpOr", reflect.TypeOf((*MockCmdable)(nil).BitOpOr), varargs...)
 }
 
-// BitOpXor mocks base method.
+// BitOpXor mock base method.
 func (m *MockCmdable) BitOpXor(arg0 context.Context, arg1 string, arg2 ...string) *redis.IntCmd {
 	m.ctrl.T.Helper()
 	varargs := []any{arg0, arg1}
@@ -657,7 +657,7 @@ func (mr *MockCmdableMockRecorder) BitOpXor(arg0, arg1 any, arg2 ...any) *gomock
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "BitOpXor", reflect.TypeOf((*MockCmdable)(nil).BitOpXor), varargs...)
 }
 
-// BitPos mocks base method.
+// BitPos mock base method.
 func (m *MockCmdable) BitPos(arg0 context.Context, arg1 string, arg2 int64, arg3 ...int64) *redis.IntCmd {
 	m.ctrl.T.Helper()
 	varargs := []any{arg0, arg1, arg2}
@@ -676,7 +676,7 @@ func (mr *MockCmdableMockRecorder) BitPos(arg0, arg1, arg2 any, arg3 ...any) *go
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "BitPos", reflect.TypeOf((*MockCmdable)(nil).BitPos), varargs...)
 }
 
-// BitPosSpan mocks base method.
+// BitPosSpan mock base method.
 func (m *MockCmdable) BitPosSpan(arg0 context.Context, arg1 string, arg2 int8, arg3, arg4 int64, arg5 string) *redis.IntCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "BitPosSpan", arg0, arg1, arg2, arg3, arg4, arg5)
@@ -690,7 +690,7 @@ func (mr *MockCmdableMockRecorder) BitPosSpan(arg0, arg1, arg2, arg3, arg4, arg5
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "BitPosSpan", reflect.TypeOf((*MockCmdable)(nil).BitPosSpan), arg0, arg1, arg2, arg3, arg4, arg5)
 }
 
-// CFAdd mocks base method.
+// CFAdd mock base method.
 func (m *MockCmdable) CFAdd(arg0 context.Context, arg1 string, arg2 any) *redis.BoolCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "CFAdd", arg0, arg1, arg2)
@@ -704,7 +704,7 @@ func (mr *MockCmdableMockRecorder) CFAdd(arg0, arg1, arg2 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "CFAdd", reflect.TypeOf((*MockCmdable)(nil).CFAdd), arg0, arg1, arg2)
 }
 
-// CFAddNX mocks base method.
+// CFAddNX mock base method.
 func (m *MockCmdable) CFAddNX(arg0 context.Context, arg1 string, arg2 any) *redis.BoolCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "CFAddNX", arg0, arg1, arg2)
@@ -718,7 +718,7 @@ func (mr *MockCmdableMockRecorder) CFAddNX(arg0, arg1, arg2 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "CFAddNX", reflect.TypeOf((*MockCmdable)(nil).CFAddNX), arg0, arg1, arg2)
 }
 
-// CFCount mocks base method.
+// CFCount mock base method.
 func (m *MockCmdable) CFCount(arg0 context.Context, arg1 string, arg2 any) *redis.IntCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "CFCount", arg0, arg1, arg2)
@@ -732,7 +732,7 @@ func (mr *MockCmdableMockRecorder) CFCount(arg0, arg1, arg2 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "CFCount", reflect.TypeOf((*MockCmdable)(nil).CFCount), arg0, arg1, arg2)
 }
 
-// CFDel mocks base method.
+// CFDel mock base method.
 func (m *MockCmdable) CFDel(arg0 context.Context, arg1 string, arg2 any) *redis.BoolCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "CFDel", arg0, arg1, arg2)
@@ -746,7 +746,7 @@ func (mr *MockCmdableMockRecorder) CFDel(arg0, arg1, arg2 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "CFDel", reflect.TypeOf((*MockCmdable)(nil).CFDel), arg0, arg1, arg2)
 }
 
-// CFExists mocks base method.
+// CFExists mock base method.
 func (m *MockCmdable) CFExists(arg0 context.Context, arg1 string, arg2 any) *redis.BoolCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "CFExists", arg0, arg1, arg2)
@@ -760,7 +760,7 @@ func (mr *MockCmdableMockRecorder) CFExists(arg0, arg1, arg2 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "CFExists", reflect.TypeOf((*MockCmdable)(nil).CFExists), arg0, arg1, arg2)
 }
 
-// CFInfo mocks base method.
+// CFInfo mock base method.
 func (m *MockCmdable) CFInfo(arg0 context.Context, arg1 string) *redis.CFInfoCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "CFInfo", arg0, arg1)
@@ -774,7 +774,7 @@ func (mr *MockCmdableMockRecorder) CFInfo(arg0, arg1 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "CFInfo", reflect.TypeOf((*MockCmdable)(nil).CFInfo), arg0, arg1)
 }
 
-// CFInsert mocks base method.
+// CFInsert mock base method.
 func (m *MockCmdable) CFInsert(arg0 context.Context, arg1 string, arg2 *redis.CFInsertOptions, arg3 ...any) *redis.BoolSliceCmd {
 	m.ctrl.T.Helper()
 	varargs := []any{arg0, arg1, arg2}
@@ -793,7 +793,7 @@ func (mr *MockCmdableMockRecorder) CFInsert(arg0, arg1, arg2 any, arg3 ...any) *
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "CFInsert", reflect.TypeOf((*MockCmdable)(nil).CFInsert), varargs...)
 }
 
-// CFInsertNX mocks base method.
+// CFInsertNX mock base method.
 func (m *MockCmdable) CFInsertNX(arg0 context.Context, arg1 string, arg2 *redis.CFInsertOptions, arg3 ...any) *redis.IntSliceCmd {
 	m.ctrl.T.Helper()
 	varargs := []any{arg0, arg1, arg2}
@@ -812,7 +812,7 @@ func (mr *MockCmdableMockRecorder) CFInsertNX(arg0, arg1, arg2 any, arg3 ...any)
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "CFInsertNX", reflect.TypeOf((*MockCmdable)(nil).CFInsertNX), varargs...)
 }
 
-// CFLoadChunk mocks base method.
+// CFLoadChunk mock base method.
 func (m *MockCmdable) CFLoadChunk(arg0 context.Context, arg1 string, arg2 int64, arg3 any) *redis.StatusCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "CFLoadChunk", arg0, arg1, arg2, arg3)
@@ -826,7 +826,7 @@ func (mr *MockCmdableMockRecorder) CFLoadChunk(arg0, arg1, arg2, arg3 any) *gomo
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "CFLoadChunk", reflect.TypeOf((*MockCmdable)(nil).CFLoadChunk), arg0, arg1, arg2, arg3)
 }
 
-// CFMExists mocks base method.
+// CFMExists mock base method.
 func (m *MockCmdable) CFMExists(arg0 context.Context, arg1 string, arg2 ...any) *redis.BoolSliceCmd {
 	m.ctrl.T.Helper()
 	varargs := []any{arg0, arg1}
@@ -845,7 +845,7 @@ func (mr *MockCmdableMockRecorder) CFMExists(arg0, arg1 any, arg2 ...any) *gomoc
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "CFMExists", reflect.TypeOf((*MockCmdable)(nil).CFMExists), varargs...)
 }
 
-// CFReserve mocks base method.
+// CFReserve mock base method.
 func (m *MockCmdable) CFReserve(arg0 context.Context, arg1 string, arg2 int64) *redis.StatusCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "CFReserve", arg0, arg1, arg2)
@@ -859,7 +859,7 @@ func (mr *MockCmdableMockRecorder) CFReserve(arg0, arg1, arg2 any) *gomock.Call 
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "CFReserve", reflect.TypeOf((*MockCmdable)(nil).CFReserve), arg0, arg1, arg2)
 }
 
-// CFReserveBucketSize mocks base method.
+// CFReserveBucketSize mock base method.
 func (m *MockCmdable) CFReserveBucketSize(arg0 context.Context, arg1 string, arg2, arg3 int64) *redis.StatusCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "CFReserveBucketSize", arg0, arg1, arg2, arg3)
@@ -873,7 +873,7 @@ func (mr *MockCmdableMockRecorder) CFReserveBucketSize(arg0, arg1, arg2, arg3 an
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "CFReserveBucketSize", reflect.TypeOf((*MockCmdable)(nil).CFReserveBucketSize), arg0, arg1, arg2, arg3)
 }
 
-// CFReserveExpansion mocks base method.
+// CFReserveExpansion mock base method.
 func (m *MockCmdable) CFReserveExpansion(arg0 context.Context, arg1 string, arg2, arg3 int64) *redis.StatusCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "CFReserveExpansion", arg0, arg1, arg2, arg3)
@@ -887,7 +887,7 @@ func (mr *MockCmdableMockRecorder) CFReserveExpansion(arg0, arg1, arg2, arg3 any
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "CFReserveExpansion", reflect.TypeOf((*MockCmdable)(nil).CFReserveExpansion), arg0, arg1, arg2, arg3)
 }
 
-// CFReserveMaxIterations mocks base method.
+// CFReserveMaxIterations mock base method.
 func (m *MockCmdable) CFReserveMaxIterations(arg0 context.Context, arg1 string, arg2, arg3 int64) *redis.StatusCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "CFReserveMaxIterations", arg0, arg1, arg2, arg3)
@@ -901,7 +901,7 @@ func (mr *MockCmdableMockRecorder) CFReserveMaxIterations(arg0, arg1, arg2, arg3
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "CFReserveMaxIterations", reflect.TypeOf((*MockCmdable)(nil).CFReserveMaxIterations), arg0, arg1, arg2, arg3)
 }
 
-// CFReserveWithArgs mocks base method.
+// CFReserveWithArgs mock base method.
 func (m *MockCmdable) CFReserveWithArgs(arg0 context.Context, arg1 string, arg2 *redis.CFReserveOptions) *redis.StatusCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "CFReserveWithArgs", arg0, arg1, arg2)
@@ -915,7 +915,7 @@ func (mr *MockCmdableMockRecorder) CFReserveWithArgs(arg0, arg1, arg2 any) *gomo
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "CFReserveWithArgs", reflect.TypeOf((*MockCmdable)(nil).CFReserveWithArgs), arg0, arg1, arg2)
 }
 
-// CFScanDump mocks base method.
+// CFScanDump mock base method.
 func (m *MockCmdable) CFScanDump(arg0 context.Context, arg1 string, arg2 int64) *redis.ScanDumpCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "CFScanDump", arg0, arg1, arg2)
@@ -929,7 +929,7 @@ func (mr *MockCmdableMockRecorder) CFScanDump(arg0, arg1, arg2 any) *gomock.Call
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "CFScanDump", reflect.TypeOf((*MockCmdable)(nil).CFScanDump), arg0, arg1, arg2)
 }
 
-// CMSIncrBy mocks base method.
+// CMSIncrBy mock base method.
 func (m *MockCmdable) CMSIncrBy(arg0 context.Context, arg1 string, arg2 ...any) *redis.IntSliceCmd {
 	m.ctrl.T.Helper()
 	varargs := []any{arg0, arg1}
@@ -948,7 +948,7 @@ func (mr *MockCmdableMockRecorder) CMSIncrBy(arg0, arg1 any, arg2 ...any) *gomoc
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "CMSIncrBy", reflect.TypeOf((*MockCmdable)(nil).CMSIncrBy), varargs...)
 }
 
-// CMSInfo mocks base method.
+// CMSInfo mock base method.
 func (m *MockCmdable) CMSInfo(arg0 context.Context, arg1 string) *redis.CMSInfoCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "CMSInfo", arg0, arg1)
@@ -962,7 +962,7 @@ func (mr *MockCmdableMockRecorder) CMSInfo(arg0, arg1 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "CMSInfo", reflect.TypeOf((*MockCmdable)(nil).CMSInfo), arg0, arg1)
 }
 
-// CMSInitByDim mocks base method.
+// CMSInitByDim mock base method.
 func (m *MockCmdable) CMSInitByDim(arg0 context.Context, arg1 string, arg2, arg3 int64) *redis.StatusCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "CMSInitByDim", arg0, arg1, arg2, arg3)
@@ -976,7 +976,7 @@ func (mr *MockCmdableMockRecorder) CMSInitByDim(arg0, arg1, arg2, arg3 any) *gom
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "CMSInitByDim", reflect.TypeOf((*MockCmdable)(nil).CMSInitByDim), arg0, arg1, arg2, arg3)
 }
 
-// CMSInitByProb mocks base method.
+// CMSInitByProb mock base method.
 func (m *MockCmdable) CMSInitByProb(arg0 context.Context, arg1 string, arg2, arg3 float64) *redis.StatusCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "CMSInitByProb", arg0, arg1, arg2, arg3)
@@ -990,7 +990,7 @@ func (mr *MockCmdableMockRecorder) CMSInitByProb(arg0, arg1, arg2, arg3 any) *go
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "CMSInitByProb", reflect.TypeOf((*MockCmdable)(nil).CMSInitByProb), arg0, arg1, arg2, arg3)
 }
 
-// CMSMerge mocks base method.
+// CMSMerge mock base method.
 func (m *MockCmdable) CMSMerge(arg0 context.Context, arg1 string, arg2 ...string) *redis.StatusCmd {
 	m.ctrl.T.Helper()
 	varargs := []any{arg0, arg1}
@@ -1009,7 +1009,7 @@ func (mr *MockCmdableMockRecorder) CMSMerge(arg0, arg1 any, arg2 ...any) *gomock
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "CMSMerge", reflect.TypeOf((*MockCmdable)(nil).CMSMerge), varargs...)
 }
 
-// CMSMergeWithWeight mocks base method.
+// CMSMergeWithWeight mock base method.
 func (m *MockCmdable) CMSMergeWithWeight(arg0 context.Context, arg1 string, arg2 map[string]int64) *redis.StatusCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "CMSMergeWithWeight", arg0, arg1, arg2)
@@ -1023,7 +1023,7 @@ func (mr *MockCmdableMockRecorder) CMSMergeWithWeight(arg0, arg1, arg2 any) *gom
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "CMSMergeWithWeight", reflect.TypeOf((*MockCmdable)(nil).CMSMergeWithWeight), arg0, arg1, arg2)
 }
 
-// CMSQuery mocks base method.
+// CMSQuery mock base method.
 func (m *MockCmdable) CMSQuery(arg0 context.Context, arg1 string, arg2 ...any) *redis.IntSliceCmd {
 	m.ctrl.T.Helper()
 	varargs := []any{arg0, arg1}
@@ -1042,7 +1042,7 @@ func (mr *MockCmdableMockRecorder) CMSQuery(arg0, arg1 any, arg2 ...any) *gomock
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "CMSQuery", reflect.TypeOf((*MockCmdable)(nil).CMSQuery), varargs...)
 }
 
-// ClientGetName mocks base method.
+// ClientGetName mock base method.
 func (m *MockCmdable) ClientGetName(arg0 context.Context) *redis.StringCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "ClientGetName", arg0)
@@ -1056,7 +1056,7 @@ func (mr *MockCmdableMockRecorder) ClientGetName(arg0 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ClientGetName", reflect.TypeOf((*MockCmdable)(nil).ClientGetName), arg0)
 }
 
-// ClientID mocks base method.
+// ClientID mock base method.
 func (m *MockCmdable) ClientID(arg0 context.Context) *redis.IntCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "ClientID", arg0)
@@ -1070,7 +1070,7 @@ func (mr *MockCmdableMockRecorder) ClientID(arg0 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ClientID", reflect.TypeOf((*MockCmdable)(nil).ClientID), arg0)
 }
 
-// ClientInfo mocks base method.
+// ClientInfo mock base method.
 func (m *MockCmdable) ClientInfo(arg0 context.Context) *redis.ClientInfoCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "ClientInfo", arg0)
@@ -1084,7 +1084,7 @@ func (mr *MockCmdableMockRecorder) ClientInfo(arg0 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ClientInfo", reflect.TypeOf((*MockCmdable)(nil).ClientInfo), arg0)
 }
 
-// ClientKill mocks base method.
+// ClientKill mock base method.
 func (m *MockCmdable) ClientKill(arg0 context.Context, arg1 string) *redis.StatusCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "ClientKill", arg0, arg1)
@@ -1098,7 +1098,7 @@ func (mr *MockCmdableMockRecorder) ClientKill(arg0, arg1 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ClientKill", reflect.TypeOf((*MockCmdable)(nil).ClientKill), arg0, arg1)
 }
 
-// ClientKillByFilter mocks base method.
+// ClientKillByFilter mock base method.
 func (m *MockCmdable) ClientKillByFilter(arg0 context.Context, arg1 ...string) *redis.IntCmd {
 	m.ctrl.T.Helper()
 	varargs := []any{arg0}
@@ -1117,7 +1117,7 @@ func (mr *MockCmdableMockRecorder) ClientKillByFilter(arg0 any, arg1 ...any) *go
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ClientKillByFilter", reflect.TypeOf((*MockCmdable)(nil).ClientKillByFilter), varargs...)
 }
 
-// ClientList mocks base method.
+// ClientList mock base method.
 func (m *MockCmdable) ClientList(arg0 context.Context) *redis.StringCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "ClientList", arg0)
@@ -1131,7 +1131,7 @@ func (mr *MockCmdableMockRecorder) ClientList(arg0 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ClientList", reflect.TypeOf((*MockCmdable)(nil).ClientList), arg0)
 }
 
-// ClientPause mocks base method.
+// ClientPause mock base method.
 func (m *MockCmdable) ClientPause(arg0 context.Context, arg1 time.Duration) *redis.BoolCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "ClientPause", arg0, arg1)
@@ -1145,7 +1145,7 @@ func (mr *MockCmdableMockRecorder) ClientPause(arg0, arg1 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ClientPause", reflect.TypeOf((*MockCmdable)(nil).ClientPause), arg0, arg1)
 }
 
-// ClientUnblock mocks base method.
+// ClientUnblock mock base method.
 func (m *MockCmdable) ClientUnblock(arg0 context.Context, arg1 int64) *redis.IntCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "ClientUnblock", arg0, arg1)
@@ -1159,7 +1159,7 @@ func (mr *MockCmdableMockRecorder) ClientUnblock(arg0, arg1 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ClientUnblock", reflect.TypeOf((*MockCmdable)(nil).ClientUnblock), arg0, arg1)
 }
 
-// ClientUnblockWithError mocks base method.
+// ClientUnblockWithError mock base method.
 func (m *MockCmdable) ClientUnblockWithError(arg0 context.Context, arg1 int64) *redis.IntCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "ClientUnblockWithError", arg0, arg1)
@@ -1173,7 +1173,7 @@ func (mr *MockCmdableMockRecorder) ClientUnblockWithError(arg0, arg1 any) *gomoc
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ClientUnblockWithError", reflect.TypeOf((*MockCmdable)(nil).ClientUnblockWithError), arg0, arg1)
 }
 
-// ClientUnpause mocks base method.
+// ClientUnpause mock base method.
 func (m *MockCmdable) ClientUnpause(arg0 context.Context) *redis.BoolCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "ClientUnpause", arg0)
@@ -1187,7 +1187,7 @@ func (mr *MockCmdableMockRecorder) ClientUnpause(arg0 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ClientUnpause", reflect.TypeOf((*MockCmdable)(nil).ClientUnpause), arg0)
 }
 
-// ClusterAddSlots mocks base method.
+// ClusterAddSlots mock base method.
 func (m *MockCmdable) ClusterAddSlots(arg0 context.Context, arg1 ...int) *redis.StatusCmd {
 	m.ctrl.T.Helper()
 	varargs := []any{arg0}
@@ -1206,7 +1206,7 @@ func (mr *MockCmdableMockRecorder) ClusterAddSlots(arg0 any, arg1 ...any) *gomoc
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ClusterAddSlots", reflect.TypeOf((*MockCmdable)(nil).ClusterAddSlots), varargs...)
 }
 
-// ClusterAddSlotsRange mocks base method.
+// ClusterAddSlotsRange mock base method.
 func (m *MockCmdable) ClusterAddSlotsRange(arg0 context.Context, arg1, arg2 int) *redis.StatusCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "ClusterAddSlotsRange", arg0, arg1, arg2)
@@ -1220,7 +1220,7 @@ func (mr *MockCmdableMockRecorder) ClusterAddSlotsRange(arg0, arg1, arg2 any) *g
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ClusterAddSlotsRange", reflect.TypeOf((*MockCmdable)(nil).ClusterAddSlotsRange), arg0, arg1, arg2)
 }
 
-// ClusterCountFailureReports mocks base method.
+// ClusterCountFailureReports mock base method.
 func (m *MockCmdable) ClusterCountFailureReports(arg0 context.Context, arg1 string) *redis.IntCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "ClusterCountFailureReports", arg0, arg1)
@@ -1234,7 +1234,7 @@ func (mr *MockCmdableMockRecorder) ClusterCountFailureReports(arg0, arg1 any) *g
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ClusterCountFailureReports", reflect.TypeOf((*MockCmdable)(nil).ClusterCountFailureReports), arg0, arg1)
 }
 
-// ClusterCountKeysInSlot mocks base method.
+// ClusterCountKeysInSlot mock base method.
 func (m *MockCmdable) ClusterCountKeysInSlot(arg0 context.Context, arg1 int) *redis.IntCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "ClusterCountKeysInSlot", arg0, arg1)
@@ -1248,7 +1248,7 @@ func (mr *MockCmdableMockRecorder) ClusterCountKeysInSlot(arg0, arg1 any) *gomoc
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ClusterCountKeysInSlot", reflect.TypeOf((*MockCmdable)(nil).ClusterCountKeysInSlot), arg0, arg1)
 }
 
-// ClusterDelSlots mocks base method.
+// ClusterDelSlots mock base method.
 func (m *MockCmdable) ClusterDelSlots(arg0 context.Context, arg1 ...int) *redis.StatusCmd {
 	m.ctrl.T.Helper()
 	varargs := []any{arg0}
@@ -1267,7 +1267,7 @@ func (mr *MockCmdableMockRecorder) ClusterDelSlots(arg0 any, arg1 ...any) *gomoc
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ClusterDelSlots", reflect.TypeOf((*MockCmdable)(nil).ClusterDelSlots), varargs...)
 }
 
-// ClusterDelSlotsRange mocks base method.
+// ClusterDelSlotsRange mock base method.
 func (m *MockCmdable) ClusterDelSlotsRange(arg0 context.Context, arg1, arg2 int) *redis.StatusCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "ClusterDelSlotsRange", arg0, arg1, arg2)
@@ -1281,7 +1281,7 @@ func (mr *MockCmdableMockRecorder) ClusterDelSlotsRange(arg0, arg1, arg2 any) *g
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ClusterDelSlotsRange", reflect.TypeOf((*MockCmdable)(nil).ClusterDelSlotsRange), arg0, arg1, arg2)
 }
 
-// ClusterFailover mocks base method.
+// ClusterFailover mock base method.
 func (m *MockCmdable) ClusterFailover(arg0 context.Context) *redis.StatusCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "ClusterFailover", arg0)
@@ -1295,7 +1295,7 @@ func (mr *MockCmdableMockRecorder) ClusterFailover(arg0 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ClusterFailover", reflect.TypeOf((*MockCmdable)(nil).ClusterFailover), arg0)
 }
 
-// ClusterForget mocks base method.
+// ClusterForget mock base method.
 func (m *MockCmdable) ClusterForget(arg0 context.Context, arg1 string) *redis.StatusCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "ClusterForget", arg0, arg1)
@@ -1309,7 +1309,7 @@ func (mr *MockCmdableMockRecorder) ClusterForget(arg0, arg1 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ClusterForget", reflect.TypeOf((*MockCmdable)(nil).ClusterForget), arg0, arg1)
 }
 
-// ClusterGetKeysInSlot mocks base method.
+// ClusterGetKeysInSlot mock base method.
 func (m *MockCmdable) ClusterGetKeysInSlot(arg0 context.Context, arg1, arg2 int) *redis.StringSliceCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "ClusterGetKeysInSlot", arg0, arg1, arg2)
@@ -1323,7 +1323,7 @@ func (mr *MockCmdableMockRecorder) ClusterGetKeysInSlot(arg0, arg1, arg2 any) *g
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ClusterGetKeysInSlot", reflect.TypeOf((*MockCmdable)(nil).ClusterGetKeysInSlot), arg0, arg1, arg2)
 }
 
-// ClusterInfo mocks base method.
+// ClusterInfo mock base method.
 func (m *MockCmdable) ClusterInfo(arg0 context.Context) *redis.StringCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "ClusterInfo", arg0)
@@ -1337,7 +1337,7 @@ func (mr *MockCmdableMockRecorder) ClusterInfo(arg0 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ClusterInfo", reflect.TypeOf((*MockCmdable)(nil).ClusterInfo), arg0)
 }
 
-// ClusterKeySlot mocks base method.
+// ClusterKeySlot mock base method.
 func (m *MockCmdable) ClusterKeySlot(arg0 context.Context, arg1 string) *redis.IntCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "ClusterKeySlot", arg0, arg1)
@@ -1351,7 +1351,7 @@ func (mr *MockCmdableMockRecorder) ClusterKeySlot(arg0, arg1 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ClusterKeySlot", reflect.TypeOf((*MockCmdable)(nil).ClusterKeySlot), arg0, arg1)
 }
 
-// ClusterLinks mocks base method.
+// ClusterLinks mock base method.
 func (m *MockCmdable) ClusterLinks(arg0 context.Context) *redis.ClusterLinksCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "ClusterLinks", arg0)
@@ -1365,7 +1365,7 @@ func (mr *MockCmdableMockRecorder) ClusterLinks(arg0 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ClusterLinks", reflect.TypeOf((*MockCmdable)(nil).ClusterLinks), arg0)
 }
 
-// ClusterMeet mocks base method.
+// ClusterMeet mock base method.
 func (m *MockCmdable) ClusterMeet(arg0 context.Context, arg1, arg2 string) *redis.StatusCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "ClusterMeet", arg0, arg1, arg2)
@@ -1379,7 +1379,7 @@ func (mr *MockCmdableMockRecorder) ClusterMeet(arg0, arg1, arg2 any) *gomock.Cal
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ClusterMeet", reflect.TypeOf((*MockCmdable)(nil).ClusterMeet), arg0, arg1, arg2)
 }
 
-// ClusterMyShardID mocks base method.
+// ClusterMyShardID mock base method.
 func (m *MockCmdable) ClusterMyShardID(arg0 context.Context) *redis.StringCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "ClusterMyShardID", arg0)
@@ -1393,7 +1393,7 @@ func (mr *MockCmdableMockRecorder) ClusterMyShardID(arg0 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ClusterMyShardID", reflect.TypeOf((*MockCmdable)(nil).ClusterMyShardID), arg0)
 }
 
-// ClusterNodes mocks base method.
+// ClusterNodes mock base method.
 func (m *MockCmdable) ClusterNodes(arg0 context.Context) *redis.StringCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "ClusterNodes", arg0)
@@ -1407,7 +1407,7 @@ func (mr *MockCmdableMockRecorder) ClusterNodes(arg0 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ClusterNodes", reflect.TypeOf((*MockCmdable)(nil).ClusterNodes), arg0)
 }
 
-// ClusterReplicate mocks base method.
+// ClusterReplicate mock base method.
 func (m *MockCmdable) ClusterReplicate(arg0 context.Context, arg1 string) *redis.StatusCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "ClusterReplicate", arg0, arg1)
@@ -1421,7 +1421,7 @@ func (mr *MockCmdableMockRecorder) ClusterReplicate(arg0, arg1 any) *gomock.Call
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ClusterReplicate", reflect.TypeOf((*MockCmdable)(nil).ClusterReplicate), arg0, arg1)
 }
 
-// ClusterResetHard mocks base method.
+// ClusterResetHard mock base method.
 func (m *MockCmdable) ClusterResetHard(arg0 context.Context) *redis.StatusCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "ClusterResetHard", arg0)
@@ -1435,7 +1435,7 @@ func (mr *MockCmdableMockRecorder) ClusterResetHard(arg0 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ClusterResetHard", reflect.TypeOf((*MockCmdable)(nil).ClusterResetHard), arg0)
 }
 
-// ClusterResetSoft mocks base method.
+// ClusterResetSoft mock base method.
 func (m *MockCmdable) ClusterResetSoft(arg0 context.Context) *redis.StatusCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "ClusterResetSoft", arg0)
@@ -1449,7 +1449,7 @@ func (mr *MockCmdableMockRecorder) ClusterResetSoft(arg0 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ClusterResetSoft", reflect.TypeOf((*MockCmdable)(nil).ClusterResetSoft), arg0)
 }
 
-// ClusterSaveConfig mocks base method.
+// ClusterSaveConfig mock base method.
 func (m *MockCmdable) ClusterSaveConfig(arg0 context.Context) *redis.StatusCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "ClusterSaveConfig", arg0)
@@ -1463,7 +1463,7 @@ func (mr *MockCmdableMockRecorder) ClusterSaveConfig(arg0 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ClusterSaveConfig", reflect.TypeOf((*MockCmdable)(nil).ClusterSaveConfig), arg0)
 }
 
-// ClusterShards mocks base method.
+// ClusterShards mock base method.
 func (m *MockCmdable) ClusterShards(arg0 context.Context) *redis.ClusterShardsCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "ClusterShards", arg0)
@@ -1477,7 +1477,7 @@ func (mr *MockCmdableMockRecorder) ClusterShards(arg0 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ClusterShards", reflect.TypeOf((*MockCmdable)(nil).ClusterShards), arg0)
 }
 
-// ClusterSlaves mocks base method.
+// ClusterSlaves mock base method.
 func (m *MockCmdable) ClusterSlaves(arg0 context.Context, arg1 string) *redis.StringSliceCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "ClusterSlaves", arg0, arg1)
@@ -1491,7 +1491,7 @@ func (mr *MockCmdableMockRecorder) ClusterSlaves(arg0, arg1 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ClusterSlaves", reflect.TypeOf((*MockCmdable)(nil).ClusterSlaves), arg0, arg1)
 }
 
-// ClusterSlots mocks base method.
+// ClusterSlots mock base method.
 func (m *MockCmdable) ClusterSlots(arg0 context.Context) *redis.ClusterSlotsCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "ClusterSlots", arg0)
@@ -1505,7 +1505,7 @@ func (mr *MockCmdableMockRecorder) ClusterSlots(arg0 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ClusterSlots", reflect.TypeOf((*MockCmdable)(nil).ClusterSlots), arg0)
 }
 
-// Command mocks base method.
+// Command mock base method.
 func (m *MockCmdable) Command(arg0 context.Context) *redis.CommandsInfoCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "Command", arg0)
@@ -1519,7 +1519,7 @@ func (mr *MockCmdableMockRecorder) Command(arg0 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Command", reflect.TypeOf((*MockCmdable)(nil).Command), arg0)
 }
 
-// CommandGetKeys mocks base method.
+// CommandGetKeys mock base method.
 func (m *MockCmdable) CommandGetKeys(arg0 context.Context, arg1 ...any) *redis.StringSliceCmd {
 	m.ctrl.T.Helper()
 	varargs := []any{arg0}
@@ -1538,7 +1538,7 @@ func (mr *MockCmdableMockRecorder) CommandGetKeys(arg0 any, arg1 ...any) *gomock
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "CommandGetKeys", reflect.TypeOf((*MockCmdable)(nil).CommandGetKeys), varargs...)
 }
 
-// CommandGetKeysAndFlags mocks base method.
+// CommandGetKeysAndFlags mock base method.
 func (m *MockCmdable) CommandGetKeysAndFlags(arg0 context.Context, arg1 ...any) *redis.KeyFlagsCmd {
 	m.ctrl.T.Helper()
 	varargs := []any{arg0}
@@ -1557,7 +1557,7 @@ func (mr *MockCmdableMockRecorder) CommandGetKeysAndFlags(arg0 any, arg1 ...any)
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "CommandGetKeysAndFlags", reflect.TypeOf((*MockCmdable)(nil).CommandGetKeysAndFlags), varargs...)
 }
 
-// CommandList mocks base method.
+// CommandList mock base method.
 func (m *MockCmdable) CommandList(arg0 context.Context, arg1 *redis.FilterBy) *redis.StringSliceCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "CommandList", arg0, arg1)
@@ -1571,7 +1571,7 @@ func (mr *MockCmdableMockRecorder) CommandList(arg0, arg1 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "CommandList", reflect.TypeOf((*MockCmdable)(nil).CommandList), arg0, arg1)
 }
 
-// ConfigGet mocks base method.
+// ConfigGet mock base method.
 func (m *MockCmdable) ConfigGet(arg0 context.Context, arg1 string) *redis.MapStringStringCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "ConfigGet", arg0, arg1)
@@ -1585,7 +1585,7 @@ func (mr *MockCmdableMockRecorder) ConfigGet(arg0, arg1 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ConfigGet", reflect.TypeOf((*MockCmdable)(nil).ConfigGet), arg0, arg1)
 }
 
-// ConfigResetStat mocks base method.
+// ConfigResetStat mock base method.
 func (m *MockCmdable) ConfigResetStat(arg0 context.Context) *redis.StatusCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "ConfigResetStat", arg0)
@@ -1599,7 +1599,7 @@ func (mr *MockCmdableMockRecorder) ConfigResetStat(arg0 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ConfigResetStat", reflect.TypeOf((*MockCmdable)(nil).ConfigResetStat), arg0)
 }
 
-// ConfigRewrite mocks base method.
+// ConfigRewrite mock base method.
 func (m *MockCmdable) ConfigRewrite(arg0 context.Context) *redis.StatusCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "ConfigRewrite", arg0)
@@ -1613,7 +1613,7 @@ func (mr *MockCmdableMockRecorder) ConfigRewrite(arg0 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ConfigRewrite", reflect.TypeOf((*MockCmdable)(nil).ConfigRewrite), arg0)
 }
 
-// ConfigSet mocks base method.
+// ConfigSet mock base method.
 func (m *MockCmdable) ConfigSet(arg0 context.Context, arg1, arg2 string) *redis.StatusCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "ConfigSet", arg0, arg1, arg2)
@@ -1627,7 +1627,7 @@ func (mr *MockCmdableMockRecorder) ConfigSet(arg0, arg1, arg2 any) *gomock.Call 
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ConfigSet", reflect.TypeOf((*MockCmdable)(nil).ConfigSet), arg0, arg1, arg2)
 }
 
-// Copy mocks base method.
+// Copy mock base method.
 func (m *MockCmdable) Copy(arg0 context.Context, arg1, arg2 string, arg3 int, arg4 bool) *redis.IntCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "Copy", arg0, arg1, arg2, arg3, arg4)
@@ -1641,7 +1641,7 @@ func (mr *MockCmdableMockRecorder) Copy(arg0, arg1, arg2, arg3, arg4 any) *gomoc
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Copy", reflect.TypeOf((*MockCmdable)(nil).Copy), arg0, arg1, arg2, arg3, arg4)
 }
 
-// DBSize mocks base method.
+// DBSize mock base method.
 func (m *MockCmdable) DBSize(arg0 context.Context) *redis.IntCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "DBSize", arg0)
@@ -1655,7 +1655,7 @@ func (mr *MockCmdableMockRecorder) DBSize(arg0 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "DBSize", reflect.TypeOf((*MockCmdable)(nil).DBSize), arg0)
 }
 
-// DebugObject mocks base method.
+// DebugObject mock base method.
 func (m *MockCmdable) DebugObject(arg0 context.Context, arg1 string) *redis.StringCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "DebugObject", arg0, arg1)
@@ -1669,7 +1669,7 @@ func (mr *MockCmdableMockRecorder) DebugObject(arg0, arg1 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "DebugObject", reflect.TypeOf((*MockCmdable)(nil).DebugObject), arg0, arg1)
 }
 
-// Decr mocks base method.
+// Decr mock base method.
 func (m *MockCmdable) Decr(arg0 context.Context, arg1 string) *redis.IntCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "Decr", arg0, arg1)
@@ -1683,7 +1683,7 @@ func (mr *MockCmdableMockRecorder) Decr(arg0, arg1 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Decr", reflect.TypeOf((*MockCmdable)(nil).Decr), arg0, arg1)
 }
 
-// DecrBy mocks base method.
+// DecrBy mock base method.
 func (m *MockCmdable) DecrBy(arg0 context.Context, arg1 string, arg2 int64) *redis.IntCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "DecrBy", arg0, arg1, arg2)
@@ -1697,7 +1697,7 @@ func (mr *MockCmdableMockRecorder) DecrBy(arg0, arg1, arg2 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "DecrBy", reflect.TypeOf((*MockCmdable)(nil).DecrBy), arg0, arg1, arg2)
 }
 
-// Del mocks base method.
+// Del mock base method.
 func (m *MockCmdable) Del(arg0 context.Context, arg1 ...string) *redis.IntCmd {
 	m.ctrl.T.Helper()
 	varargs := []any{arg0}
@@ -1716,7 +1716,7 @@ func (mr *MockCmdableMockRecorder) Del(arg0 any, arg1 ...any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Del", reflect.TypeOf((*MockCmdable)(nil).Del), varargs...)
 }
 
-// Dump mocks base method.
+// Dump mock base method.
 func (m *MockCmdable) Dump(arg0 context.Context, arg1 string) *redis.StringCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "Dump", arg0, arg1)
@@ -1730,7 +1730,7 @@ func (mr *MockCmdableMockRecorder) Dump(arg0, arg1 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Dump", reflect.TypeOf((*MockCmdable)(nil).Dump), arg0, arg1)
 }
 
-// Echo mocks base method.
+// Echo mock base method.
 func (m *MockCmdable) Echo(arg0 context.Context, arg1 any) *redis.StringCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "Echo", arg0, arg1)
@@ -1744,7 +1744,7 @@ func (mr *MockCmdableMockRecorder) Echo(arg0, arg1 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Echo", reflect.TypeOf((*MockCmdable)(nil).Echo), arg0, arg1)
 }
 
-// Eval mocks base method.
+// Eval mock base method.
 func (m *MockCmdable) Eval(arg0 context.Context, arg1 string, arg2 []string, arg3 ...any) *redis.Cmd {
 	m.ctrl.T.Helper()
 	varargs := []any{arg0, arg1, arg2}
@@ -1763,7 +1763,7 @@ func (mr *MockCmdableMockRecorder) Eval(arg0, arg1, arg2 any, arg3 ...any) *gomo
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Eval", reflect.TypeOf((*MockCmdable)(nil).Eval), varargs...)
 }
 
-// EvalRO mocks base method.
+// EvalRO mock base method.
 func (m *MockCmdable) EvalRO(arg0 context.Context, arg1 string, arg2 []string, arg3 ...any) *redis.Cmd {
 	m.ctrl.T.Helper()
 	varargs := []any{arg0, arg1, arg2}
@@ -1782,7 +1782,7 @@ func (mr *MockCmdableMockRecorder) EvalRO(arg0, arg1, arg2 any, arg3 ...any) *go
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "EvalRO", reflect.TypeOf((*MockCmdable)(nil).EvalRO), varargs...)
 }
 
-// EvalSha mocks base method.
+// EvalSha mock base method.
 func (m *MockCmdable) EvalSha(arg0 context.Context, arg1 string, arg2 []string, arg3 ...any) *redis.Cmd {
 	m.ctrl.T.Helper()
 	varargs := []any{arg0, arg1, arg2}
@@ -1801,7 +1801,7 @@ func (mr *MockCmdableMockRecorder) EvalSha(arg0, arg1, arg2 any, arg3 ...any) *g
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "EvalSha", reflect.TypeOf((*MockCmdable)(nil).EvalSha), varargs...)
 }
 
-// EvalShaRO mocks base method.
+// EvalShaRO mock base method.
 func (m *MockCmdable) EvalShaRO(arg0 context.Context, arg1 string, arg2 []string, arg3 ...any) *redis.Cmd {
 	m.ctrl.T.Helper()
 	varargs := []any{arg0, arg1, arg2}
@@ -1820,7 +1820,7 @@ func (mr *MockCmdableMockRecorder) EvalShaRO(arg0, arg1, arg2 any, arg3 ...any) 
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "EvalShaRO", reflect.TypeOf((*MockCmdable)(nil).EvalShaRO), varargs...)
 }
 
-// Exists mocks base method.
+// Exists mock base method.
 func (m *MockCmdable) Exists(arg0 context.Context, arg1 ...string) *redis.IntCmd {
 	m.ctrl.T.Helper()
 	varargs := []any{arg0}
@@ -1839,7 +1839,7 @@ func (mr *MockCmdableMockRecorder) Exists(arg0 any, arg1 ...any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Exists", reflect.TypeOf((*MockCmdable)(nil).Exists), varargs...)
 }
 
-// Expire mocks base method.
+// Expire mock base method.
 func (m *MockCmdable) Expire(arg0 context.Context, arg1 string, arg2 time.Duration) *redis.BoolCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "Expire", arg0, arg1, arg2)
@@ -1853,7 +1853,7 @@ func (mr *MockCmdableMockRecorder) Expire(arg0, arg1, arg2 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Expire", reflect.TypeOf((*MockCmdable)(nil).Expire), arg0, arg1, arg2)
 }
 
-// ExpireAt mocks base method.
+// ExpireAt mock base method.
 func (m *MockCmdable) ExpireAt(arg0 context.Context, arg1 string, arg2 time.Time) *redis.BoolCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "ExpireAt", arg0, arg1, arg2)
@@ -1867,7 +1867,7 @@ func (mr *MockCmdableMockRecorder) ExpireAt(arg0, arg1, arg2 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ExpireAt", reflect.TypeOf((*MockCmdable)(nil).ExpireAt), arg0, arg1, arg2)
 }
 
-// ExpireGT mocks base method.
+// ExpireGT mock base method.
 func (m *MockCmdable) ExpireGT(arg0 context.Context, arg1 string, arg2 time.Duration) *redis.BoolCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "ExpireGT", arg0, arg1, arg2)
@@ -1881,7 +1881,7 @@ func (mr *MockCmdableMockRecorder) ExpireGT(arg0, arg1, arg2 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ExpireGT", reflect.TypeOf((*MockCmdable)(nil).ExpireGT), arg0, arg1, arg2)
 }
 
-// ExpireLT mocks base method.
+// ExpireLT mock base method.
 func (m *MockCmdable) ExpireLT(arg0 context.Context, arg1 string, arg2 time.Duration) *redis.BoolCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "ExpireLT", arg0, arg1, arg2)
@@ -1895,7 +1895,7 @@ func (mr *MockCmdableMockRecorder) ExpireLT(arg0, arg1, arg2 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ExpireLT", reflect.TypeOf((*MockCmdable)(nil).ExpireLT), arg0, arg1, arg2)
 }
 
-// ExpireNX mocks base method.
+// ExpireNX mock base method.
 func (m *MockCmdable) ExpireNX(arg0 context.Context, arg1 string, arg2 time.Duration) *redis.BoolCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "ExpireNX", arg0, arg1, arg2)
@@ -1909,7 +1909,7 @@ func (mr *MockCmdableMockRecorder) ExpireNX(arg0, arg1, arg2 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ExpireNX", reflect.TypeOf((*MockCmdable)(nil).ExpireNX), arg0, arg1, arg2)
 }
 
-// ExpireTime mocks base method.
+// ExpireTime mock base method.
 func (m *MockCmdable) ExpireTime(arg0 context.Context, arg1 string) *redis.DurationCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "ExpireTime", arg0, arg1)
@@ -1923,7 +1923,7 @@ func (mr *MockCmdableMockRecorder) ExpireTime(arg0, arg1 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ExpireTime", reflect.TypeOf((*MockCmdable)(nil).ExpireTime), arg0, arg1)
 }
 
-// ExpireXX mocks base method.
+// ExpireXX mock base method.
 func (m *MockCmdable) ExpireXX(arg0 context.Context, arg1 string, arg2 time.Duration) *redis.BoolCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "ExpireXX", arg0, arg1, arg2)
@@ -1937,7 +1937,7 @@ func (mr *MockCmdableMockRecorder) ExpireXX(arg0, arg1, arg2 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ExpireXX", reflect.TypeOf((*MockCmdable)(nil).ExpireXX), arg0, arg1, arg2)
 }
 
-// FCall mocks base method.
+// FCall mock base method.
 func (m *MockCmdable) FCall(arg0 context.Context, arg1 string, arg2 []string, arg3 ...any) *redis.Cmd {
 	m.ctrl.T.Helper()
 	varargs := []any{arg0, arg1, arg2}
@@ -1956,7 +1956,7 @@ func (mr *MockCmdableMockRecorder) FCall(arg0, arg1, arg2 any, arg3 ...any) *gom
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "FCall", reflect.TypeOf((*MockCmdable)(nil).FCall), varargs...)
 }
 
-// FCallRO mocks base method.
+// FCallRO mock base method.
 func (m *MockCmdable) FCallRO(arg0 context.Context, arg1 string, arg2 []string, arg3 ...any) *redis.Cmd {
 	m.ctrl.T.Helper()
 	varargs := []any{arg0, arg1, arg2}
@@ -1975,7 +1975,7 @@ func (mr *MockCmdableMockRecorder) FCallRO(arg0, arg1, arg2 any, arg3 ...any) *g
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "FCallRO", reflect.TypeOf((*MockCmdable)(nil).FCallRO), varargs...)
 }
 
-// FCallRo mocks base method.
+// FCallRo mock base method.
 func (m *MockCmdable) FCallRo(arg0 context.Context, arg1 string, arg2 []string, arg3 ...any) *redis.Cmd {
 	m.ctrl.T.Helper()
 	varargs := []any{arg0, arg1, arg2}
@@ -1994,7 +1994,7 @@ func (mr *MockCmdableMockRecorder) FCallRo(arg0, arg1, arg2 any, arg3 ...any) *g
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "FCallRo", reflect.TypeOf((*MockCmdable)(nil).FCallRo), varargs...)
 }
 
-// FlushAll mocks base method.
+// FlushAll mock base method.
 func (m *MockCmdable) FlushAll(arg0 context.Context) *redis.StatusCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "FlushAll", arg0)
@@ -2008,7 +2008,7 @@ func (mr *MockCmdableMockRecorder) FlushAll(arg0 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "FlushAll", reflect.TypeOf((*MockCmdable)(nil).FlushAll), arg0)
 }
 
-// FlushAllAsync mocks base method.
+// FlushAllAsync mock base method.
 func (m *MockCmdable) FlushAllAsync(arg0 context.Context) *redis.StatusCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "FlushAllAsync", arg0)
@@ -2022,7 +2022,7 @@ func (mr *MockCmdableMockRecorder) FlushAllAsync(arg0 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "FlushAllAsync", reflect.TypeOf((*MockCmdable)(nil).FlushAllAsync), arg0)
 }
 
-// FlushDB mocks base method.
+// FlushDB mock base method.
 func (m *MockCmdable) FlushDB(arg0 context.Context) *redis.StatusCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "FlushDB", arg0)
@@ -2036,7 +2036,7 @@ func (mr *MockCmdableMockRecorder) FlushDB(arg0 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "FlushDB", reflect.TypeOf((*MockCmdable)(nil).FlushDB), arg0)
 }
 
-// FlushDBAsync mocks base method.
+// FlushDBAsync mock base method.
 func (m *MockCmdable) FlushDBAsync(arg0 context.Context) *redis.StatusCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "FlushDBAsync", arg0)
@@ -2050,7 +2050,7 @@ func (mr *MockCmdableMockRecorder) FlushDBAsync(arg0 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "FlushDBAsync", reflect.TypeOf((*MockCmdable)(nil).FlushDBAsync), arg0)
 }
 
-// FunctionDelete mocks base method.
+// FunctionDelete mock base method.
 func (m *MockCmdable) FunctionDelete(arg0 context.Context, arg1 string) *redis.StringCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "FunctionDelete", arg0, arg1)
@@ -2064,7 +2064,7 @@ func (mr *MockCmdableMockRecorder) FunctionDelete(arg0, arg1 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "FunctionDelete", reflect.TypeOf((*MockCmdable)(nil).FunctionDelete), arg0, arg1)
 }
 
-// FunctionDump mocks base method.
+// FunctionDump mock base method.
 func (m *MockCmdable) FunctionDump(arg0 context.Context) *redis.StringCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "FunctionDump", arg0)
@@ -2078,7 +2078,7 @@ func (mr *MockCmdableMockRecorder) FunctionDump(arg0 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "FunctionDump", reflect.TypeOf((*MockCmdable)(nil).FunctionDump), arg0)
 }
 
-// FunctionFlush mocks base method.
+// FunctionFlush mock base method.
 func (m *MockCmdable) FunctionFlush(arg0 context.Context) *redis.StringCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "FunctionFlush", arg0)
@@ -2092,7 +2092,7 @@ func (mr *MockCmdableMockRecorder) FunctionFlush(arg0 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "FunctionFlush", reflect.TypeOf((*MockCmdable)(nil).FunctionFlush), arg0)
 }
 
-// FunctionFlushAsync mocks base method.
+// FunctionFlushAsync mock base method.
 func (m *MockCmdable) FunctionFlushAsync(arg0 context.Context) *redis.StringCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "FunctionFlushAsync", arg0)
@@ -2106,7 +2106,7 @@ func (mr *MockCmdableMockRecorder) FunctionFlushAsync(arg0 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "FunctionFlushAsync", reflect.TypeOf((*MockCmdable)(nil).FunctionFlushAsync), arg0)
 }
 
-// FunctionKill mocks base method.
+// FunctionKill mock base method.
 func (m *MockCmdable) FunctionKill(arg0 context.Context) *redis.StringCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "FunctionKill", arg0)
@@ -2120,7 +2120,7 @@ func (mr *MockCmdableMockRecorder) FunctionKill(arg0 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "FunctionKill", reflect.TypeOf((*MockCmdable)(nil).FunctionKill), arg0)
 }
 
-// FunctionList mocks base method.
+// FunctionList mock base method.
 func (m *MockCmdable) FunctionList(arg0 context.Context, arg1 redis.FunctionListQuery) *redis.FunctionListCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "FunctionList", arg0, arg1)
@@ -2134,7 +2134,7 @@ func (mr *MockCmdableMockRecorder) FunctionList(arg0, arg1 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "FunctionList", reflect.TypeOf((*MockCmdable)(nil).FunctionList), arg0, arg1)
 }
 
-// FunctionLoad mocks base method.
+// FunctionLoad mock base method.
 func (m *MockCmdable) FunctionLoad(arg0 context.Context, arg1 string) *redis.StringCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "FunctionLoad", arg0, arg1)
@@ -2148,7 +2148,7 @@ func (mr *MockCmdableMockRecorder) FunctionLoad(arg0, arg1 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "FunctionLoad", reflect.TypeOf((*MockCmdable)(nil).FunctionLoad), arg0, arg1)
 }
 
-// FunctionLoadReplace mocks base method.
+// FunctionLoadReplace mock base method.
 func (m *MockCmdable) FunctionLoadReplace(arg0 context.Context, arg1 string) *redis.StringCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "FunctionLoadReplace", arg0, arg1)
@@ -2162,7 +2162,7 @@ func (mr *MockCmdableMockRecorder) FunctionLoadReplace(arg0, arg1 any) *gomock.C
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "FunctionLoadReplace", reflect.TypeOf((*MockCmdable)(nil).FunctionLoadReplace), arg0, arg1)
 }
 
-// FunctionRestore mocks base method.
+// FunctionRestore mock base method.
 func (m *MockCmdable) FunctionRestore(arg0 context.Context, arg1 string) *redis.StringCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "FunctionRestore", arg0, arg1)
@@ -2176,7 +2176,7 @@ func (mr *MockCmdableMockRecorder) FunctionRestore(arg0, arg1 any) *gomock.Call 
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "FunctionRestore", reflect.TypeOf((*MockCmdable)(nil).FunctionRestore), arg0, arg1)
 }
 
-// FunctionStats mocks base method.
+// FunctionStats mock base method.
 func (m *MockCmdable) FunctionStats(arg0 context.Context) *redis.FunctionStatsCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "FunctionStats", arg0)
@@ -2190,7 +2190,7 @@ func (mr *MockCmdableMockRecorder) FunctionStats(arg0 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "FunctionStats", reflect.TypeOf((*MockCmdable)(nil).FunctionStats), arg0)
 }
 
-// GeoAdd mocks base method.
+// GeoAdd mock base method.
 func (m *MockCmdable) GeoAdd(arg0 context.Context, arg1 string, arg2 ...*redis.GeoLocation) *redis.IntCmd {
 	m.ctrl.T.Helper()
 	varargs := []any{arg0, arg1}
@@ -2209,7 +2209,7 @@ func (mr *MockCmdableMockRecorder) GeoAdd(arg0, arg1 any, arg2 ...any) *gomock.C
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "GeoAdd", reflect.TypeOf((*MockCmdable)(nil).GeoAdd), varargs...)
 }
 
-// GeoDist mocks base method.
+// GeoDist mock base method.
 func (m *MockCmdable) GeoDist(arg0 context.Context, arg1, arg2, arg3, arg4 string) *redis.FloatCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "GeoDist", arg0, arg1, arg2, arg3, arg4)
@@ -2223,7 +2223,7 @@ func (mr *MockCmdableMockRecorder) GeoDist(arg0, arg1, arg2, arg3, arg4 any) *go
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "GeoDist", reflect.TypeOf((*MockCmdable)(nil).GeoDist), arg0, arg1, arg2, arg3, arg4)
 }
 
-// GeoHash mocks base method.
+// GeoHash mock base method.
 func (m *MockCmdable) GeoHash(arg0 context.Context, arg1 string, arg2 ...string) *redis.StringSliceCmd {
 	m.ctrl.T.Helper()
 	varargs := []any{arg0, arg1}
@@ -2242,7 +2242,7 @@ func (mr *MockCmdableMockRecorder) GeoHash(arg0, arg1 any, arg2 ...any) *gomock.
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "GeoHash", reflect.TypeOf((*MockCmdable)(nil).GeoHash), varargs...)
 }
 
-// GeoPos mocks base method.
+// GeoPos mock base method.
 func (m *MockCmdable) GeoPos(arg0 context.Context, arg1 string, arg2 ...string) *redis.GeoPosCmd {
 	m.ctrl.T.Helper()
 	varargs := []any{arg0, arg1}
@@ -2261,7 +2261,7 @@ func (mr *MockCmdableMockRecorder) GeoPos(arg0, arg1 any, arg2 ...any) *gomock.C
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "GeoPos", reflect.TypeOf((*MockCmdable)(nil).GeoPos), varargs...)
 }
 
-// GeoRadius mocks base method.
+// GeoRadius mock base method.
 func (m *MockCmdable) GeoRadius(arg0 context.Context, arg1 string, arg2, arg3 float64, arg4 *redis.GeoRadiusQuery) *redis.GeoLocationCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "GeoRadius", arg0, arg1, arg2, arg3, arg4)
@@ -2275,7 +2275,7 @@ func (mr *MockCmdableMockRecorder) GeoRadius(arg0, arg1, arg2, arg3, arg4 any) *
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "GeoRadius", reflect.TypeOf((*MockCmdable)(nil).GeoRadius), arg0, arg1, arg2, arg3, arg4)
 }
 
-// GeoRadiusByMember mocks base method.
+// GeoRadiusByMember mock base method.
 func (m *MockCmdable) GeoRadiusByMember(arg0 context.Context, arg1, arg2 string, arg3 *redis.GeoRadiusQuery) *redis.GeoLocationCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "GeoRadiusByMember", arg0, arg1, arg2, arg3)
@@ -2289,7 +2289,7 @@ func (mr *MockCmdableMockRecorder) GeoRadiusByMember(arg0, arg1, arg2, arg3 any)
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "GeoRadiusByMember", reflect.TypeOf((*MockCmdable)(nil).GeoRadiusByMember), arg0, arg1, arg2, arg3)
 }
 
-// GeoRadiusByMemberStore mocks base method.
+// GeoRadiusByMemberStore mock base method.
 func (m *MockCmdable) GeoRadiusByMemberStore(arg0 context.Context, arg1, arg2 string, arg3 *redis.GeoRadiusQuery) *redis.IntCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "GeoRadiusByMemberStore", arg0, arg1, arg2, arg3)
@@ -2303,7 +2303,7 @@ func (mr *MockCmdableMockRecorder) GeoRadiusByMemberStore(arg0, arg1, arg2, arg3
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "GeoRadiusByMemberStore", reflect.TypeOf((*MockCmdable)(nil).GeoRadiusByMemberStore), arg0, arg1, arg2, arg3)
 }
 
-// GeoRadiusStore mocks base method.
+// GeoRadiusStore mock base method.
 func (m *MockCmdable) GeoRadiusStore(arg0 context.Context, arg1 string, arg2, arg3 float64, arg4 *redis.GeoRadiusQuery) *redis.IntCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "GeoRadiusStore", arg0, arg1, arg2, arg3, arg4)
@@ -2317,7 +2317,7 @@ func (mr *MockCmdableMockRecorder) GeoRadiusStore(arg0, arg1, arg2, arg3, arg4 a
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "GeoRadiusStore", reflect.TypeOf((*MockCmdable)(nil).GeoRadiusStore), arg0, arg1, arg2, arg3, arg4)
 }
 
-// GeoSearch mocks base method.
+// GeoSearch mock base method.
 func (m *MockCmdable) GeoSearch(arg0 context.Context, arg1 string, arg2 *redis.GeoSearchQuery) *redis.StringSliceCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "GeoSearch", arg0, arg1, arg2)
@@ -2331,7 +2331,7 @@ func (mr *MockCmdableMockRecorder) GeoSearch(arg0, arg1, arg2 any) *gomock.Call 
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "GeoSearch", reflect.TypeOf((*MockCmdable)(nil).GeoSearch), arg0, arg1, arg2)
 }
 
-// GeoSearchLocation mocks base method.
+// GeoSearchLocation mock base method.
 func (m *MockCmdable) GeoSearchLocation(arg0 context.Context, arg1 string, arg2 *redis.GeoSearchLocationQuery) *redis.GeoSearchLocationCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "GeoSearchLocation", arg0, arg1, arg2)
@@ -2345,7 +2345,7 @@ func (mr *MockCmdableMockRecorder) GeoSearchLocation(arg0, arg1, arg2 any) *gomo
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "GeoSearchLocation", reflect.TypeOf((*MockCmdable)(nil).GeoSearchLocation), arg0, arg1, arg2)
 }
 
-// GeoSearchStore mocks base method.
+// GeoSearchStore mock base method.
 func (m *MockCmdable) GeoSearchStore(arg0 context.Context, arg1, arg2 string, arg3 *redis.GeoSearchStoreQuery) *redis.IntCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "GeoSearchStore", arg0, arg1, arg2, arg3)
@@ -2359,7 +2359,7 @@ func (mr *MockCmdableMockRecorder) GeoSearchStore(arg0, arg1, arg2, arg3 any) *g
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "GeoSearchStore", reflect.TypeOf((*MockCmdable)(nil).GeoSearchStore), arg0, arg1, arg2, arg3)
 }
 
-// Get mocks base method.
+// Get mock base method.
 func (m *MockCmdable) Get(arg0 context.Context, arg1 string) *redis.StringCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "Get", arg0, arg1)
@@ -2373,7 +2373,7 @@ func (mr *MockCmdableMockRecorder) Get(arg0, arg1 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Get", reflect.TypeOf((*MockCmdable)(nil).Get), arg0, arg1)
 }
 
-// GetBit mocks base method.
+// GetBit mock base method.
 func (m *MockCmdable) GetBit(arg0 context.Context, arg1 string, arg2 int64) *redis.IntCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "GetBit", arg0, arg1, arg2)
@@ -2387,7 +2387,7 @@ func (mr *MockCmdableMockRecorder) GetBit(arg0, arg1, arg2 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "GetBit", reflect.TypeOf((*MockCmdable)(nil).GetBit), arg0, arg1, arg2)
 }
 
-// GetDel mocks base method.
+// GetDel mock base method.
 func (m *MockCmdable) GetDel(arg0 context.Context, arg1 string) *redis.StringCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "GetDel", arg0, arg1)
@@ -2401,7 +2401,7 @@ func (mr *MockCmdableMockRecorder) GetDel(arg0, arg1 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "GetDel", reflect.TypeOf((*MockCmdable)(nil).GetDel), arg0, arg1)
 }
 
-// GetEx mocks base method.
+// GetEx mock base method.
 func (m *MockCmdable) GetEx(arg0 context.Context, arg1 string, arg2 time.Duration) *redis.StringCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "GetEx", arg0, arg1, arg2)
@@ -2415,7 +2415,7 @@ func (mr *MockCmdableMockRecorder) GetEx(arg0, arg1, arg2 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "GetEx", reflect.TypeOf((*MockCmdable)(nil).GetEx), arg0, arg1, arg2)
 }
 
-// GetRange mocks base method.
+// GetRange mock base method.
 func (m *MockCmdable) GetRange(arg0 context.Context, arg1 string, arg2, arg3 int64) *redis.StringCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "GetRange", arg0, arg1, arg2, arg3)
@@ -2429,7 +2429,7 @@ func (mr *MockCmdableMockRecorder) GetRange(arg0, arg1, arg2, arg3 any) *gomock.
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "GetRange", reflect.TypeOf((*MockCmdable)(nil).GetRange), arg0, arg1, arg2, arg3)
 }
 
-// GetSet mocks base method.
+// GetSet mock base method.
 func (m *MockCmdable) GetSet(arg0 context.Context, arg1 string, arg2 any) *redis.StringCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "GetSet", arg0, arg1, arg2)
@@ -2443,7 +2443,7 @@ func (mr *MockCmdableMockRecorder) GetSet(arg0, arg1, arg2 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "GetSet", reflect.TypeOf((*MockCmdable)(nil).GetSet), arg0, arg1, arg2)
 }
 
-// HDel mocks base method.
+// HDel mock base method.
 func (m *MockCmdable) HDel(arg0 context.Context, arg1 string, arg2 ...string) *redis.IntCmd {
 	m.ctrl.T.Helper()
 	varargs := []any{arg0, arg1}
@@ -2462,7 +2462,7 @@ func (mr *MockCmdableMockRecorder) HDel(arg0, arg1 any, arg2 ...any) *gomock.Cal
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "HDel", reflect.TypeOf((*MockCmdable)(nil).HDel), varargs...)
 }
 
-// HExists mocks base method.
+// HExists mock base method.
 func (m *MockCmdable) HExists(arg0 context.Context, arg1, arg2 string) *redis.BoolCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "HExists", arg0, arg1, arg2)
@@ -2476,7 +2476,7 @@ func (mr *MockCmdableMockRecorder) HExists(arg0, arg1, arg2 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "HExists", reflect.TypeOf((*MockCmdable)(nil).HExists), arg0, arg1, arg2)
 }
 
-// HGet mocks base method.
+// HGet mock base method.
 func (m *MockCmdable) HGet(arg0 context.Context, arg1, arg2 string) *redis.StringCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "HGet", arg0, arg1, arg2)
@@ -2490,7 +2490,7 @@ func (mr *MockCmdableMockRecorder) HGet(arg0, arg1, arg2 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "HGet", reflect.TypeOf((*MockCmdable)(nil).HGet), arg0, arg1, arg2)
 }
 
-// HGetAll mocks base method.
+// HGetAll mock base method.
 func (m *MockCmdable) HGetAll(arg0 context.Context, arg1 string) *redis.MapStringStringCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "HGetAll", arg0, arg1)
@@ -2504,7 +2504,7 @@ func (mr *MockCmdableMockRecorder) HGetAll(arg0, arg1 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "HGetAll", reflect.TypeOf((*MockCmdable)(nil).HGetAll), arg0, arg1)
 }
 
-// HIncrBy mocks base method.
+// HIncrBy mock base method.
 func (m *MockCmdable) HIncrBy(arg0 context.Context, arg1, arg2 string, arg3 int64) *redis.IntCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "HIncrBy", arg0, arg1, arg2, arg3)
@@ -2518,7 +2518,7 @@ func (mr *MockCmdableMockRecorder) HIncrBy(arg0, arg1, arg2, arg3 any) *gomock.C
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "HIncrBy", reflect.TypeOf((*MockCmdable)(nil).HIncrBy), arg0, arg1, arg2, arg3)
 }
 
-// HIncrByFloat mocks base method.
+// HIncrByFloat mock base method.
 func (m *MockCmdable) HIncrByFloat(arg0 context.Context, arg1, arg2 string, arg3 float64) *redis.FloatCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "HIncrByFloat", arg0, arg1, arg2, arg3)
@@ -2532,7 +2532,7 @@ func (mr *MockCmdableMockRecorder) HIncrByFloat(arg0, arg1, arg2, arg3 any) *gom
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "HIncrByFloat", reflect.TypeOf((*MockCmdable)(nil).HIncrByFloat), arg0, arg1, arg2, arg3)
 }
 
-// HKeys mocks base method.
+// HKeys mock base method.
 func (m *MockCmdable) HKeys(arg0 context.Context, arg1 string) *redis.StringSliceCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "HKeys", arg0, arg1)
@@ -2546,7 +2546,7 @@ func (mr *MockCmdableMockRecorder) HKeys(arg0, arg1 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "HKeys", reflect.TypeOf((*MockCmdable)(nil).HKeys), arg0, arg1)
 }
 
-// HLen mocks base method.
+// HLen mock base method.
 func (m *MockCmdable) HLen(arg0 context.Context, arg1 string) *redis.IntCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "HLen", arg0, arg1)
@@ -2560,7 +2560,7 @@ func (mr *MockCmdableMockRecorder) HLen(arg0, arg1 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "HLen", reflect.TypeOf((*MockCmdable)(nil).HLen), arg0, arg1)
 }
 
-// HMGet mocks base method.
+// HMGet mock base method.
 func (m *MockCmdable) HMGet(arg0 context.Context, arg1 string, arg2 ...string) *redis.SliceCmd {
 	m.ctrl.T.Helper()
 	varargs := []any{arg0, arg1}
@@ -2579,7 +2579,7 @@ func (mr *MockCmdableMockRecorder) HMGet(arg0, arg1 any, arg2 ...any) *gomock.Ca
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "HMGet", reflect.TypeOf((*MockCmdable)(nil).HMGet), varargs...)
 }
 
-// HMSet mocks base method.
+// HMSet mock base method.
 func (m *MockCmdable) HMSet(arg0 context.Context, arg1 string, arg2 ...any) *redis.BoolCmd {
 	m.ctrl.T.Helper()
 	varargs := []any{arg0, arg1}
@@ -2598,7 +2598,7 @@ func (mr *MockCmdableMockRecorder) HMSet(arg0, arg1 any, arg2 ...any) *gomock.Ca
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "HMSet", reflect.TypeOf((*MockCmdable)(nil).HMSet), varargs...)
 }
 
-// HRandField mocks base method.
+// HRandField mock base method.
 func (m *MockCmdable) HRandField(arg0 context.Context, arg1 string, arg2 int) *redis.StringSliceCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "HRandField", arg0, arg1, arg2)
@@ -2612,7 +2612,7 @@ func (mr *MockCmdableMockRecorder) HRandField(arg0, arg1, arg2 any) *gomock.Call
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "HRandField", reflect.TypeOf((*MockCmdable)(nil).HRandField), arg0, arg1, arg2)
 }
 
-// HRandFieldWithValues mocks base method.
+// HRandFieldWithValues mock base method.
 func (m *MockCmdable) HRandFieldWithValues(arg0 context.Context, arg1 string, arg2 int) *redis.KeyValueSliceCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "HRandFieldWithValues", arg0, arg1, arg2)
@@ -2626,7 +2626,7 @@ func (mr *MockCmdableMockRecorder) HRandFieldWithValues(arg0, arg1, arg2 any) *g
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "HRandFieldWithValues", reflect.TypeOf((*MockCmdable)(nil).HRandFieldWithValues), arg0, arg1, arg2)
 }
 
-// HScan mocks base method.
+// HScan mock base method.
 func (m *MockCmdable) HScan(arg0 context.Context, arg1 string, arg2 uint64, arg3 string, arg4 int64) *redis.ScanCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "HScan", arg0, arg1, arg2, arg3, arg4)
@@ -2640,7 +2640,7 @@ func (mr *MockCmdableMockRecorder) HScan(arg0, arg1, arg2, arg3, arg4 any) *gomo
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "HScan", reflect.TypeOf((*MockCmdable)(nil).HScan), arg0, arg1, arg2, arg3, arg4)
 }
 
-// HSet mocks base method.
+// HSet mock base method.
 func (m *MockCmdable) HSet(arg0 context.Context, arg1 string, arg2 ...any) *redis.IntCmd {
 	m.ctrl.T.Helper()
 	varargs := []any{arg0, arg1}
@@ -2659,7 +2659,7 @@ func (mr *MockCmdableMockRecorder) HSet(arg0, arg1 any, arg2 ...any) *gomock.Cal
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "HSet", reflect.TypeOf((*MockCmdable)(nil).HSet), varargs...)
 }
 
-// HSetNX mocks base method.
+// HSetNX mock base method.
 func (m *MockCmdable) HSetNX(arg0 context.Context, arg1, arg2 string, arg3 any) *redis.BoolCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "HSetNX", arg0, arg1, arg2, arg3)
@@ -2673,7 +2673,7 @@ func (mr *MockCmdableMockRecorder) HSetNX(arg0, arg1, arg2, arg3 any) *gomock.Ca
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "HSetNX", reflect.TypeOf((*MockCmdable)(nil).HSetNX), arg0, arg1, arg2, arg3)
 }
 
-// HVals mocks base method.
+// HVals mock base method.
 func (m *MockCmdable) HVals(arg0 context.Context, arg1 string) *redis.StringSliceCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "HVals", arg0, arg1)
@@ -2687,7 +2687,7 @@ func (mr *MockCmdableMockRecorder) HVals(arg0, arg1 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "HVals", reflect.TypeOf((*MockCmdable)(nil).HVals), arg0, arg1)
 }
 
-// Incr mocks base method.
+// Incr mock base method.
 func (m *MockCmdable) Incr(arg0 context.Context, arg1 string) *redis.IntCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "Incr", arg0, arg1)
@@ -2701,7 +2701,7 @@ func (mr *MockCmdableMockRecorder) Incr(arg0, arg1 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Incr", reflect.TypeOf((*MockCmdable)(nil).Incr), arg0, arg1)
 }
 
-// IncrBy mocks base method.
+// IncrBy mock base method.
 func (m *MockCmdable) IncrBy(arg0 context.Context, arg1 string, arg2 int64) *redis.IntCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "IncrBy", arg0, arg1, arg2)
@@ -2715,7 +2715,7 @@ func (mr *MockCmdableMockRecorder) IncrBy(arg0, arg1, arg2 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "IncrBy", reflect.TypeOf((*MockCmdable)(nil).IncrBy), arg0, arg1, arg2)
 }
 
-// IncrByFloat mocks base method.
+// IncrByFloat mock base method.
 func (m *MockCmdable) IncrByFloat(arg0 context.Context, arg1 string, arg2 float64) *redis.FloatCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "IncrByFloat", arg0, arg1, arg2)
@@ -2729,7 +2729,7 @@ func (mr *MockCmdableMockRecorder) IncrByFloat(arg0, arg1, arg2 any) *gomock.Cal
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "IncrByFloat", reflect.TypeOf((*MockCmdable)(nil).IncrByFloat), arg0, arg1, arg2)
 }
 
-// Info mocks base method.
+// Info mock base method.
 func (m *MockCmdable) Info(arg0 context.Context, arg1 ...string) *redis.StringCmd {
 	m.ctrl.T.Helper()
 	varargs := []any{arg0}
@@ -2748,7 +2748,7 @@ func (mr *MockCmdableMockRecorder) Info(arg0 any, arg1 ...any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Info", reflect.TypeOf((*MockCmdable)(nil).Info), varargs...)
 }
 
-// JSONArrAppend mocks base method.
+// JSONArrAppend mock base method.
 func (m *MockCmdable) JSONArrAppend(arg0 context.Context, arg1, arg2 string, arg3 ...any) *redis.IntSliceCmd {
 	m.ctrl.T.Helper()
 	varargs := []any{arg0, arg1, arg2}
@@ -2767,7 +2767,7 @@ func (mr *MockCmdableMockRecorder) JSONArrAppend(arg0, arg1, arg2 any, arg3 ...a
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "JSONArrAppend", reflect.TypeOf((*MockCmdable)(nil).JSONArrAppend), varargs...)
 }
 
-// JSONArrIndex mocks base method.
+// JSONArrIndex mock base method.
 func (m *MockCmdable) JSONArrIndex(arg0 context.Context, arg1, arg2 string, arg3 ...any) *redis.IntSliceCmd {
 	m.ctrl.T.Helper()
 	varargs := []any{arg0, arg1, arg2}
@@ -2786,7 +2786,7 @@ func (mr *MockCmdableMockRecorder) JSONArrIndex(arg0, arg1, arg2 any, arg3 ...an
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "JSONArrIndex", reflect.TypeOf((*MockCmdable)(nil).JSONArrIndex), varargs...)
 }
 
-// JSONArrIndexWithArgs mocks base method.
+// JSONArrIndexWithArgs mock base method.
 func (m *MockCmdable) JSONArrIndexWithArgs(arg0 context.Context, arg1, arg2 string, arg3 *redis.JSONArrIndexArgs, arg4 ...any) *redis.IntSliceCmd {
 	m.ctrl.T.Helper()
 	varargs := []any{arg0, arg1, arg2, arg3}
@@ -2805,7 +2805,7 @@ func (mr *MockCmdableMockRecorder) JSONArrIndexWithArgs(arg0, arg1, arg2, arg3 a
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "JSONArrIndexWithArgs", reflect.TypeOf((*MockCmdable)(nil).JSONArrIndexWithArgs), varargs...)
 }
 
-// JSONArrInsert mocks base method.
+// JSONArrInsert mock base method.
 func (m *MockCmdable) JSONArrInsert(arg0 context.Context, arg1, arg2 string, arg3 int64, arg4 ...any) *redis.IntSliceCmd {
 	m.ctrl.T.Helper()
 	varargs := []any{arg0, arg1, arg2, arg3}
@@ -2824,7 +2824,7 @@ func (mr *MockCmdableMockRecorder) JSONArrInsert(arg0, arg1, arg2, arg3 any, arg
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "JSONArrInsert", reflect.TypeOf((*MockCmdable)(nil).JSONArrInsert), varargs...)
 }
 
-// JSONArrLen mocks base method.
+// JSONArrLen mock base method.
 func (m *MockCmdable) JSONArrLen(arg0 context.Context, arg1, arg2 string) *redis.IntSliceCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "JSONArrLen", arg0, arg1, arg2)
@@ -2838,7 +2838,7 @@ func (mr *MockCmdableMockRecorder) JSONArrLen(arg0, arg1, arg2 any) *gomock.Call
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "JSONArrLen", reflect.TypeOf((*MockCmdable)(nil).JSONArrLen), arg0, arg1, arg2)
 }
 
-// JSONArrPop mocks base method.
+// JSONArrPop mock base method.
 func (m *MockCmdable) JSONArrPop(arg0 context.Context, arg1, arg2 string, arg3 int) *redis.StringSliceCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "JSONArrPop", arg0, arg1, arg2, arg3)
@@ -2852,7 +2852,7 @@ func (mr *MockCmdableMockRecorder) JSONArrPop(arg0, arg1, arg2, arg3 any) *gomoc
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "JSONArrPop", reflect.TypeOf((*MockCmdable)(nil).JSONArrPop), arg0, arg1, arg2, arg3)
 }
 
-// JSONArrTrim mocks base method.
+// JSONArrTrim mock base method.
 func (m *MockCmdable) JSONArrTrim(arg0 context.Context, arg1, arg2 string) *redis.IntSliceCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "JSONArrTrim", arg0, arg1, arg2)
@@ -2866,7 +2866,7 @@ func (mr *MockCmdableMockRecorder) JSONArrTrim(arg0, arg1, arg2 any) *gomock.Cal
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "JSONArrTrim", reflect.TypeOf((*MockCmdable)(nil).JSONArrTrim), arg0, arg1, arg2)
 }
 
-// JSONArrTrimWithArgs mocks base method.
+// JSONArrTrimWithArgs mock base method.
 func (m *MockCmdable) JSONArrTrimWithArgs(arg0 context.Context, arg1, arg2 string, arg3 *redis.JSONArrTrimArgs) *redis.IntSliceCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "JSONArrTrimWithArgs", arg0, arg1, arg2, arg3)
@@ -2880,7 +2880,7 @@ func (mr *MockCmdableMockRecorder) JSONArrTrimWithArgs(arg0, arg1, arg2, arg3 an
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "JSONArrTrimWithArgs", reflect.TypeOf((*MockCmdable)(nil).JSONArrTrimWithArgs), arg0, arg1, arg2, arg3)
 }
 
-// JSONClear mocks base method.
+// JSONClear mock base method.
 func (m *MockCmdable) JSONClear(arg0 context.Context, arg1, arg2 string) *redis.IntCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "JSONClear", arg0, arg1, arg2)
@@ -2894,7 +2894,7 @@ func (mr *MockCmdableMockRecorder) JSONClear(arg0, arg1, arg2 any) *gomock.Call 
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "JSONClear", reflect.TypeOf((*MockCmdable)(nil).JSONClear), arg0, arg1, arg2)
 }
 
-// JSONDebugMemory mocks base method.
+// JSONDebugMemory mock base method.
 func (m *MockCmdable) JSONDebugMemory(arg0 context.Context, arg1, arg2 string) *redis.IntCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "JSONDebugMemory", arg0, arg1, arg2)
@@ -2908,7 +2908,7 @@ func (mr *MockCmdableMockRecorder) JSONDebugMemory(arg0, arg1, arg2 any) *gomock
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "JSONDebugMemory", reflect.TypeOf((*MockCmdable)(nil).JSONDebugMemory), arg0, arg1, arg2)
 }
 
-// JSONDel mocks base method.
+// JSONDel mock base method.
 func (m *MockCmdable) JSONDel(arg0 context.Context, arg1, arg2 string) *redis.IntCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "JSONDel", arg0, arg1, arg2)
@@ -2922,7 +2922,7 @@ func (mr *MockCmdableMockRecorder) JSONDel(arg0, arg1, arg2 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "JSONDel", reflect.TypeOf((*MockCmdable)(nil).JSONDel), arg0, arg1, arg2)
 }
 
-// JSONForget mocks base method.
+// JSONForget mock base method.
 func (m *MockCmdable) JSONForget(arg0 context.Context, arg1, arg2 string) *redis.IntCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "JSONForget", arg0, arg1, arg2)
@@ -2936,7 +2936,7 @@ func (mr *MockCmdableMockRecorder) JSONForget(arg0, arg1, arg2 any) *gomock.Call
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "JSONForget", reflect.TypeOf((*MockCmdable)(nil).JSONForget), arg0, arg1, arg2)
 }
 
-// JSONGet mocks base method.
+// JSONGet mock base method.
 func (m *MockCmdable) JSONGet(arg0 context.Context, arg1 string, arg2 ...string) *redis.JSONCmd {
 	m.ctrl.T.Helper()
 	varargs := []any{arg0, arg1}
@@ -2955,7 +2955,7 @@ func (mr *MockCmdableMockRecorder) JSONGet(arg0, arg1 any, arg2 ...any) *gomock.
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "JSONGet", reflect.TypeOf((*MockCmdable)(nil).JSONGet), varargs...)
 }
 
-// JSONGetWithArgs mocks base method.
+// JSONGetWithArgs mock base method.
 func (m *MockCmdable) JSONGetWithArgs(arg0 context.Context, arg1 string, arg2 *redis.JSONGetArgs, arg3 ...string) *redis.JSONCmd {
 	m.ctrl.T.Helper()
 	varargs := []any{arg0, arg1, arg2}
@@ -2974,7 +2974,7 @@ func (mr *MockCmdableMockRecorder) JSONGetWithArgs(arg0, arg1, arg2 any, arg3 ..
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "JSONGetWithArgs", reflect.TypeOf((*MockCmdable)(nil).JSONGetWithArgs), varargs...)
 }
 
-// JSONMGet mocks base method.
+// JSONMGet mock base method.
 func (m *MockCmdable) JSONMGet(arg0 context.Context, arg1 string, arg2 ...string) *redis.JSONSliceCmd {
 	m.ctrl.T.Helper()
 	varargs := []any{arg0, arg1}
@@ -2993,7 +2993,7 @@ func (mr *MockCmdableMockRecorder) JSONMGet(arg0, arg1 any, arg2 ...any) *gomock
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "JSONMGet", reflect.TypeOf((*MockCmdable)(nil).JSONMGet), varargs...)
 }
 
-// JSONMSet mocks base method.
+// JSONMSet mock base method.
 func (m *MockCmdable) JSONMSet(arg0 context.Context, arg1 ...any) *redis.StatusCmd {
 	m.ctrl.T.Helper()
 	varargs := []any{arg0}
@@ -3012,7 +3012,7 @@ func (mr *MockCmdableMockRecorder) JSONMSet(arg0 any, arg1 ...any) *gomock.Call 
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "JSONMSet", reflect.TypeOf((*MockCmdable)(nil).JSONMSet), varargs...)
 }
 
-// JSONMSetArgs mocks base method.
+// JSONMSetArgs mock base method.
 func (m *MockCmdable) JSONMSetArgs(arg0 context.Context, arg1 []redis.JSONSetArgs) *redis.StatusCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "JSONMSetArgs", arg0, arg1)
@@ -3026,7 +3026,7 @@ func (mr *MockCmdableMockRecorder) JSONMSetArgs(arg0, arg1 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "JSONMSetArgs", reflect.TypeOf((*MockCmdable)(nil).JSONMSetArgs), arg0, arg1)
 }
 
-// JSONMerge mocks base method.
+// JSONMerge mock base method.
 func (m *MockCmdable) JSONMerge(arg0 context.Context, arg1, arg2, arg3 string) *redis.StatusCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "JSONMerge", arg0, arg1, arg2, arg3)
@@ -3040,7 +3040,7 @@ func (mr *MockCmdableMockRecorder) JSONMerge(arg0, arg1, arg2, arg3 any) *gomock
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "JSONMerge", reflect.TypeOf((*MockCmdable)(nil).JSONMerge), arg0, arg1, arg2, arg3)
 }
 
-// JSONNumIncrBy mocks base method.
+// JSONNumIncrBy mock base method.
 func (m *MockCmdable) JSONNumIncrBy(arg0 context.Context, arg1, arg2 string, arg3 float64) *redis.JSONCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "JSONNumIncrBy", arg0, arg1, arg2, arg3)
@@ -3054,7 +3054,7 @@ func (mr *MockCmdableMockRecorder) JSONNumIncrBy(arg0, arg1, arg2, arg3 any) *go
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "JSONNumIncrBy", reflect.TypeOf((*MockCmdable)(nil).JSONNumIncrBy), arg0, arg1, arg2, arg3)
 }
 
-// JSONObjKeys mocks base method.
+// JSONObjKeys mock base method.
 func (m *MockCmdable) JSONObjKeys(arg0 context.Context, arg1, arg2 string) *redis.SliceCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "JSONObjKeys", arg0, arg1, arg2)
@@ -3068,7 +3068,7 @@ func (mr *MockCmdableMockRecorder) JSONObjKeys(arg0, arg1, arg2 any) *gomock.Cal
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "JSONObjKeys", reflect.TypeOf((*MockCmdable)(nil).JSONObjKeys), arg0, arg1, arg2)
 }
 
-// JSONObjLen mocks base method.
+// JSONObjLen mock base method.
 func (m *MockCmdable) JSONObjLen(arg0 context.Context, arg1, arg2 string) *redis.IntPointerSliceCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "JSONObjLen", arg0, arg1, arg2)
@@ -3082,7 +3082,7 @@ func (mr *MockCmdableMockRecorder) JSONObjLen(arg0, arg1, arg2 any) *gomock.Call
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "JSONObjLen", reflect.TypeOf((*MockCmdable)(nil).JSONObjLen), arg0, arg1, arg2)
 }
 
-// JSONSet mocks base method.
+// JSONSet mock base method.
 func (m *MockCmdable) JSONSet(arg0 context.Context, arg1, arg2 string, arg3 any) *redis.StatusCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "JSONSet", arg0, arg1, arg2, arg3)
@@ -3096,7 +3096,7 @@ func (mr *MockCmdableMockRecorder) JSONSet(arg0, arg1, arg2, arg3 any) *gomock.C
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "JSONSet", reflect.TypeOf((*MockCmdable)(nil).JSONSet), arg0, arg1, arg2, arg3)
 }
 
-// JSONSetMode mocks base method.
+// JSONSetMode mock base method.
 func (m *MockCmdable) JSONSetMode(arg0 context.Context, arg1, arg2 string, arg3 any, arg4 string) *redis.StatusCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "JSONSetMode", arg0, arg1, arg2, arg3, arg4)
@@ -3110,7 +3110,7 @@ func (mr *MockCmdableMockRecorder) JSONSetMode(arg0, arg1, arg2, arg3, arg4 any)
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "JSONSetMode", reflect.TypeOf((*MockCmdable)(nil).JSONSetMode), arg0, arg1, arg2, arg3, arg4)
 }
 
-// JSONStrAppend mocks base method.
+// JSONStrAppend mock base method.
 func (m *MockCmdable) JSONStrAppend(arg0 context.Context, arg1, arg2, arg3 string) *redis.IntPointerSliceCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "JSONStrAppend", arg0, arg1, arg2, arg3)
@@ -3124,7 +3124,7 @@ func (mr *MockCmdableMockRecorder) JSONStrAppend(arg0, arg1, arg2, arg3 any) *go
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "JSONStrAppend", reflect.TypeOf((*MockCmdable)(nil).JSONStrAppend), arg0, arg1, arg2, arg3)
 }
 
-// JSONStrLen mocks base method.
+// JSONStrLen mock base method.
 func (m *MockCmdable) JSONStrLen(arg0 context.Context, arg1, arg2 string) *redis.IntPointerSliceCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "JSONStrLen", arg0, arg1, arg2)
@@ -3138,7 +3138,7 @@ func (mr *MockCmdableMockRecorder) JSONStrLen(arg0, arg1, arg2 any) *gomock.Call
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "JSONStrLen", reflect.TypeOf((*MockCmdable)(nil).JSONStrLen), arg0, arg1, arg2)
 }
 
-// JSONToggle mocks base method.
+// JSONToggle mock base method.
 func (m *MockCmdable) JSONToggle(arg0 context.Context, arg1, arg2 string) *redis.IntPointerSliceCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "JSONToggle", arg0, arg1, arg2)
@@ -3152,7 +3152,7 @@ func (mr *MockCmdableMockRecorder) JSONToggle(arg0, arg1, arg2 any) *gomock.Call
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "JSONToggle", reflect.TypeOf((*MockCmdable)(nil).JSONToggle), arg0, arg1, arg2)
 }
 
-// JSONType mocks base method.
+// JSONType mock base method.
 func (m *MockCmdable) JSONType(arg0 context.Context, arg1, arg2 string) *redis.JSONSliceCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "JSONType", arg0, arg1, arg2)
@@ -3166,7 +3166,7 @@ func (mr *MockCmdableMockRecorder) JSONType(arg0, arg1, arg2 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "JSONType", reflect.TypeOf((*MockCmdable)(nil).JSONType), arg0, arg1, arg2)
 }
 
-// Keys mocks base method.
+// Keys mock base method.
 func (m *MockCmdable) Keys(arg0 context.Context, arg1 string) *redis.StringSliceCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "Keys", arg0, arg1)
@@ -3180,7 +3180,7 @@ func (mr *MockCmdableMockRecorder) Keys(arg0, arg1 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Keys", reflect.TypeOf((*MockCmdable)(nil).Keys), arg0, arg1)
 }
 
-// LCS mocks base method.
+// LCS mock base method.
 func (m *MockCmdable) LCS(arg0 context.Context, arg1 *redis.LCSQuery) *redis.LCSCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "LCS", arg0, arg1)
@@ -3194,7 +3194,7 @@ func (mr *MockCmdableMockRecorder) LCS(arg0, arg1 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "LCS", reflect.TypeOf((*MockCmdable)(nil).LCS), arg0, arg1)
 }
 
-// LIndex mocks base method.
+// LIndex mock base method.
 func (m *MockCmdable) LIndex(arg0 context.Context, arg1 string, arg2 int64) *redis.StringCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "LIndex", arg0, arg1, arg2)
@@ -3208,7 +3208,7 @@ func (mr *MockCmdableMockRecorder) LIndex(arg0, arg1, arg2 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "LIndex", reflect.TypeOf((*MockCmdable)(nil).LIndex), arg0, arg1, arg2)
 }
 
-// LInsert mocks base method.
+// LInsert mock base method.
 func (m *MockCmdable) LInsert(arg0 context.Context, arg1, arg2 string, arg3, arg4 any) *redis.IntCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "LInsert", arg0, arg1, arg2, arg3, arg4)
@@ -3222,7 +3222,7 @@ func (mr *MockCmdableMockRecorder) LInsert(arg0, arg1, arg2, arg3, arg4 any) *go
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "LInsert", reflect.TypeOf((*MockCmdable)(nil).LInsert), arg0, arg1, arg2, arg3, arg4)
 }
 
-// LInsertAfter mocks base method.
+// LInsertAfter mock base method.
 func (m *MockCmdable) LInsertAfter(arg0 context.Context, arg1 string, arg2, arg3 any) *redis.IntCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "LInsertAfter", arg0, arg1, arg2, arg3)
@@ -3236,7 +3236,7 @@ func (mr *MockCmdableMockRecorder) LInsertAfter(arg0, arg1, arg2, arg3 any) *gom
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "LInsertAfter", reflect.TypeOf((*MockCmdable)(nil).LInsertAfter), arg0, arg1, arg2, arg3)
 }
 
-// LInsertBefore mocks base method.
+// LInsertBefore mock base method.
 func (m *MockCmdable) LInsertBefore(arg0 context.Context, arg1 string, arg2, arg3 any) *redis.IntCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "LInsertBefore", arg0, arg1, arg2, arg3)
@@ -3250,7 +3250,7 @@ func (mr *MockCmdableMockRecorder) LInsertBefore(arg0, arg1, arg2, arg3 any) *go
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "LInsertBefore", reflect.TypeOf((*MockCmdable)(nil).LInsertBefore), arg0, arg1, arg2, arg3)
 }
 
-// LLen mocks base method.
+// LLen mock base method.
 func (m *MockCmdable) LLen(arg0 context.Context, arg1 string) *redis.IntCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "LLen", arg0, arg1)
@@ -3264,7 +3264,7 @@ func (mr *MockCmdableMockRecorder) LLen(arg0, arg1 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "LLen", reflect.TypeOf((*MockCmdable)(nil).LLen), arg0, arg1)
 }
 
-// LMPop mocks base method.
+// LMPop mock base method.
 func (m *MockCmdable) LMPop(arg0 context.Context, arg1 string, arg2 int64, arg3 ...string) *redis.KeyValuesCmd {
 	m.ctrl.T.Helper()
 	varargs := []any{arg0, arg1, arg2}
@@ -3283,7 +3283,7 @@ func (mr *MockCmdableMockRecorder) LMPop(arg0, arg1, arg2 any, arg3 ...any) *gom
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "LMPop", reflect.TypeOf((*MockCmdable)(nil).LMPop), varargs...)
 }
 
-// LMove mocks base method.
+// LMove mock base method.
 func (m *MockCmdable) LMove(arg0 context.Context, arg1, arg2, arg3, arg4 string) *redis.StringCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "LMove", arg0, arg1, arg2, arg3, arg4)
@@ -3297,7 +3297,7 @@ func (mr *MockCmdableMockRecorder) LMove(arg0, arg1, arg2, arg3, arg4 any) *gomo
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "LMove", reflect.TypeOf((*MockCmdable)(nil).LMove), arg0, arg1, arg2, arg3, arg4)
 }
 
-// LPop mocks base method.
+// LPop mock base method.
 func (m *MockCmdable) LPop(arg0 context.Context, arg1 string) *redis.StringCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "LPop", arg0, arg1)
@@ -3311,7 +3311,7 @@ func (mr *MockCmdableMockRecorder) LPop(arg0, arg1 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "LPop", reflect.TypeOf((*MockCmdable)(nil).LPop), arg0, arg1)
 }
 
-// LPopCount mocks base method.
+// LPopCount mock base method.
 func (m *MockCmdable) LPopCount(arg0 context.Context, arg1 string, arg2 int) *redis.StringSliceCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "LPopCount", arg0, arg1, arg2)
@@ -3325,7 +3325,7 @@ func (mr *MockCmdableMockRecorder) LPopCount(arg0, arg1, arg2 any) *gomock.Call 
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "LPopCount", reflect.TypeOf((*MockCmdable)(nil).LPopCount), arg0, arg1, arg2)
 }
 
-// LPos mocks base method.
+// LPos mock base method.
 func (m *MockCmdable) LPos(arg0 context.Context, arg1, arg2 string, arg3 redis.LPosArgs) *redis.IntCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "LPos", arg0, arg1, arg2, arg3)
@@ -3339,7 +3339,7 @@ func (mr *MockCmdableMockRecorder) LPos(arg0, arg1, arg2, arg3 any) *gomock.Call
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "LPos", reflect.TypeOf((*MockCmdable)(nil).LPos), arg0, arg1, arg2, arg3)
 }
 
-// LPosCount mocks base method.
+// LPosCount mock base method.
 func (m *MockCmdable) LPosCount(arg0 context.Context, arg1, arg2 string, arg3 int64, arg4 redis.LPosArgs) *redis.IntSliceCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "LPosCount", arg0, arg1, arg2, arg3, arg4)
@@ -3353,7 +3353,7 @@ func (mr *MockCmdableMockRecorder) LPosCount(arg0, arg1, arg2, arg3, arg4 any) *
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "LPosCount", reflect.TypeOf((*MockCmdable)(nil).LPosCount), arg0, arg1, arg2, arg3, arg4)
 }
 
-// LPush mocks base method.
+// LPush mock base method.
 func (m *MockCmdable) LPush(arg0 context.Context, arg1 string, arg2 ...any) *redis.IntCmd {
 	m.ctrl.T.Helper()
 	varargs := []any{arg0, arg1}
@@ -3372,7 +3372,7 @@ func (mr *MockCmdableMockRecorder) LPush(arg0, arg1 any, arg2 ...any) *gomock.Ca
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "LPush", reflect.TypeOf((*MockCmdable)(nil).LPush), varargs...)
 }
 
-// LPushX mocks base method.
+// LPushX mock base method.
 func (m *MockCmdable) LPushX(arg0 context.Context, arg1 string, arg2 ...any) *redis.IntCmd {
 	m.ctrl.T.Helper()
 	varargs := []any{arg0, arg1}
@@ -3391,7 +3391,7 @@ func (mr *MockCmdableMockRecorder) LPushX(arg0, arg1 any, arg2 ...any) *gomock.C
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "LPushX", reflect.TypeOf((*MockCmdable)(nil).LPushX), varargs...)
 }
 
-// LRange mocks base method.
+// LRange mock base method.
 func (m *MockCmdable) LRange(arg0 context.Context, arg1 string, arg2, arg3 int64) *redis.StringSliceCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "LRange", arg0, arg1, arg2, arg3)
@@ -3405,7 +3405,7 @@ func (mr *MockCmdableMockRecorder) LRange(arg0, arg1, arg2, arg3 any) *gomock.Ca
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "LRange", reflect.TypeOf((*MockCmdable)(nil).LRange), arg0, arg1, arg2, arg3)
 }
 
-// LRem mocks base method.
+// LRem mock base method.
 func (m *MockCmdable) LRem(arg0 context.Context, arg1 string, arg2 int64, arg3 any) *redis.IntCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "LRem", arg0, arg1, arg2, arg3)
@@ -3419,7 +3419,7 @@ func (mr *MockCmdableMockRecorder) LRem(arg0, arg1, arg2, arg3 any) *gomock.Call
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "LRem", reflect.TypeOf((*MockCmdable)(nil).LRem), arg0, arg1, arg2, arg3)
 }
 
-// LSet mocks base method.
+// LSet mock base method.
 func (m *MockCmdable) LSet(arg0 context.Context, arg1 string, arg2 int64, arg3 any) *redis.StatusCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "LSet", arg0, arg1, arg2, arg3)
@@ -3433,7 +3433,7 @@ func (mr *MockCmdableMockRecorder) LSet(arg0, arg1, arg2, arg3 any) *gomock.Call
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "LSet", reflect.TypeOf((*MockCmdable)(nil).LSet), arg0, arg1, arg2, arg3)
 }
 
-// LTrim mocks base method.
+// LTrim mock base method.
 func (m *MockCmdable) LTrim(arg0 context.Context, arg1 string, arg2, arg3 int64) *redis.StatusCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "LTrim", arg0, arg1, arg2, arg3)
@@ -3447,7 +3447,7 @@ func (mr *MockCmdableMockRecorder) LTrim(arg0, arg1, arg2, arg3 any) *gomock.Cal
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "LTrim", reflect.TypeOf((*MockCmdable)(nil).LTrim), arg0, arg1, arg2, arg3)
 }
 
-// LastSave mocks base method.
+// LastSave mock base method.
 func (m *MockCmdable) LastSave(arg0 context.Context) *redis.IntCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "LastSave", arg0)
@@ -3461,7 +3461,7 @@ func (mr *MockCmdableMockRecorder) LastSave(arg0 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "LastSave", reflect.TypeOf((*MockCmdable)(nil).LastSave), arg0)
 }
 
-// MGet mocks base method.
+// MGet mock base method.
 func (m *MockCmdable) MGet(arg0 context.Context, arg1 ...string) *redis.SliceCmd {
 	m.ctrl.T.Helper()
 	varargs := []any{arg0}
@@ -3480,7 +3480,7 @@ func (mr *MockCmdableMockRecorder) MGet(arg0 any, arg1 ...any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "MGet", reflect.TypeOf((*MockCmdable)(nil).MGet), varargs...)
 }
 
-// MSet mocks base method.
+// MSet mock base method.
 func (m *MockCmdable) MSet(arg0 context.Context, arg1 ...any) *redis.StatusCmd {
 	m.ctrl.T.Helper()
 	varargs := []any{arg0}
@@ -3499,7 +3499,7 @@ func (mr *MockCmdableMockRecorder) MSet(arg0 any, arg1 ...any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "MSet", reflect.TypeOf((*MockCmdable)(nil).MSet), varargs...)
 }
 
-// MSetNX mocks base method.
+// MSetNX mock base method.
 func (m *MockCmdable) MSetNX(arg0 context.Context, arg1 ...any) *redis.BoolCmd {
 	m.ctrl.T.Helper()
 	varargs := []any{arg0}
@@ -3518,7 +3518,7 @@ func (mr *MockCmdableMockRecorder) MSetNX(arg0 any, arg1 ...any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "MSetNX", reflect.TypeOf((*MockCmdable)(nil).MSetNX), varargs...)
 }
 
-// MemoryUsage mocks base method.
+// MemoryUsage mock base method.
 func (m *MockCmdable) MemoryUsage(arg0 context.Context, arg1 string, arg2 ...int) *redis.IntCmd {
 	m.ctrl.T.Helper()
 	varargs := []any{arg0, arg1}
@@ -3537,7 +3537,7 @@ func (mr *MockCmdableMockRecorder) MemoryUsage(arg0, arg1 any, arg2 ...any) *gom
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "MemoryUsage", reflect.TypeOf((*MockCmdable)(nil).MemoryUsage), varargs...)
 }
 
-// Migrate mocks base method.
+// Migrate mock base method.
 func (m *MockCmdable) Migrate(arg0 context.Context, arg1, arg2, arg3 string, arg4 int, arg5 time.Duration) *redis.StatusCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "Migrate", arg0, arg1, arg2, arg3, arg4, arg5)
@@ -3551,7 +3551,7 @@ func (mr *MockCmdableMockRecorder) Migrate(arg0, arg1, arg2, arg3, arg4, arg5 an
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Migrate", reflect.TypeOf((*MockCmdable)(nil).Migrate), arg0, arg1, arg2, arg3, arg4, arg5)
 }
 
-// ModuleLoadex mocks base method.
+// ModuleLoadex mock base method.
 func (m *MockCmdable) ModuleLoadex(arg0 context.Context, arg1 *redis.ModuleLoadexConfig) *redis.StringCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "ModuleLoadex", arg0, arg1)
@@ -3565,7 +3565,7 @@ func (mr *MockCmdableMockRecorder) ModuleLoadex(arg0, arg1 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ModuleLoadex", reflect.TypeOf((*MockCmdable)(nil).ModuleLoadex), arg0, arg1)
 }
 
-// Move mocks base method.
+// Move mock base method.
 func (m *MockCmdable) Move(arg0 context.Context, arg1 string, arg2 int) *redis.BoolCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "Move", arg0, arg1, arg2)
@@ -3579,7 +3579,7 @@ func (mr *MockCmdableMockRecorder) Move(arg0, arg1, arg2 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Move", reflect.TypeOf((*MockCmdable)(nil).Move), arg0, arg1, arg2)
 }
 
-// ObjectEncoding mocks base method.
+// ObjectEncoding mock base method.
 func (m *MockCmdable) ObjectEncoding(arg0 context.Context, arg1 string) *redis.StringCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "ObjectEncoding", arg0, arg1)
@@ -3593,7 +3593,7 @@ func (mr *MockCmdableMockRecorder) ObjectEncoding(arg0, arg1 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ObjectEncoding", reflect.TypeOf((*MockCmdable)(nil).ObjectEncoding), arg0, arg1)
 }
 
-// ObjectIdleTime mocks base method.
+// ObjectIdleTime mock base method.
 func (m *MockCmdable) ObjectIdleTime(arg0 context.Context, arg1 string) *redis.DurationCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "ObjectIdleTime", arg0, arg1)
@@ -3607,7 +3607,7 @@ func (mr *MockCmdableMockRecorder) ObjectIdleTime(arg0, arg1 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ObjectIdleTime", reflect.TypeOf((*MockCmdable)(nil).ObjectIdleTime), arg0, arg1)
 }
 
-// ObjectRefCount mocks base method.
+// ObjectRefCount mock base method.
 func (m *MockCmdable) ObjectRefCount(arg0 context.Context, arg1 string) *redis.IntCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "ObjectRefCount", arg0, arg1)
@@ -3621,7 +3621,7 @@ func (mr *MockCmdableMockRecorder) ObjectRefCount(arg0, arg1 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ObjectRefCount", reflect.TypeOf((*MockCmdable)(nil).ObjectRefCount), arg0, arg1)
 }
 
-// PExpire mocks base method.
+// PExpire mock base method.
 func (m *MockCmdable) PExpire(arg0 context.Context, arg1 string, arg2 time.Duration) *redis.BoolCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "PExpire", arg0, arg1, arg2)
@@ -3635,7 +3635,7 @@ func (mr *MockCmdableMockRecorder) PExpire(arg0, arg1, arg2 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "PExpire", reflect.TypeOf((*MockCmdable)(nil).PExpire), arg0, arg1, arg2)
 }
 
-// PExpireAt mocks base method.
+// PExpireAt mock base method.
 func (m *MockCmdable) PExpireAt(arg0 context.Context, arg1 string, arg2 time.Time) *redis.BoolCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "PExpireAt", arg0, arg1, arg2)
@@ -3649,7 +3649,7 @@ func (mr *MockCmdableMockRecorder) PExpireAt(arg0, arg1, arg2 any) *gomock.Call 
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "PExpireAt", reflect.TypeOf((*MockCmdable)(nil).PExpireAt), arg0, arg1, arg2)
 }
 
-// PExpireTime mocks base method.
+// PExpireTime mock base method.
 func (m *MockCmdable) PExpireTime(arg0 context.Context, arg1 string) *redis.DurationCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "PExpireTime", arg0, arg1)
@@ -3663,7 +3663,7 @@ func (mr *MockCmdableMockRecorder) PExpireTime(arg0, arg1 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "PExpireTime", reflect.TypeOf((*MockCmdable)(nil).PExpireTime), arg0, arg1)
 }
 
-// PFAdd mocks base method.
+// PFAdd mock base method.
 func (m *MockCmdable) PFAdd(arg0 context.Context, arg1 string, arg2 ...any) *redis.IntCmd {
 	m.ctrl.T.Helper()
 	varargs := []any{arg0, arg1}
@@ -3682,7 +3682,7 @@ func (mr *MockCmdableMockRecorder) PFAdd(arg0, arg1 any, arg2 ...any) *gomock.Ca
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "PFAdd", reflect.TypeOf((*MockCmdable)(nil).PFAdd), varargs...)
 }
 
-// PFCount mocks base method.
+// PFCount mock base method.
 func (m *MockCmdable) PFCount(arg0 context.Context, arg1 ...string) *redis.IntCmd {
 	m.ctrl.T.Helper()
 	varargs := []any{arg0}
@@ -3701,7 +3701,7 @@ func (mr *MockCmdableMockRecorder) PFCount(arg0 any, arg1 ...any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "PFCount", reflect.TypeOf((*MockCmdable)(nil).PFCount), varargs...)
 }
 
-// PFMerge mocks base method.
+// PFMerge mock base method.
 func (m *MockCmdable) PFMerge(arg0 context.Context, arg1 string, arg2 ...string) *redis.StatusCmd {
 	m.ctrl.T.Helper()
 	varargs := []any{arg0, arg1}
@@ -3720,7 +3720,7 @@ func (mr *MockCmdableMockRecorder) PFMerge(arg0, arg1 any, arg2 ...any) *gomock.
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "PFMerge", reflect.TypeOf((*MockCmdable)(nil).PFMerge), varargs...)
 }
 
-// PTTL mocks base method.
+// PTTL mock base method.
 func (m *MockCmdable) PTTL(arg0 context.Context, arg1 string) *redis.DurationCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "PTTL", arg0, arg1)
@@ -3734,7 +3734,7 @@ func (mr *MockCmdableMockRecorder) PTTL(arg0, arg1 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "PTTL", reflect.TypeOf((*MockCmdable)(nil).PTTL), arg0, arg1)
 }
 
-// Persist mocks base method.
+// Persist mock base method.
 func (m *MockCmdable) Persist(arg0 context.Context, arg1 string) *redis.BoolCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "Persist", arg0, arg1)
@@ -3748,7 +3748,7 @@ func (mr *MockCmdableMockRecorder) Persist(arg0, arg1 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Persist", reflect.TypeOf((*MockCmdable)(nil).Persist), arg0, arg1)
 }
 
-// Ping mocks base method.
+// Ping mock base method.
 func (m *MockCmdable) Ping(arg0 context.Context) *redis.StatusCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "Ping", arg0)
@@ -3762,7 +3762,7 @@ func (mr *MockCmdableMockRecorder) Ping(arg0 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Ping", reflect.TypeOf((*MockCmdable)(nil).Ping), arg0)
 }
 
-// Pipeline mocks base method.
+// Pipeline mock base method.
 func (m *MockCmdable) Pipeline() redis.Pipeliner {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "Pipeline")
@@ -3776,7 +3776,7 @@ func (mr *MockCmdableMockRecorder) Pipeline() *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Pipeline", reflect.TypeOf((*MockCmdable)(nil).Pipeline))
 }
 
-// Pipelined mocks base method.
+// Pipelined mock base method.
 func (m *MockCmdable) Pipelined(arg0 context.Context, arg1 func(redis.Pipeliner) error) ([]redis.Cmder, error) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "Pipelined", arg0, arg1)
@@ -3791,7 +3791,7 @@ func (mr *MockCmdableMockRecorder) Pipelined(arg0, arg1 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Pipelined", reflect.TypeOf((*MockCmdable)(nil).Pipelined), arg0, arg1)
 }
 
-// PubSubChannels mocks base method.
+// PubSubChannels mock base method.
 func (m *MockCmdable) PubSubChannels(arg0 context.Context, arg1 string) *redis.StringSliceCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "PubSubChannels", arg0, arg1)
@@ -3805,7 +3805,7 @@ func (mr *MockCmdableMockRecorder) PubSubChannels(arg0, arg1 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "PubSubChannels", reflect.TypeOf((*MockCmdable)(nil).PubSubChannels), arg0, arg1)
 }
 
-// PubSubNumPat mocks base method.
+// PubSubNumPat mock base method.
 func (m *MockCmdable) PubSubNumPat(arg0 context.Context) *redis.IntCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "PubSubNumPat", arg0)
@@ -3819,7 +3819,7 @@ func (mr *MockCmdableMockRecorder) PubSubNumPat(arg0 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "PubSubNumPat", reflect.TypeOf((*MockCmdable)(nil).PubSubNumPat), arg0)
 }
 
-// PubSubNumSub mocks base method.
+// PubSubNumSub mock base method.
 func (m *MockCmdable) PubSubNumSub(arg0 context.Context, arg1 ...string) *redis.MapStringIntCmd {
 	m.ctrl.T.Helper()
 	varargs := []any{arg0}
@@ -3838,7 +3838,7 @@ func (mr *MockCmdableMockRecorder) PubSubNumSub(arg0 any, arg1 ...any) *gomock.C
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "PubSubNumSub", reflect.TypeOf((*MockCmdable)(nil).PubSubNumSub), varargs...)
 }
 
-// PubSubShardChannels mocks base method.
+// PubSubShardChannels mock base method.
 func (m *MockCmdable) PubSubShardChannels(arg0 context.Context, arg1 string) *redis.StringSliceCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "PubSubShardChannels", arg0, arg1)
@@ -3852,7 +3852,7 @@ func (mr *MockCmdableMockRecorder) PubSubShardChannels(arg0, arg1 any) *gomock.C
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "PubSubShardChannels", reflect.TypeOf((*MockCmdable)(nil).PubSubShardChannels), arg0, arg1)
 }
 
-// PubSubShardNumSub mocks base method.
+// PubSubShardNumSub mock base method.
 func (m *MockCmdable) PubSubShardNumSub(arg0 context.Context, arg1 ...string) *redis.MapStringIntCmd {
 	m.ctrl.T.Helper()
 	varargs := []any{arg0}
@@ -3871,7 +3871,7 @@ func (mr *MockCmdableMockRecorder) PubSubShardNumSub(arg0 any, arg1 ...any) *gom
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "PubSubShardNumSub", reflect.TypeOf((*MockCmdable)(nil).PubSubShardNumSub), varargs...)
 }
 
-// Publish mocks base method.
+// Publish mock base method.
 func (m *MockCmdable) Publish(arg0 context.Context, arg1 string, arg2 any) *redis.IntCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "Publish", arg0, arg1, arg2)
@@ -3885,7 +3885,7 @@ func (mr *MockCmdableMockRecorder) Publish(arg0, arg1, arg2 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Publish", reflect.TypeOf((*MockCmdable)(nil).Publish), arg0, arg1, arg2)
 }
 
-// Quit mocks base method.
+// Quit mock base method.
 func (m *MockCmdable) Quit(arg0 context.Context) *redis.StatusCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "Quit", arg0)
@@ -3899,7 +3899,7 @@ func (mr *MockCmdableMockRecorder) Quit(arg0 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Quit", reflect.TypeOf((*MockCmdable)(nil).Quit), arg0)
 }
 
-// RPop mocks base method.
+// RPop mock base method.
 func (m *MockCmdable) RPop(arg0 context.Context, arg1 string) *redis.StringCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "RPop", arg0, arg1)
@@ -3913,7 +3913,7 @@ func (mr *MockCmdableMockRecorder) RPop(arg0, arg1 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "RPop", reflect.TypeOf((*MockCmdable)(nil).RPop), arg0, arg1)
 }
 
-// RPopCount mocks base method.
+// RPopCount mock base method.
 func (m *MockCmdable) RPopCount(arg0 context.Context, arg1 string, arg2 int) *redis.StringSliceCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "RPopCount", arg0, arg1, arg2)
@@ -3927,7 +3927,7 @@ func (mr *MockCmdableMockRecorder) RPopCount(arg0, arg1, arg2 any) *gomock.Call 
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "RPopCount", reflect.TypeOf((*MockCmdable)(nil).RPopCount), arg0, arg1, arg2)
 }
 
-// RPopLPush mocks base method.
+// RPopLPush mock base method.
 func (m *MockCmdable) RPopLPush(arg0 context.Context, arg1, arg2 string) *redis.StringCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "RPopLPush", arg0, arg1, arg2)
@@ -3941,7 +3941,7 @@ func (mr *MockCmdableMockRecorder) RPopLPush(arg0, arg1, arg2 any) *gomock.Call 
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "RPopLPush", reflect.TypeOf((*MockCmdable)(nil).RPopLPush), arg0, arg1, arg2)
 }
 
-// RPush mocks base method.
+// RPush mock base method.
 func (m *MockCmdable) RPush(arg0 context.Context, arg1 string, arg2 ...any) *redis.IntCmd {
 	m.ctrl.T.Helper()
 	varargs := []any{arg0, arg1}
@@ -3960,7 +3960,7 @@ func (mr *MockCmdableMockRecorder) RPush(arg0, arg1 any, arg2 ...any) *gomock.Ca
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "RPush", reflect.TypeOf((*MockCmdable)(nil).RPush), varargs...)
 }
 
-// RPushX mocks base method.
+// RPushX mock base method.
 func (m *MockCmdable) RPushX(arg0 context.Context, arg1 string, arg2 ...any) *redis.IntCmd {
 	m.ctrl.T.Helper()
 	varargs := []any{arg0, arg1}
@@ -3979,7 +3979,7 @@ func (mr *MockCmdableMockRecorder) RPushX(arg0, arg1 any, arg2 ...any) *gomock.C
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "RPushX", reflect.TypeOf((*MockCmdable)(nil).RPushX), varargs...)
 }
 
-// RandomKey mocks base method.
+// RandomKey mock base method.
 func (m *MockCmdable) RandomKey(arg0 context.Context) *redis.StringCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "RandomKey", arg0)
@@ -3993,7 +3993,7 @@ func (mr *MockCmdableMockRecorder) RandomKey(arg0 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "RandomKey", reflect.TypeOf((*MockCmdable)(nil).RandomKey), arg0)
 }
 
-// ReadOnly mocks base method.
+// ReadOnly mock base method.
 func (m *MockCmdable) ReadOnly(arg0 context.Context) *redis.StatusCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "ReadOnly", arg0)
@@ -4007,7 +4007,7 @@ func (mr *MockCmdableMockRecorder) ReadOnly(arg0 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ReadOnly", reflect.TypeOf((*MockCmdable)(nil).ReadOnly), arg0)
 }
 
-// ReadWrite mocks base method.
+// ReadWrite mock base method.
 func (m *MockCmdable) ReadWrite(arg0 context.Context) *redis.StatusCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "ReadWrite", arg0)
@@ -4021,7 +4021,7 @@ func (mr *MockCmdableMockRecorder) ReadWrite(arg0 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ReadWrite", reflect.TypeOf((*MockCmdable)(nil).ReadWrite), arg0)
 }
 
-// Rename mocks base method.
+// Rename mock base method.
 func (m *MockCmdable) Rename(arg0 context.Context, arg1, arg2 string) *redis.StatusCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "Rename", arg0, arg1, arg2)
@@ -4035,7 +4035,7 @@ func (mr *MockCmdableMockRecorder) Rename(arg0, arg1, arg2 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Rename", reflect.TypeOf((*MockCmdable)(nil).Rename), arg0, arg1, arg2)
 }
 
-// RenameNX mocks base method.
+// RenameNX mock base method.
 func (m *MockCmdable) RenameNX(arg0 context.Context, arg1, arg2 string) *redis.BoolCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "RenameNX", arg0, arg1, arg2)
@@ -4049,7 +4049,7 @@ func (mr *MockCmdableMockRecorder) RenameNX(arg0, arg1, arg2 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "RenameNX", reflect.TypeOf((*MockCmdable)(nil).RenameNX), arg0, arg1, arg2)
 }
 
-// Restore mocks base method.
+// Restore mock base method.
 func (m *MockCmdable) Restore(arg0 context.Context, arg1 string, arg2 time.Duration, arg3 string) *redis.StatusCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "Restore", arg0, arg1, arg2, arg3)
@@ -4063,7 +4063,7 @@ func (mr *MockCmdableMockRecorder) Restore(arg0, arg1, arg2, arg3 any) *gomock.C
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Restore", reflect.TypeOf((*MockCmdable)(nil).Restore), arg0, arg1, arg2, arg3)
 }
 
-// RestoreReplace mocks base method.
+// RestoreReplace mock base method.
 func (m *MockCmdable) RestoreReplace(arg0 context.Context, arg1 string, arg2 time.Duration, arg3 string) *redis.StatusCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "RestoreReplace", arg0, arg1, arg2, arg3)
@@ -4077,7 +4077,7 @@ func (mr *MockCmdableMockRecorder) RestoreReplace(arg0, arg1, arg2, arg3 any) *g
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "RestoreReplace", reflect.TypeOf((*MockCmdable)(nil).RestoreReplace), arg0, arg1, arg2, arg3)
 }
 
-// SAdd mocks base method.
+// SAdd mock base method.
 func (m *MockCmdable) SAdd(arg0 context.Context, arg1 string, arg2 ...any) *redis.IntCmd {
 	m.ctrl.T.Helper()
 	varargs := []any{arg0, arg1}
@@ -4096,7 +4096,7 @@ func (mr *MockCmdableMockRecorder) SAdd(arg0, arg1 any, arg2 ...any) *gomock.Cal
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "SAdd", reflect.TypeOf((*MockCmdable)(nil).SAdd), varargs...)
 }
 
-// SCard mocks base method.
+// SCard mock base method.
 func (m *MockCmdable) SCard(arg0 context.Context, arg1 string) *redis.IntCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "SCard", arg0, arg1)
@@ -4110,7 +4110,7 @@ func (mr *MockCmdableMockRecorder) SCard(arg0, arg1 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "SCard", reflect.TypeOf((*MockCmdable)(nil).SCard), arg0, arg1)
 }
 
-// SDiff mocks base method.
+// SDiff mock base method.
 func (m *MockCmdable) SDiff(arg0 context.Context, arg1 ...string) *redis.StringSliceCmd {
 	m.ctrl.T.Helper()
 	varargs := []any{arg0}
@@ -4129,7 +4129,7 @@ func (mr *MockCmdableMockRecorder) SDiff(arg0 any, arg1 ...any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "SDiff", reflect.TypeOf((*MockCmdable)(nil).SDiff), varargs...)
 }
 
-// SDiffStore mocks base method.
+// SDiffStore mock base method.
 func (m *MockCmdable) SDiffStore(arg0 context.Context, arg1 string, arg2 ...string) *redis.IntCmd {
 	m.ctrl.T.Helper()
 	varargs := []any{arg0, arg1}
@@ -4148,7 +4148,7 @@ func (mr *MockCmdableMockRecorder) SDiffStore(arg0, arg1 any, arg2 ...any) *gomo
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "SDiffStore", reflect.TypeOf((*MockCmdable)(nil).SDiffStore), varargs...)
 }
 
-// SInter mocks base method.
+// SInter mock base method.
 func (m *MockCmdable) SInter(arg0 context.Context, arg1 ...string) *redis.StringSliceCmd {
 	m.ctrl.T.Helper()
 	varargs := []any{arg0}
@@ -4167,7 +4167,7 @@ func (mr *MockCmdableMockRecorder) SInter(arg0 any, arg1 ...any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "SInter", reflect.TypeOf((*MockCmdable)(nil).SInter), varargs...)
 }
 
-// SInterCard mocks base method.
+// SInterCard mock base method.
 func (m *MockCmdable) SInterCard(arg0 context.Context, arg1 int64, arg2 ...string) *redis.IntCmd {
 	m.ctrl.T.Helper()
 	varargs := []any{arg0, arg1}
@@ -4186,7 +4186,7 @@ func (mr *MockCmdableMockRecorder) SInterCard(arg0, arg1 any, arg2 ...any) *gomo
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "SInterCard", reflect.TypeOf((*MockCmdable)(nil).SInterCard), varargs...)
 }
 
-// SInterStore mocks base method.
+// SInterStore mock base method.
 func (m *MockCmdable) SInterStore(arg0 context.Context, arg1 string, arg2 ...string) *redis.IntCmd {
 	m.ctrl.T.Helper()
 	varargs := []any{arg0, arg1}
@@ -4205,7 +4205,7 @@ func (mr *MockCmdableMockRecorder) SInterStore(arg0, arg1 any, arg2 ...any) *gom
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "SInterStore", reflect.TypeOf((*MockCmdable)(nil).SInterStore), varargs...)
 }
 
-// SIsMember mocks base method.
+// SIsMember mock base method.
 func (m *MockCmdable) SIsMember(arg0 context.Context, arg1 string, arg2 any) *redis.BoolCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "SIsMember", arg0, arg1, arg2)
@@ -4219,7 +4219,7 @@ func (mr *MockCmdableMockRecorder) SIsMember(arg0, arg1, arg2 any) *gomock.Call 
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "SIsMember", reflect.TypeOf((*MockCmdable)(nil).SIsMember), arg0, arg1, arg2)
 }
 
-// SMIsMember mocks base method.
+// SMIsMember mock base method.
 func (m *MockCmdable) SMIsMember(arg0 context.Context, arg1 string, arg2 ...any) *redis.BoolSliceCmd {
 	m.ctrl.T.Helper()
 	varargs := []any{arg0, arg1}
@@ -4238,7 +4238,7 @@ func (mr *MockCmdableMockRecorder) SMIsMember(arg0, arg1 any, arg2 ...any) *gomo
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "SMIsMember", reflect.TypeOf((*MockCmdable)(nil).SMIsMember), varargs...)
 }
 
-// SMembers mocks base method.
+// SMembers mock base method.
 func (m *MockCmdable) SMembers(arg0 context.Context, arg1 string) *redis.StringSliceCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "SMembers", arg0, arg1)
@@ -4252,7 +4252,7 @@ func (mr *MockCmdableMockRecorder) SMembers(arg0, arg1 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "SMembers", reflect.TypeOf((*MockCmdable)(nil).SMembers), arg0, arg1)
 }
 
-// SMembersMap mocks base method.
+// SMembersMap mock base method.
 func (m *MockCmdable) SMembersMap(arg0 context.Context, arg1 string) *redis.StringStructMapCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "SMembersMap", arg0, arg1)
@@ -4266,7 +4266,7 @@ func (mr *MockCmdableMockRecorder) SMembersMap(arg0, arg1 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "SMembersMap", reflect.TypeOf((*MockCmdable)(nil).SMembersMap), arg0, arg1)
 }
 
-// SMove mocks base method.
+// SMove mock base method.
 func (m *MockCmdable) SMove(arg0 context.Context, arg1, arg2 string, arg3 any) *redis.BoolCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "SMove", arg0, arg1, arg2, arg3)
@@ -4280,7 +4280,7 @@ func (mr *MockCmdableMockRecorder) SMove(arg0, arg1, arg2, arg3 any) *gomock.Cal
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "SMove", reflect.TypeOf((*MockCmdable)(nil).SMove), arg0, arg1, arg2, arg3)
 }
 
-// SPop mocks base method.
+// SPop mock base method.
 func (m *MockCmdable) SPop(arg0 context.Context, arg1 string) *redis.StringCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "SPop", arg0, arg1)
@@ -4294,7 +4294,7 @@ func (mr *MockCmdableMockRecorder) SPop(arg0, arg1 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "SPop", reflect.TypeOf((*MockCmdable)(nil).SPop), arg0, arg1)
 }
 
-// SPopN mocks base method.
+// SPopN mock base method.
 func (m *MockCmdable) SPopN(arg0 context.Context, arg1 string, arg2 int64) *redis.StringSliceCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "SPopN", arg0, arg1, arg2)
@@ -4308,7 +4308,7 @@ func (mr *MockCmdableMockRecorder) SPopN(arg0, arg1, arg2 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "SPopN", reflect.TypeOf((*MockCmdable)(nil).SPopN), arg0, arg1, arg2)
 }
 
-// SPublish mocks base method.
+// SPublish mock base method.
 func (m *MockCmdable) SPublish(arg0 context.Context, arg1 string, arg2 any) *redis.IntCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "SPublish", arg0, arg1, arg2)
@@ -4322,7 +4322,7 @@ func (mr *MockCmdableMockRecorder) SPublish(arg0, arg1, arg2 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "SPublish", reflect.TypeOf((*MockCmdable)(nil).SPublish), arg0, arg1, arg2)
 }
 
-// SRandMember mocks base method.
+// SRandMember mock base method.
 func (m *MockCmdable) SRandMember(arg0 context.Context, arg1 string) *redis.StringCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "SRandMember", arg0, arg1)
@@ -4336,7 +4336,7 @@ func (mr *MockCmdableMockRecorder) SRandMember(arg0, arg1 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "SRandMember", reflect.TypeOf((*MockCmdable)(nil).SRandMember), arg0, arg1)
 }
 
-// SRandMemberN mocks base method.
+// SRandMemberN mock base method.
 func (m *MockCmdable) SRandMemberN(arg0 context.Context, arg1 string, arg2 int64) *redis.StringSliceCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "SRandMemberN", arg0, arg1, arg2)
@@ -4350,7 +4350,7 @@ func (mr *MockCmdableMockRecorder) SRandMemberN(arg0, arg1, arg2 any) *gomock.Ca
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "SRandMemberN", reflect.TypeOf((*MockCmdable)(nil).SRandMemberN), arg0, arg1, arg2)
 }
 
-// SRem mocks base method.
+// SRem mock base method.
 func (m *MockCmdable) SRem(arg0 context.Context, arg1 string, arg2 ...any) *redis.IntCmd {
 	m.ctrl.T.Helper()
 	varargs := []any{arg0, arg1}
@@ -4369,7 +4369,7 @@ func (mr *MockCmdableMockRecorder) SRem(arg0, arg1 any, arg2 ...any) *gomock.Cal
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "SRem", reflect.TypeOf((*MockCmdable)(nil).SRem), varargs...)
 }
 
-// SScan mocks base method.
+// SScan mock base method.
 func (m *MockCmdable) SScan(arg0 context.Context, arg1 string, arg2 uint64, arg3 string, arg4 int64) *redis.ScanCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "SScan", arg0, arg1, arg2, arg3, arg4)
@@ -4383,7 +4383,7 @@ func (mr *MockCmdableMockRecorder) SScan(arg0, arg1, arg2, arg3, arg4 any) *gomo
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "SScan", reflect.TypeOf((*MockCmdable)(nil).SScan), arg0, arg1, arg2, arg3, arg4)
 }
 
-// SUnion mocks base method.
+// SUnion mock base method.
 func (m *MockCmdable) SUnion(arg0 context.Context, arg1 ...string) *redis.StringSliceCmd {
 	m.ctrl.T.Helper()
 	varargs := []any{arg0}
@@ -4402,7 +4402,7 @@ func (mr *MockCmdableMockRecorder) SUnion(arg0 any, arg1 ...any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "SUnion", reflect.TypeOf((*MockCmdable)(nil).SUnion), varargs...)
 }
 
-// SUnionStore mocks base method.
+// SUnionStore mock base method.
 func (m *MockCmdable) SUnionStore(arg0 context.Context, arg1 string, arg2 ...string) *redis.IntCmd {
 	m.ctrl.T.Helper()
 	varargs := []any{arg0, arg1}
@@ -4421,7 +4421,7 @@ func (mr *MockCmdableMockRecorder) SUnionStore(arg0, arg1 any, arg2 ...any) *gom
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "SUnionStore", reflect.TypeOf((*MockCmdable)(nil).SUnionStore), varargs...)
 }
 
-// Save mocks base method.
+// Save mock base method.
 func (m *MockCmdable) Save(arg0 context.Context) *redis.StatusCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "Save", arg0)
@@ -4435,7 +4435,7 @@ func (mr *MockCmdableMockRecorder) Save(arg0 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Save", reflect.TypeOf((*MockCmdable)(nil).Save), arg0)
 }
 
-// Scan mocks base method.
+// Scan mock base method.
 func (m *MockCmdable) Scan(arg0 context.Context, arg1 uint64, arg2 string, arg3 int64) *redis.ScanCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "Scan", arg0, arg1, arg2, arg3)
@@ -4449,7 +4449,7 @@ func (mr *MockCmdableMockRecorder) Scan(arg0, arg1, arg2, arg3 any) *gomock.Call
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Scan", reflect.TypeOf((*MockCmdable)(nil).Scan), arg0, arg1, arg2, arg3)
 }
 
-// ScanType mocks base method.
+// ScanType mock base method.
 func (m *MockCmdable) ScanType(arg0 context.Context, arg1 uint64, arg2 string, arg3 int64, arg4 string) *redis.ScanCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "ScanType", arg0, arg1, arg2, arg3, arg4)
@@ -4463,7 +4463,7 @@ func (mr *MockCmdableMockRecorder) ScanType(arg0, arg1, arg2, arg3, arg4 any) *g
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ScanType", reflect.TypeOf((*MockCmdable)(nil).ScanType), arg0, arg1, arg2, arg3, arg4)
 }
 
-// ScriptExists mocks base method.
+// ScriptExists mock base method.
 func (m *MockCmdable) ScriptExists(arg0 context.Context, arg1 ...string) *redis.BoolSliceCmd {
 	m.ctrl.T.Helper()
 	varargs := []any{arg0}
@@ -4482,7 +4482,7 @@ func (mr *MockCmdableMockRecorder) ScriptExists(arg0 any, arg1 ...any) *gomock.C
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ScriptExists", reflect.TypeOf((*MockCmdable)(nil).ScriptExists), varargs...)
 }
 
-// ScriptFlush mocks base method.
+// ScriptFlush mock base method.
 func (m *MockCmdable) ScriptFlush(arg0 context.Context) *redis.StatusCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "ScriptFlush", arg0)
@@ -4496,7 +4496,7 @@ func (mr *MockCmdableMockRecorder) ScriptFlush(arg0 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ScriptFlush", reflect.TypeOf((*MockCmdable)(nil).ScriptFlush), arg0)
 }
 
-// ScriptKill mocks base method.
+// ScriptKill mock base method.
 func (m *MockCmdable) ScriptKill(arg0 context.Context) *redis.StatusCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "ScriptKill", arg0)
@@ -4510,7 +4510,7 @@ func (mr *MockCmdableMockRecorder) ScriptKill(arg0 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ScriptKill", reflect.TypeOf((*MockCmdable)(nil).ScriptKill), arg0)
 }
 
-// ScriptLoad mocks base method.
+// ScriptLoad mock base method.
 func (m *MockCmdable) ScriptLoad(arg0 context.Context, arg1 string) *redis.StringCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "ScriptLoad", arg0, arg1)
@@ -4524,7 +4524,7 @@ func (mr *MockCmdableMockRecorder) ScriptLoad(arg0, arg1 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ScriptLoad", reflect.TypeOf((*MockCmdable)(nil).ScriptLoad), arg0, arg1)
 }
 
-// Set mocks base method.
+// Set mock base method.
 func (m *MockCmdable) Set(arg0 context.Context, arg1 string, arg2 any, arg3 time.Duration) *redis.StatusCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "Set", arg0, arg1, arg2, arg3)
@@ -4538,7 +4538,7 @@ func (mr *MockCmdableMockRecorder) Set(arg0, arg1, arg2, arg3 any) *gomock.Call 
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Set", reflect.TypeOf((*MockCmdable)(nil).Set), arg0, arg1, arg2, arg3)
 }
 
-// SetArgs mocks base method.
+// SetArgs mock base method.
 func (m *MockCmdable) SetArgs(arg0 context.Context, arg1 string, arg2 any, arg3 redis.SetArgs) *redis.StatusCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "SetArgs", arg0, arg1, arg2, arg3)
@@ -4552,7 +4552,7 @@ func (mr *MockCmdableMockRecorder) SetArgs(arg0, arg1, arg2, arg3 any) *gomock.C
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "SetArgs", reflect.TypeOf((*MockCmdable)(nil).SetArgs), arg0, arg1, arg2, arg3)
 }
 
-// SetBit mocks base method.
+// SetBit mock base method.
 func (m *MockCmdable) SetBit(arg0 context.Context, arg1 string, arg2 int64, arg3 int) *redis.IntCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "SetBit", arg0, arg1, arg2, arg3)
@@ -4566,7 +4566,7 @@ func (mr *MockCmdableMockRecorder) SetBit(arg0, arg1, arg2, arg3 any) *gomock.Ca
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "SetBit", reflect.TypeOf((*MockCmdable)(nil).SetBit), arg0, arg1, arg2, arg3)
 }
 
-// SetEx mocks base method.
+// SetEx mock base method.
 func (m *MockCmdable) SetEx(arg0 context.Context, arg1 string, arg2 any, arg3 time.Duration) *redis.StatusCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "SetEx", arg0, arg1, arg2, arg3)
@@ -4580,7 +4580,7 @@ func (mr *MockCmdableMockRecorder) SetEx(arg0, arg1, arg2, arg3 any) *gomock.Cal
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "SetEx", reflect.TypeOf((*MockCmdable)(nil).SetEx), arg0, arg1, arg2, arg3)
 }
 
-// SetNX mocks base method.
+// SetNX mock base method.
 func (m *MockCmdable) SetNX(arg0 context.Context, arg1 string, arg2 any, arg3 time.Duration) *redis.BoolCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "SetNX", arg0, arg1, arg2, arg3)
@@ -4594,7 +4594,7 @@ func (mr *MockCmdableMockRecorder) SetNX(arg0, arg1, arg2, arg3 any) *gomock.Cal
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "SetNX", reflect.TypeOf((*MockCmdable)(nil).SetNX), arg0, arg1, arg2, arg3)
 }
 
-// SetRange mocks base method.
+// SetRange mock base method.
 func (m *MockCmdable) SetRange(arg0 context.Context, arg1 string, arg2 int64, arg3 string) *redis.IntCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "SetRange", arg0, arg1, arg2, arg3)
@@ -4608,7 +4608,7 @@ func (mr *MockCmdableMockRecorder) SetRange(arg0, arg1, arg2, arg3 any) *gomock.
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "SetRange", reflect.TypeOf((*MockCmdable)(nil).SetRange), arg0, arg1, arg2, arg3)
 }
 
-// SetXX mocks base method.
+// SetXX mock base method.
 func (m *MockCmdable) SetXX(arg0 context.Context, arg1 string, arg2 any, arg3 time.Duration) *redis.BoolCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "SetXX", arg0, arg1, arg2, arg3)
@@ -4622,7 +4622,7 @@ func (mr *MockCmdableMockRecorder) SetXX(arg0, arg1, arg2, arg3 any) *gomock.Cal
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "SetXX", reflect.TypeOf((*MockCmdable)(nil).SetXX), arg0, arg1, arg2, arg3)
 }
 
-// Shutdown mocks base method.
+// Shutdown mock base method.
 func (m *MockCmdable) Shutdown(arg0 context.Context) *redis.StatusCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "Shutdown", arg0)
@@ -4636,7 +4636,7 @@ func (mr *MockCmdableMockRecorder) Shutdown(arg0 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Shutdown", reflect.TypeOf((*MockCmdable)(nil).Shutdown), arg0)
 }
 
-// ShutdownNoSave mocks base method.
+// ShutdownNoSave mock base method.
 func (m *MockCmdable) ShutdownNoSave(arg0 context.Context) *redis.StatusCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "ShutdownNoSave", arg0)
@@ -4650,7 +4650,7 @@ func (mr *MockCmdableMockRecorder) ShutdownNoSave(arg0 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ShutdownNoSave", reflect.TypeOf((*MockCmdable)(nil).ShutdownNoSave), arg0)
 }
 
-// ShutdownSave mocks base method.
+// ShutdownSave mock base method.
 func (m *MockCmdable) ShutdownSave(arg0 context.Context) *redis.StatusCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "ShutdownSave", arg0)
@@ -4664,7 +4664,7 @@ func (mr *MockCmdableMockRecorder) ShutdownSave(arg0 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ShutdownSave", reflect.TypeOf((*MockCmdable)(nil).ShutdownSave), arg0)
 }
 
-// SlaveOf mocks base method.
+// SlaveOf mock base method.
 func (m *MockCmdable) SlaveOf(arg0 context.Context, arg1, arg2 string) *redis.StatusCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "SlaveOf", arg0, arg1, arg2)
@@ -4678,7 +4678,7 @@ func (mr *MockCmdableMockRecorder) SlaveOf(arg0, arg1, arg2 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "SlaveOf", reflect.TypeOf((*MockCmdable)(nil).SlaveOf), arg0, arg1, arg2)
 }
 
-// SlowLogGet mocks base method.
+// SlowLogGet mock base method.
 func (m *MockCmdable) SlowLogGet(arg0 context.Context, arg1 int64) *redis.SlowLogCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "SlowLogGet", arg0, arg1)
@@ -4692,7 +4692,7 @@ func (mr *MockCmdableMockRecorder) SlowLogGet(arg0, arg1 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "SlowLogGet", reflect.TypeOf((*MockCmdable)(nil).SlowLogGet), arg0, arg1)
 }
 
-// Sort mocks base method.
+// Sort mock base method.
 func (m *MockCmdable) Sort(arg0 context.Context, arg1 string, arg2 *redis.Sort) *redis.StringSliceCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "Sort", arg0, arg1, arg2)
@@ -4706,7 +4706,7 @@ func (mr *MockCmdableMockRecorder) Sort(arg0, arg1, arg2 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Sort", reflect.TypeOf((*MockCmdable)(nil).Sort), arg0, arg1, arg2)
 }
 
-// SortInterfaces mocks base method.
+// SortInterfaces mock base method.
 func (m *MockCmdable) SortInterfaces(arg0 context.Context, arg1 string, arg2 *redis.Sort) *redis.SliceCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "SortInterfaces", arg0, arg1, arg2)
@@ -4720,7 +4720,7 @@ func (mr *MockCmdableMockRecorder) SortInterfaces(arg0, arg1, arg2 any) *gomock.
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "SortInterfaces", reflect.TypeOf((*MockCmdable)(nil).SortInterfaces), arg0, arg1, arg2)
 }
 
-// SortRO mocks base method.
+// SortRO mock base method.
 func (m *MockCmdable) SortRO(arg0 context.Context, arg1 string, arg2 *redis.Sort) *redis.StringSliceCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "SortRO", arg0, arg1, arg2)
@@ -4734,7 +4734,7 @@ func (mr *MockCmdableMockRecorder) SortRO(arg0, arg1, arg2 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "SortRO", reflect.TypeOf((*MockCmdable)(nil).SortRO), arg0, arg1, arg2)
 }
 
-// SortStore mocks base method.
+// SortStore mock base method.
 func (m *MockCmdable) SortStore(arg0 context.Context, arg1, arg2 string, arg3 *redis.Sort) *redis.IntCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "SortStore", arg0, arg1, arg2, arg3)
@@ -4748,7 +4748,7 @@ func (mr *MockCmdableMockRecorder) SortStore(arg0, arg1, arg2, arg3 any) *gomock
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "SortStore", reflect.TypeOf((*MockCmdable)(nil).SortStore), arg0, arg1, arg2, arg3)
 }
 
-// StrLen mocks base method.
+// StrLen mock base method.
 func (m *MockCmdable) StrLen(arg0 context.Context, arg1 string) *redis.IntCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "StrLen", arg0, arg1)
@@ -4762,7 +4762,7 @@ func (mr *MockCmdableMockRecorder) StrLen(arg0, arg1 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "StrLen", reflect.TypeOf((*MockCmdable)(nil).StrLen), arg0, arg1)
 }
 
-// TDigestAdd mocks base method.
+// TDigestAdd mock base method.
 func (m *MockCmdable) TDigestAdd(arg0 context.Context, arg1 string, arg2 ...float64) *redis.StatusCmd {
 	m.ctrl.T.Helper()
 	varargs := []any{arg0, arg1}
@@ -4781,7 +4781,7 @@ func (mr *MockCmdableMockRecorder) TDigestAdd(arg0, arg1 any, arg2 ...any) *gomo
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "TDigestAdd", reflect.TypeOf((*MockCmdable)(nil).TDigestAdd), varargs...)
 }
 
-// TDigestByRank mocks base method.
+// TDigestByRank mock base method.
 func (m *MockCmdable) TDigestByRank(arg0 context.Context, arg1 string, arg2 ...uint64) *redis.FloatSliceCmd {
 	m.ctrl.T.Helper()
 	varargs := []any{arg0, arg1}
@@ -4800,7 +4800,7 @@ func (mr *MockCmdableMockRecorder) TDigestByRank(arg0, arg1 any, arg2 ...any) *g
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "TDigestByRank", reflect.TypeOf((*MockCmdable)(nil).TDigestByRank), varargs...)
 }
 
-// TDigestByRevRank mocks base method.
+// TDigestByRevRank mock base method.
 func (m *MockCmdable) TDigestByRevRank(arg0 context.Context, arg1 string, arg2 ...uint64) *redis.FloatSliceCmd {
 	m.ctrl.T.Helper()
 	varargs := []any{arg0, arg1}
@@ -4819,7 +4819,7 @@ func (mr *MockCmdableMockRecorder) TDigestByRevRank(arg0, arg1 any, arg2 ...any)
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "TDigestByRevRank", reflect.TypeOf((*MockCmdable)(nil).TDigestByRevRank), varargs...)
 }
 
-// TDigestCDF mocks base method.
+// TDigestCDF mock base method.
 func (m *MockCmdable) TDigestCDF(arg0 context.Context, arg1 string, arg2 ...float64) *redis.FloatSliceCmd {
 	m.ctrl.T.Helper()
 	varargs := []any{arg0, arg1}
@@ -4838,7 +4838,7 @@ func (mr *MockCmdableMockRecorder) TDigestCDF(arg0, arg1 any, arg2 ...any) *gomo
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "TDigestCDF", reflect.TypeOf((*MockCmdable)(nil).TDigestCDF), varargs...)
 }
 
-// TDigestCreate mocks base method.
+// TDigestCreate mock base method.
 func (m *MockCmdable) TDigestCreate(arg0 context.Context, arg1 string) *redis.StatusCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "TDigestCreate", arg0, arg1)
@@ -4852,7 +4852,7 @@ func (mr *MockCmdableMockRecorder) TDigestCreate(arg0, arg1 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "TDigestCreate", reflect.TypeOf((*MockCmdable)(nil).TDigestCreate), arg0, arg1)
 }
 
-// TDigestCreateWithCompression mocks base method.
+// TDigestCreateWithCompression mock base method.
 func (m *MockCmdable) TDigestCreateWithCompression(arg0 context.Context, arg1 string, arg2 int64) *redis.StatusCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "TDigestCreateWithCompression", arg0, arg1, arg2)
@@ -4866,7 +4866,7 @@ func (mr *MockCmdableMockRecorder) TDigestCreateWithCompression(arg0, arg1, arg2
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "TDigestCreateWithCompression", reflect.TypeOf((*MockCmdable)(nil).TDigestCreateWithCompression), arg0, arg1, arg2)
 }
 
-// TDigestInfo mocks base method.
+// TDigestInfo mock base method.
 func (m *MockCmdable) TDigestInfo(arg0 context.Context, arg1 string) *redis.TDigestInfoCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "TDigestInfo", arg0, arg1)
@@ -4880,7 +4880,7 @@ func (mr *MockCmdableMockRecorder) TDigestInfo(arg0, arg1 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "TDigestInfo", reflect.TypeOf((*MockCmdable)(nil).TDigestInfo), arg0, arg1)
 }
 
-// TDigestMax mocks base method.
+// TDigestMax mock base method.
 func (m *MockCmdable) TDigestMax(arg0 context.Context, arg1 string) *redis.FloatCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "TDigestMax", arg0, arg1)
@@ -4894,7 +4894,7 @@ func (mr *MockCmdableMockRecorder) TDigestMax(arg0, arg1 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "TDigestMax", reflect.TypeOf((*MockCmdable)(nil).TDigestMax), arg0, arg1)
 }
 
-// TDigestMerge mocks base method.
+// TDigestMerge mock base method.
 func (m *MockCmdable) TDigestMerge(arg0 context.Context, arg1 string, arg2 *redis.TDigestMergeOptions, arg3 ...string) *redis.StatusCmd {
 	m.ctrl.T.Helper()
 	varargs := []any{arg0, arg1, arg2}
@@ -4913,7 +4913,7 @@ func (mr *MockCmdableMockRecorder) TDigestMerge(arg0, arg1, arg2 any, arg3 ...an
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "TDigestMerge", reflect.TypeOf((*MockCmdable)(nil).TDigestMerge), varargs...)
 }
 
-// TDigestMin mocks base method.
+// TDigestMin mock base method.
 func (m *MockCmdable) TDigestMin(arg0 context.Context, arg1 string) *redis.FloatCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "TDigestMin", arg0, arg1)
@@ -4927,7 +4927,7 @@ func (mr *MockCmdableMockRecorder) TDigestMin(arg0, arg1 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "TDigestMin", reflect.TypeOf((*MockCmdable)(nil).TDigestMin), arg0, arg1)
 }
 
-// TDigestQuantile mocks base method.
+// TDigestQuantile mock base method.
 func (m *MockCmdable) TDigestQuantile(arg0 context.Context, arg1 string, arg2 ...float64) *redis.FloatSliceCmd {
 	m.ctrl.T.Helper()
 	varargs := []any{arg0, arg1}
@@ -4946,7 +4946,7 @@ func (mr *MockCmdableMockRecorder) TDigestQuantile(arg0, arg1 any, arg2 ...any) 
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "TDigestQuantile", reflect.TypeOf((*MockCmdable)(nil).TDigestQuantile), varargs...)
 }
 
-// TDigestRank mocks base method.
+// TDigestRank mock base method.
 func (m *MockCmdable) TDigestRank(arg0 context.Context, arg1 string, arg2 ...float64) *redis.IntSliceCmd {
 	m.ctrl.T.Helper()
 	varargs := []any{arg0, arg1}
@@ -4965,7 +4965,7 @@ func (mr *MockCmdableMockRecorder) TDigestRank(arg0, arg1 any, arg2 ...any) *gom
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "TDigestRank", reflect.TypeOf((*MockCmdable)(nil).TDigestRank), varargs...)
 }
 
-// TDigestReset mocks base method.
+// TDigestReset mock base method.
 func (m *MockCmdable) TDigestReset(arg0 context.Context, arg1 string) *redis.StatusCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "TDigestReset", arg0, arg1)
@@ -4979,7 +4979,7 @@ func (mr *MockCmdableMockRecorder) TDigestReset(arg0, arg1 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "TDigestReset", reflect.TypeOf((*MockCmdable)(nil).TDigestReset), arg0, arg1)
 }
 
-// TDigestRevRank mocks base method.
+// TDigestRevRank mock base method.
 func (m *MockCmdable) TDigestRevRank(arg0 context.Context, arg1 string, arg2 ...float64) *redis.IntSliceCmd {
 	m.ctrl.T.Helper()
 	varargs := []any{arg0, arg1}
@@ -4998,7 +4998,7 @@ func (mr *MockCmdableMockRecorder) TDigestRevRank(arg0, arg1 any, arg2 ...any) *
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "TDigestRevRank", reflect.TypeOf((*MockCmdable)(nil).TDigestRevRank), varargs...)
 }
 
-// TDigestTrimmedMean mocks base method.
+// TDigestTrimmedMean mock base method.
 func (m *MockCmdable) TDigestTrimmedMean(arg0 context.Context, arg1 string, arg2, arg3 float64) *redis.FloatCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "TDigestTrimmedMean", arg0, arg1, arg2, arg3)
@@ -5012,7 +5012,7 @@ func (mr *MockCmdableMockRecorder) TDigestTrimmedMean(arg0, arg1, arg2, arg3 any
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "TDigestTrimmedMean", reflect.TypeOf((*MockCmdable)(nil).TDigestTrimmedMean), arg0, arg1, arg2, arg3)
 }
 
-// TFCall mocks base method.
+// TFCall mock base method.
 func (m *MockCmdable) TFCall(arg0 context.Context, arg1, arg2 string, arg3 int) *redis.Cmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "TFCall", arg0, arg1, arg2, arg3)
@@ -5026,7 +5026,7 @@ func (mr *MockCmdableMockRecorder) TFCall(arg0, arg1, arg2, arg3 any) *gomock.Ca
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "TFCall", reflect.TypeOf((*MockCmdable)(nil).TFCall), arg0, arg1, arg2, arg3)
 }
 
-// TFCallASYNC mocks base method.
+// TFCallASYNC mock base method.
 func (m *MockCmdable) TFCallASYNC(arg0 context.Context, arg1, arg2 string, arg3 int) *redis.Cmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "TFCallASYNC", arg0, arg1, arg2, arg3)
@@ -5040,7 +5040,7 @@ func (mr *MockCmdableMockRecorder) TFCallASYNC(arg0, arg1, arg2, arg3 any) *gomo
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "TFCallASYNC", reflect.TypeOf((*MockCmdable)(nil).TFCallASYNC), arg0, arg1, arg2, arg3)
 }
 
-// TFCallASYNCArgs mocks base method.
+// TFCallASYNCArgs mock base method.
 func (m *MockCmdable) TFCallASYNCArgs(arg0 context.Context, arg1, arg2 string, arg3 int, arg4 *redis.TFCallOptions) *redis.Cmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "TFCallASYNCArgs", arg0, arg1, arg2, arg3, arg4)
@@ -5054,7 +5054,7 @@ func (mr *MockCmdableMockRecorder) TFCallASYNCArgs(arg0, arg1, arg2, arg3, arg4 
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "TFCallASYNCArgs", reflect.TypeOf((*MockCmdable)(nil).TFCallASYNCArgs), arg0, arg1, arg2, arg3, arg4)
 }
 
-// TFCallArgs mocks base method.
+// TFCallArgs mock base method.
 func (m *MockCmdable) TFCallArgs(arg0 context.Context, arg1, arg2 string, arg3 int, arg4 *redis.TFCallOptions) *redis.Cmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "TFCallArgs", arg0, arg1, arg2, arg3, arg4)
@@ -5068,7 +5068,7 @@ func (mr *MockCmdableMockRecorder) TFCallArgs(arg0, arg1, arg2, arg3, arg4 any) 
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "TFCallArgs", reflect.TypeOf((*MockCmdable)(nil).TFCallArgs), arg0, arg1, arg2, arg3, arg4)
 }
 
-// TFunctionDelete mocks base method.
+// TFunctionDelete mock base method.
 func (m *MockCmdable) TFunctionDelete(arg0 context.Context, arg1 string) *redis.StatusCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "TFunctionDelete", arg0, arg1)
@@ -5082,7 +5082,7 @@ func (mr *MockCmdableMockRecorder) TFunctionDelete(arg0, arg1 any) *gomock.Call 
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "TFunctionDelete", reflect.TypeOf((*MockCmdable)(nil).TFunctionDelete), arg0, arg1)
 }
 
-// TFunctionList mocks base method.
+// TFunctionList mock base method.
 func (m *MockCmdable) TFunctionList(arg0 context.Context) *redis.MapStringInterfaceSliceCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "TFunctionList", arg0)
@@ -5096,7 +5096,7 @@ func (mr *MockCmdableMockRecorder) TFunctionList(arg0 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "TFunctionList", reflect.TypeOf((*MockCmdable)(nil).TFunctionList), arg0)
 }
 
-// TFunctionListArgs mocks base method.
+// TFunctionListArgs mock base method.
 func (m *MockCmdable) TFunctionListArgs(arg0 context.Context, arg1 *redis.TFunctionListOptions) *redis.MapStringInterfaceSliceCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "TFunctionListArgs", arg0, arg1)
@@ -5110,7 +5110,7 @@ func (mr *MockCmdableMockRecorder) TFunctionListArgs(arg0, arg1 any) *gomock.Cal
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "TFunctionListArgs", reflect.TypeOf((*MockCmdable)(nil).TFunctionListArgs), arg0, arg1)
 }
 
-// TFunctionLoad mocks base method.
+// TFunctionLoad mock base method.
 func (m *MockCmdable) TFunctionLoad(arg0 context.Context, arg1 string) *redis.StatusCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "TFunctionLoad", arg0, arg1)
@@ -5124,7 +5124,7 @@ func (mr *MockCmdableMockRecorder) TFunctionLoad(arg0, arg1 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "TFunctionLoad", reflect.TypeOf((*MockCmdable)(nil).TFunctionLoad), arg0, arg1)
 }
 
-// TFunctionLoadArgs mocks base method.
+// TFunctionLoadArgs mock base method.
 func (m *MockCmdable) TFunctionLoadArgs(arg0 context.Context, arg1 string, arg2 *redis.TFunctionLoadOptions) *redis.StatusCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "TFunctionLoadArgs", arg0, arg1, arg2)
@@ -5138,7 +5138,7 @@ func (mr *MockCmdableMockRecorder) TFunctionLoadArgs(arg0, arg1, arg2 any) *gomo
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "TFunctionLoadArgs", reflect.TypeOf((*MockCmdable)(nil).TFunctionLoadArgs), arg0, arg1, arg2)
 }
 
-// TSAdd mocks base method.
+// TSAdd mock base method.
 func (m *MockCmdable) TSAdd(arg0 context.Context, arg1 string, arg2 any, arg3 float64) *redis.IntCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "TSAdd", arg0, arg1, arg2, arg3)
@@ -5152,7 +5152,7 @@ func (mr *MockCmdableMockRecorder) TSAdd(arg0, arg1, arg2, arg3 any) *gomock.Cal
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "TSAdd", reflect.TypeOf((*MockCmdable)(nil).TSAdd), arg0, arg1, arg2, arg3)
 }
 
-// TSAddWithArgs mocks base method.
+// TSAddWithArgs mock base method.
 func (m *MockCmdable) TSAddWithArgs(arg0 context.Context, arg1 string, arg2 any, arg3 float64, arg4 *redis.TSOptions) *redis.IntCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "TSAddWithArgs", arg0, arg1, arg2, arg3, arg4)
@@ -5166,7 +5166,7 @@ func (mr *MockCmdableMockRecorder) TSAddWithArgs(arg0, arg1, arg2, arg3, arg4 an
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "TSAddWithArgs", reflect.TypeOf((*MockCmdable)(nil).TSAddWithArgs), arg0, arg1, arg2, arg3, arg4)
 }
 
-// TSAlter mocks base method.
+// TSAlter mock base method.
 func (m *MockCmdable) TSAlter(arg0 context.Context, arg1 string, arg2 *redis.TSAlterOptions) *redis.StatusCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "TSAlter", arg0, arg1, arg2)
@@ -5180,7 +5180,7 @@ func (mr *MockCmdableMockRecorder) TSAlter(arg0, arg1, arg2 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "TSAlter", reflect.TypeOf((*MockCmdable)(nil).TSAlter), arg0, arg1, arg2)
 }
 
-// TSCreate mocks base method.
+// TSCreate mock base method.
 func (m *MockCmdable) TSCreate(arg0 context.Context, arg1 string) *redis.StatusCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "TSCreate", arg0, arg1)
@@ -5194,7 +5194,7 @@ func (mr *MockCmdableMockRecorder) TSCreate(arg0, arg1 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "TSCreate", reflect.TypeOf((*MockCmdable)(nil).TSCreate), arg0, arg1)
 }
 
-// TSCreateRule mocks base method.
+// TSCreateRule mock base method.
 func (m *MockCmdable) TSCreateRule(arg0 context.Context, arg1, arg2 string, arg3 redis.Aggregator, arg4 int) *redis.StatusCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "TSCreateRule", arg0, arg1, arg2, arg3, arg4)
@@ -5208,7 +5208,7 @@ func (mr *MockCmdableMockRecorder) TSCreateRule(arg0, arg1, arg2, arg3, arg4 any
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "TSCreateRule", reflect.TypeOf((*MockCmdable)(nil).TSCreateRule), arg0, arg1, arg2, arg3, arg4)
 }
 
-// TSCreateRuleWithArgs mocks base method.
+// TSCreateRuleWithArgs mock base method.
 func (m *MockCmdable) TSCreateRuleWithArgs(arg0 context.Context, arg1, arg2 string, arg3 redis.Aggregator, arg4 int, arg5 *redis.TSCreateRuleOptions) *redis.StatusCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "TSCreateRuleWithArgs", arg0, arg1, arg2, arg3, arg4, arg5)
@@ -5222,7 +5222,7 @@ func (mr *MockCmdableMockRecorder) TSCreateRuleWithArgs(arg0, arg1, arg2, arg3, 
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "TSCreateRuleWithArgs", reflect.TypeOf((*MockCmdable)(nil).TSCreateRuleWithArgs), arg0, arg1, arg2, arg3, arg4, arg5)
 }
 
-// TSCreateWithArgs mocks base method.
+// TSCreateWithArgs mock base method.
 func (m *MockCmdable) TSCreateWithArgs(arg0 context.Context, arg1 string, arg2 *redis.TSOptions) *redis.StatusCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "TSCreateWithArgs", arg0, arg1, arg2)
@@ -5236,7 +5236,7 @@ func (mr *MockCmdableMockRecorder) TSCreateWithArgs(arg0, arg1, arg2 any) *gomoc
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "TSCreateWithArgs", reflect.TypeOf((*MockCmdable)(nil).TSCreateWithArgs), arg0, arg1, arg2)
 }
 
-// TSDecrBy mocks base method.
+// TSDecrBy mock base method.
 func (m *MockCmdable) TSDecrBy(arg0 context.Context, arg1 string, arg2 float64) *redis.IntCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "TSDecrBy", arg0, arg1, arg2)
@@ -5250,7 +5250,7 @@ func (mr *MockCmdableMockRecorder) TSDecrBy(arg0, arg1, arg2 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "TSDecrBy", reflect.TypeOf((*MockCmdable)(nil).TSDecrBy), arg0, arg1, arg2)
 }
 
-// TSDecrByWithArgs mocks base method.
+// TSDecrByWithArgs mock base method.
 func (m *MockCmdable) TSDecrByWithArgs(arg0 context.Context, arg1 string, arg2 float64, arg3 *redis.TSIncrDecrOptions) *redis.IntCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "TSDecrByWithArgs", arg0, arg1, arg2, arg3)
@@ -5264,7 +5264,7 @@ func (mr *MockCmdableMockRecorder) TSDecrByWithArgs(arg0, arg1, arg2, arg3 any) 
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "TSDecrByWithArgs", reflect.TypeOf((*MockCmdable)(nil).TSDecrByWithArgs), arg0, arg1, arg2, arg3)
 }
 
-// TSDel mocks base method.
+// TSDel mock base method.
 func (m *MockCmdable) TSDel(arg0 context.Context, arg1 string, arg2, arg3 int) *redis.IntCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "TSDel", arg0, arg1, arg2, arg3)
@@ -5278,7 +5278,7 @@ func (mr *MockCmdableMockRecorder) TSDel(arg0, arg1, arg2, arg3 any) *gomock.Cal
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "TSDel", reflect.TypeOf((*MockCmdable)(nil).TSDel), arg0, arg1, arg2, arg3)
 }
 
-// TSDeleteRule mocks base method.
+// TSDeleteRule mock base method.
 func (m *MockCmdable) TSDeleteRule(arg0 context.Context, arg1, arg2 string) *redis.StatusCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "TSDeleteRule", arg0, arg1, arg2)
@@ -5292,7 +5292,7 @@ func (mr *MockCmdableMockRecorder) TSDeleteRule(arg0, arg1, arg2 any) *gomock.Ca
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "TSDeleteRule", reflect.TypeOf((*MockCmdable)(nil).TSDeleteRule), arg0, arg1, arg2)
 }
 
-// TSGet mocks base method.
+// TSGet mock base method.
 func (m *MockCmdable) TSGet(arg0 context.Context, arg1 string) *redis.TSTimestampValueCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "TSGet", arg0, arg1)
@@ -5306,7 +5306,7 @@ func (mr *MockCmdableMockRecorder) TSGet(arg0, arg1 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "TSGet", reflect.TypeOf((*MockCmdable)(nil).TSGet), arg0, arg1)
 }
 
-// TSGetWithArgs mocks base method.
+// TSGetWithArgs mock base method.
 func (m *MockCmdable) TSGetWithArgs(arg0 context.Context, arg1 string, arg2 *redis.TSGetOptions) *redis.TSTimestampValueCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "TSGetWithArgs", arg0, arg1, arg2)
@@ -5320,7 +5320,7 @@ func (mr *MockCmdableMockRecorder) TSGetWithArgs(arg0, arg1, arg2 any) *gomock.C
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "TSGetWithArgs", reflect.TypeOf((*MockCmdable)(nil).TSGetWithArgs), arg0, arg1, arg2)
 }
 
-// TSIncrBy mocks base method.
+// TSIncrBy mock base method.
 func (m *MockCmdable) TSIncrBy(arg0 context.Context, arg1 string, arg2 float64) *redis.IntCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "TSIncrBy", arg0, arg1, arg2)
@@ -5334,7 +5334,7 @@ func (mr *MockCmdableMockRecorder) TSIncrBy(arg0, arg1, arg2 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "TSIncrBy", reflect.TypeOf((*MockCmdable)(nil).TSIncrBy), arg0, arg1, arg2)
 }
 
-// TSIncrByWithArgs mocks base method.
+// TSIncrByWithArgs mock base method.
 func (m *MockCmdable) TSIncrByWithArgs(arg0 context.Context, arg1 string, arg2 float64, arg3 *redis.TSIncrDecrOptions) *redis.IntCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "TSIncrByWithArgs", arg0, arg1, arg2, arg3)
@@ -5348,7 +5348,7 @@ func (mr *MockCmdableMockRecorder) TSIncrByWithArgs(arg0, arg1, arg2, arg3 any) 
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "TSIncrByWithArgs", reflect.TypeOf((*MockCmdable)(nil).TSIncrByWithArgs), arg0, arg1, arg2, arg3)
 }
 
-// TSInfo mocks base method.
+// TSInfo mock base method.
 func (m *MockCmdable) TSInfo(arg0 context.Context, arg1 string) *redis.MapStringInterfaceCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "TSInfo", arg0, arg1)
@@ -5362,7 +5362,7 @@ func (mr *MockCmdableMockRecorder) TSInfo(arg0, arg1 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "TSInfo", reflect.TypeOf((*MockCmdable)(nil).TSInfo), arg0, arg1)
 }
 
-// TSInfoWithArgs mocks base method.
+// TSInfoWithArgs mock base method.
 func (m *MockCmdable) TSInfoWithArgs(arg0 context.Context, arg1 string, arg2 *redis.TSInfoOptions) *redis.MapStringInterfaceCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "TSInfoWithArgs", arg0, arg1, arg2)
@@ -5376,7 +5376,7 @@ func (mr *MockCmdableMockRecorder) TSInfoWithArgs(arg0, arg1, arg2 any) *gomock.
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "TSInfoWithArgs", reflect.TypeOf((*MockCmdable)(nil).TSInfoWithArgs), arg0, arg1, arg2)
 }
 
-// TSMAdd mocks base method.
+// TSMAdd mock base method.
 func (m *MockCmdable) TSMAdd(arg0 context.Context, arg1 [][]any) *redis.IntSliceCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "TSMAdd", arg0, arg1)
@@ -5390,7 +5390,7 @@ func (mr *MockCmdableMockRecorder) TSMAdd(arg0, arg1 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "TSMAdd", reflect.TypeOf((*MockCmdable)(nil).TSMAdd), arg0, arg1)
 }
 
-// TSMGet mocks base method.
+// TSMGet mock base method.
 func (m *MockCmdable) TSMGet(arg0 context.Context, arg1 []string) *redis.MapStringSliceInterfaceCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "TSMGet", arg0, arg1)
@@ -5404,7 +5404,7 @@ func (mr *MockCmdableMockRecorder) TSMGet(arg0, arg1 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "TSMGet", reflect.TypeOf((*MockCmdable)(nil).TSMGet), arg0, arg1)
 }
 
-// TSMGetWithArgs mocks base method.
+// TSMGetWithArgs mock base method.
 func (m *MockCmdable) TSMGetWithArgs(arg0 context.Context, arg1 []string, arg2 *redis.TSMGetOptions) *redis.MapStringSliceInterfaceCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "TSMGetWithArgs", arg0, arg1, arg2)
@@ -5418,7 +5418,7 @@ func (mr *MockCmdableMockRecorder) TSMGetWithArgs(arg0, arg1, arg2 any) *gomock.
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "TSMGetWithArgs", reflect.TypeOf((*MockCmdable)(nil).TSMGetWithArgs), arg0, arg1, arg2)
 }
 
-// TSMRange mocks base method.
+// TSMRange mock base method.
 func (m *MockCmdable) TSMRange(arg0 context.Context, arg1, arg2 int, arg3 []string) *redis.MapStringSliceInterfaceCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "TSMRange", arg0, arg1, arg2, arg3)
@@ -5432,7 +5432,7 @@ func (mr *MockCmdableMockRecorder) TSMRange(arg0, arg1, arg2, arg3 any) *gomock.
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "TSMRange", reflect.TypeOf((*MockCmdable)(nil).TSMRange), arg0, arg1, arg2, arg3)
 }
 
-// TSMRangeWithArgs mocks base method.
+// TSMRangeWithArgs mock base method.
 func (m *MockCmdable) TSMRangeWithArgs(arg0 context.Context, arg1, arg2 int, arg3 []string, arg4 *redis.TSMRangeOptions) *redis.MapStringSliceInterfaceCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "TSMRangeWithArgs", arg0, arg1, arg2, arg3, arg4)
@@ -5446,7 +5446,7 @@ func (mr *MockCmdableMockRecorder) TSMRangeWithArgs(arg0, arg1, arg2, arg3, arg4
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "TSMRangeWithArgs", reflect.TypeOf((*MockCmdable)(nil).TSMRangeWithArgs), arg0, arg1, arg2, arg3, arg4)
 }
 
-// TSMRevRange mocks base method.
+// TSMRevRange mock base method.
 func (m *MockCmdable) TSMRevRange(arg0 context.Context, arg1, arg2 int, arg3 []string) *redis.MapStringSliceInterfaceCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "TSMRevRange", arg0, arg1, arg2, arg3)
@@ -5460,7 +5460,7 @@ func (mr *MockCmdableMockRecorder) TSMRevRange(arg0, arg1, arg2, arg3 any) *gomo
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "TSMRevRange", reflect.TypeOf((*MockCmdable)(nil).TSMRevRange), arg0, arg1, arg2, arg3)
 }
 
-// TSMRevRangeWithArgs mocks base method.
+// TSMRevRangeWithArgs mock base method.
 func (m *MockCmdable) TSMRevRangeWithArgs(arg0 context.Context, arg1, arg2 int, arg3 []string, arg4 *redis.TSMRevRangeOptions) *redis.MapStringSliceInterfaceCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "TSMRevRangeWithArgs", arg0, arg1, arg2, arg3, arg4)
@@ -5474,7 +5474,7 @@ func (mr *MockCmdableMockRecorder) TSMRevRangeWithArgs(arg0, arg1, arg2, arg3, a
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "TSMRevRangeWithArgs", reflect.TypeOf((*MockCmdable)(nil).TSMRevRangeWithArgs), arg0, arg1, arg2, arg3, arg4)
 }
 
-// TSQueryIndex mocks base method.
+// TSQueryIndex mock base method.
 func (m *MockCmdable) TSQueryIndex(arg0 context.Context, arg1 []string) *redis.StringSliceCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "TSQueryIndex", arg0, arg1)
@@ -5488,7 +5488,7 @@ func (mr *MockCmdableMockRecorder) TSQueryIndex(arg0, arg1 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "TSQueryIndex", reflect.TypeOf((*MockCmdable)(nil).TSQueryIndex), arg0, arg1)
 }
 
-// TSRange mocks base method.
+// TSRange mock base method.
 func (m *MockCmdable) TSRange(arg0 context.Context, arg1 string, arg2, arg3 int) *redis.TSTimestampValueSliceCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "TSRange", arg0, arg1, arg2, arg3)
@@ -5502,7 +5502,7 @@ func (mr *MockCmdableMockRecorder) TSRange(arg0, arg1, arg2, arg3 any) *gomock.C
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "TSRange", reflect.TypeOf((*MockCmdable)(nil).TSRange), arg0, arg1, arg2, arg3)
 }
 
-// TSRangeWithArgs mocks base method.
+// TSRangeWithArgs mock base method.
 func (m *MockCmdable) TSRangeWithArgs(arg0 context.Context, arg1 string, arg2, arg3 int, arg4 *redis.TSRangeOptions) *redis.TSTimestampValueSliceCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "TSRangeWithArgs", arg0, arg1, arg2, arg3, arg4)
@@ -5516,7 +5516,7 @@ func (mr *MockCmdableMockRecorder) TSRangeWithArgs(arg0, arg1, arg2, arg3, arg4 
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "TSRangeWithArgs", reflect.TypeOf((*MockCmdable)(nil).TSRangeWithArgs), arg0, arg1, arg2, arg3, arg4)
 }
 
-// TSRevRange mocks base method.
+// TSRevRange mock base method.
 func (m *MockCmdable) TSRevRange(arg0 context.Context, arg1 string, arg2, arg3 int) *redis.TSTimestampValueSliceCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "TSRevRange", arg0, arg1, arg2, arg3)
@@ -5530,7 +5530,7 @@ func (mr *MockCmdableMockRecorder) TSRevRange(arg0, arg1, arg2, arg3 any) *gomoc
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "TSRevRange", reflect.TypeOf((*MockCmdable)(nil).TSRevRange), arg0, arg1, arg2, arg3)
 }
 
-// TSRevRangeWithArgs mocks base method.
+// TSRevRangeWithArgs mock base method.
 func (m *MockCmdable) TSRevRangeWithArgs(arg0 context.Context, arg1 string, arg2, arg3 int, arg4 *redis.TSRevRangeOptions) *redis.TSTimestampValueSliceCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "TSRevRangeWithArgs", arg0, arg1, arg2, arg3, arg4)
@@ -5544,7 +5544,7 @@ func (mr *MockCmdableMockRecorder) TSRevRangeWithArgs(arg0, arg1, arg2, arg3, ar
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "TSRevRangeWithArgs", reflect.TypeOf((*MockCmdable)(nil).TSRevRangeWithArgs), arg0, arg1, arg2, arg3, arg4)
 }
 
-// TTL mocks base method.
+// TTL mock base method.
 func (m *MockCmdable) TTL(arg0 context.Context, arg1 string) *redis.DurationCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "TTL", arg0, arg1)
@@ -5558,7 +5558,7 @@ func (mr *MockCmdableMockRecorder) TTL(arg0, arg1 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "TTL", reflect.TypeOf((*MockCmdable)(nil).TTL), arg0, arg1)
 }
 
-// Time mocks base method.
+// Time mock base method.
 func (m *MockCmdable) Time(arg0 context.Context) *redis.TimeCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "Time", arg0)
@@ -5572,7 +5572,7 @@ func (mr *MockCmdableMockRecorder) Time(arg0 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Time", reflect.TypeOf((*MockCmdable)(nil).Time), arg0)
 }
 
-// TopKAdd mocks base method.
+// TopKAdd mock base method.
 func (m *MockCmdable) TopKAdd(arg0 context.Context, arg1 string, arg2 ...any) *redis.StringSliceCmd {
 	m.ctrl.T.Helper()
 	varargs := []any{arg0, arg1}
@@ -5591,7 +5591,7 @@ func (mr *MockCmdableMockRecorder) TopKAdd(arg0, arg1 any, arg2 ...any) *gomock.
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "TopKAdd", reflect.TypeOf((*MockCmdable)(nil).TopKAdd), varargs...)
 }
 
-// TopKCount mocks base method.
+// TopKCount mock base method.
 func (m *MockCmdable) TopKCount(arg0 context.Context, arg1 string, arg2 ...any) *redis.IntSliceCmd {
 	m.ctrl.T.Helper()
 	varargs := []any{arg0, arg1}
@@ -5610,7 +5610,7 @@ func (mr *MockCmdableMockRecorder) TopKCount(arg0, arg1 any, arg2 ...any) *gomoc
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "TopKCount", reflect.TypeOf((*MockCmdable)(nil).TopKCount), varargs...)
 }
 
-// TopKIncrBy mocks base method.
+// TopKIncrBy mock base method.
 func (m *MockCmdable) TopKIncrBy(arg0 context.Context, arg1 string, arg2 ...any) *redis.StringSliceCmd {
 	m.ctrl.T.Helper()
 	varargs := []any{arg0, arg1}
@@ -5629,7 +5629,7 @@ func (mr *MockCmdableMockRecorder) TopKIncrBy(arg0, arg1 any, arg2 ...any) *gomo
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "TopKIncrBy", reflect.TypeOf((*MockCmdable)(nil).TopKIncrBy), varargs...)
 }
 
-// TopKInfo mocks base method.
+// TopKInfo mock base method.
 func (m *MockCmdable) TopKInfo(arg0 context.Context, arg1 string) *redis.TopKInfoCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "TopKInfo", arg0, arg1)
@@ -5643,7 +5643,7 @@ func (mr *MockCmdableMockRecorder) TopKInfo(arg0, arg1 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "TopKInfo", reflect.TypeOf((*MockCmdable)(nil).TopKInfo), arg0, arg1)
 }
 
-// TopKList mocks base method.
+// TopKList mock base method.
 func (m *MockCmdable) TopKList(arg0 context.Context, arg1 string) *redis.StringSliceCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "TopKList", arg0, arg1)
@@ -5657,7 +5657,7 @@ func (mr *MockCmdableMockRecorder) TopKList(arg0, arg1 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "TopKList", reflect.TypeOf((*MockCmdable)(nil).TopKList), arg0, arg1)
 }
 
-// TopKListWithCount mocks base method.
+// TopKListWithCount mock base method.
 func (m *MockCmdable) TopKListWithCount(arg0 context.Context, arg1 string) *redis.MapStringIntCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "TopKListWithCount", arg0, arg1)
@@ -5671,7 +5671,7 @@ func (mr *MockCmdableMockRecorder) TopKListWithCount(arg0, arg1 any) *gomock.Cal
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "TopKListWithCount", reflect.TypeOf((*MockCmdable)(nil).TopKListWithCount), arg0, arg1)
 }
 
-// TopKQuery mocks base method.
+// TopKQuery mock base method.
 func (m *MockCmdable) TopKQuery(arg0 context.Context, arg1 string, arg2 ...any) *redis.BoolSliceCmd {
 	m.ctrl.T.Helper()
 	varargs := []any{arg0, arg1}
@@ -5690,7 +5690,7 @@ func (mr *MockCmdableMockRecorder) TopKQuery(arg0, arg1 any, arg2 ...any) *gomoc
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "TopKQuery", reflect.TypeOf((*MockCmdable)(nil).TopKQuery), varargs...)
 }
 
-// TopKReserve mocks base method.
+// TopKReserve mock base method.
 func (m *MockCmdable) TopKReserve(arg0 context.Context, arg1 string, arg2 int64) *redis.StatusCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "TopKReserve", arg0, arg1, arg2)
@@ -5704,7 +5704,7 @@ func (mr *MockCmdableMockRecorder) TopKReserve(arg0, arg1, arg2 any) *gomock.Cal
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "TopKReserve", reflect.TypeOf((*MockCmdable)(nil).TopKReserve), arg0, arg1, arg2)
 }
 
-// TopKReserveWithOptions mocks base method.
+// TopKReserveWithOptions mock base method.
 func (m *MockCmdable) TopKReserveWithOptions(arg0 context.Context, arg1 string, arg2, arg3, arg4 int64, arg5 float64) *redis.StatusCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "TopKReserveWithOptions", arg0, arg1, arg2, arg3, arg4, arg5)
@@ -5718,7 +5718,7 @@ func (mr *MockCmdableMockRecorder) TopKReserveWithOptions(arg0, arg1, arg2, arg3
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "TopKReserveWithOptions", reflect.TypeOf((*MockCmdable)(nil).TopKReserveWithOptions), arg0, arg1, arg2, arg3, arg4, arg5)
 }
 
-// Touch mocks base method.
+// Touch mock base method.
 func (m *MockCmdable) Touch(arg0 context.Context, arg1 ...string) *redis.IntCmd {
 	m.ctrl.T.Helper()
 	varargs := []any{arg0}
@@ -5737,7 +5737,7 @@ func (mr *MockCmdableMockRecorder) Touch(arg0 any, arg1 ...any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Touch", reflect.TypeOf((*MockCmdable)(nil).Touch), varargs...)
 }
 
-// TxPipeline mocks base method.
+// TxPipeline mock base method.
 func (m *MockCmdable) TxPipeline() redis.Pipeliner {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "TxPipeline")
@@ -5751,7 +5751,7 @@ func (mr *MockCmdableMockRecorder) TxPipeline() *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "TxPipeline", reflect.TypeOf((*MockCmdable)(nil).TxPipeline))
 }
 
-// TxPipelined mocks base method.
+// TxPipelined mock base method.
 func (m *MockCmdable) TxPipelined(arg0 context.Context, arg1 func(redis.Pipeliner) error) ([]redis.Cmder, error) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "TxPipelined", arg0, arg1)
@@ -5766,7 +5766,7 @@ func (mr *MockCmdableMockRecorder) TxPipelined(arg0, arg1 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "TxPipelined", reflect.TypeOf((*MockCmdable)(nil).TxPipelined), arg0, arg1)
 }
 
-// Type mocks base method.
+// Type mock base method.
 func (m *MockCmdable) Type(arg0 context.Context, arg1 string) *redis.StatusCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "Type", arg0, arg1)
@@ -5780,7 +5780,7 @@ func (mr *MockCmdableMockRecorder) Type(arg0, arg1 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Type", reflect.TypeOf((*MockCmdable)(nil).Type), arg0, arg1)
 }
 
-// Unlink mocks base method.
+// Unlink mock base method.
 func (m *MockCmdable) Unlink(arg0 context.Context, arg1 ...string) *redis.IntCmd {
 	m.ctrl.T.Helper()
 	varargs := []any{arg0}
@@ -5799,7 +5799,7 @@ func (mr *MockCmdableMockRecorder) Unlink(arg0 any, arg1 ...any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Unlink", reflect.TypeOf((*MockCmdable)(nil).Unlink), varargs...)
 }
 
-// XAck mocks base method.
+// XAck mock base method.
 func (m *MockCmdable) XAck(arg0 context.Context, arg1, arg2 string, arg3 ...string) *redis.IntCmd {
 	m.ctrl.T.Helper()
 	varargs := []any{arg0, arg1, arg2}
@@ -5818,7 +5818,7 @@ func (mr *MockCmdableMockRecorder) XAck(arg0, arg1, arg2 any, arg3 ...any) *gomo
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "XAck", reflect.TypeOf((*MockCmdable)(nil).XAck), varargs...)
 }
 
-// XAdd mocks base method.
+// XAdd mock base method.
 func (m *MockCmdable) XAdd(arg0 context.Context, arg1 *redis.XAddArgs) *redis.StringCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "XAdd", arg0, arg1)
@@ -5832,7 +5832,7 @@ func (mr *MockCmdableMockRecorder) XAdd(arg0, arg1 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "XAdd", reflect.TypeOf((*MockCmdable)(nil).XAdd), arg0, arg1)
 }
 
-// XAutoClaim mocks base method.
+// XAutoClaim mock base method.
 func (m *MockCmdable) XAutoClaim(arg0 context.Context, arg1 *redis.XAutoClaimArgs) *redis.XAutoClaimCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "XAutoClaim", arg0, arg1)
@@ -5846,7 +5846,7 @@ func (mr *MockCmdableMockRecorder) XAutoClaim(arg0, arg1 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "XAutoClaim", reflect.TypeOf((*MockCmdable)(nil).XAutoClaim), arg0, arg1)
 }
 
-// XAutoClaimJustID mocks base method.
+// XAutoClaimJustID mock base method.
 func (m *MockCmdable) XAutoClaimJustID(arg0 context.Context, arg1 *redis.XAutoClaimArgs) *redis.XAutoClaimJustIDCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "XAutoClaimJustID", arg0, arg1)
@@ -5860,7 +5860,7 @@ func (mr *MockCmdableMockRecorder) XAutoClaimJustID(arg0, arg1 any) *gomock.Call
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "XAutoClaimJustID", reflect.TypeOf((*MockCmdable)(nil).XAutoClaimJustID), arg0, arg1)
 }
 
-// XClaim mocks base method.
+// XClaim mock base method.
 func (m *MockCmdable) XClaim(arg0 context.Context, arg1 *redis.XClaimArgs) *redis.XMessageSliceCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "XClaim", arg0, arg1)
@@ -5874,7 +5874,7 @@ func (mr *MockCmdableMockRecorder) XClaim(arg0, arg1 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "XClaim", reflect.TypeOf((*MockCmdable)(nil).XClaim), arg0, arg1)
 }
 
-// XClaimJustID mocks base method.
+// XClaimJustID mock base method.
 func (m *MockCmdable) XClaimJustID(arg0 context.Context, arg1 *redis.XClaimArgs) *redis.StringSliceCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "XClaimJustID", arg0, arg1)
@@ -5888,7 +5888,7 @@ func (mr *MockCmdableMockRecorder) XClaimJustID(arg0, arg1 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "XClaimJustID", reflect.TypeOf((*MockCmdable)(nil).XClaimJustID), arg0, arg1)
 }
 
-// XDel mocks base method.
+// XDel mock base method.
 func (m *MockCmdable) XDel(arg0 context.Context, arg1 string, arg2 ...string) *redis.IntCmd {
 	m.ctrl.T.Helper()
 	varargs := []any{arg0, arg1}
@@ -5907,7 +5907,7 @@ func (mr *MockCmdableMockRecorder) XDel(arg0, arg1 any, arg2 ...any) *gomock.Cal
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "XDel", reflect.TypeOf((*MockCmdable)(nil).XDel), varargs...)
 }
 
-// XGroupCreate mocks base method.
+// XGroupCreate mock base method.
 func (m *MockCmdable) XGroupCreate(arg0 context.Context, arg1, arg2, arg3 string) *redis.StatusCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "XGroupCreate", arg0, arg1, arg2, arg3)
@@ -5921,7 +5921,7 @@ func (mr *MockCmdableMockRecorder) XGroupCreate(arg0, arg1, arg2, arg3 any) *gom
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "XGroupCreate", reflect.TypeOf((*MockCmdable)(nil).XGroupCreate), arg0, arg1, arg2, arg3)
 }
 
-// XGroupCreateConsumer mocks base method.
+// XGroupCreateConsumer mock base method.
 func (m *MockCmdable) XGroupCreateConsumer(arg0 context.Context, arg1, arg2, arg3 string) *redis.IntCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "XGroupCreateConsumer", arg0, arg1, arg2, arg3)
@@ -5935,7 +5935,7 @@ func (mr *MockCmdableMockRecorder) XGroupCreateConsumer(arg0, arg1, arg2, arg3 a
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "XGroupCreateConsumer", reflect.TypeOf((*MockCmdable)(nil).XGroupCreateConsumer), arg0, arg1, arg2, arg3)
 }
 
-// XGroupCreateMkStream mocks base method.
+// XGroupCreateMkStream mock base method.
 func (m *MockCmdable) XGroupCreateMkStream(arg0 context.Context, arg1, arg2, arg3 string) *redis.StatusCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "XGroupCreateMkStream", arg0, arg1, arg2, arg3)
@@ -5949,7 +5949,7 @@ func (mr *MockCmdableMockRecorder) XGroupCreateMkStream(arg0, arg1, arg2, arg3 a
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "XGroupCreateMkStream", reflect.TypeOf((*MockCmdable)(nil).XGroupCreateMkStream), arg0, arg1, arg2, arg3)
 }
 
-// XGroupDelConsumer mocks base method.
+// XGroupDelConsumer mock base method.
 func (m *MockCmdable) XGroupDelConsumer(arg0 context.Context, arg1, arg2, arg3 string) *redis.IntCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "XGroupDelConsumer", arg0, arg1, arg2, arg3)
@@ -5963,7 +5963,7 @@ func (mr *MockCmdableMockRecorder) XGroupDelConsumer(arg0, arg1, arg2, arg3 any)
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "XGroupDelConsumer", reflect.TypeOf((*MockCmdable)(nil).XGroupDelConsumer), arg0, arg1, arg2, arg3)
 }
 
-// XGroupDestroy mocks base method.
+// XGroupDestroy mock base method.
 func (m *MockCmdable) XGroupDestroy(arg0 context.Context, arg1, arg2 string) *redis.IntCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "XGroupDestroy", arg0, arg1, arg2)
@@ -5977,7 +5977,7 @@ func (mr *MockCmdableMockRecorder) XGroupDestroy(arg0, arg1, arg2 any) *gomock.C
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "XGroupDestroy", reflect.TypeOf((*MockCmdable)(nil).XGroupDestroy), arg0, arg1, arg2)
 }
 
-// XGroupSetID mocks base method.
+// XGroupSetID mock base method.
 func (m *MockCmdable) XGroupSetID(arg0 context.Context, arg1, arg2, arg3 string) *redis.StatusCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "XGroupSetID", arg0, arg1, arg2, arg3)
@@ -5991,7 +5991,7 @@ func (mr *MockCmdableMockRecorder) XGroupSetID(arg0, arg1, arg2, arg3 any) *gomo
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "XGroupSetID", reflect.TypeOf((*MockCmdable)(nil).XGroupSetID), arg0, arg1, arg2, arg3)
 }
 
-// XInfoConsumers mocks base method.
+// XInfoConsumers mock base method.
 func (m *MockCmdable) XInfoConsumers(arg0 context.Context, arg1, arg2 string) *redis.XInfoConsumersCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "XInfoConsumers", arg0, arg1, arg2)
@@ -6005,7 +6005,7 @@ func (mr *MockCmdableMockRecorder) XInfoConsumers(arg0, arg1, arg2 any) *gomock.
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "XInfoConsumers", reflect.TypeOf((*MockCmdable)(nil).XInfoConsumers), arg0, arg1, arg2)
 }
 
-// XInfoGroups mocks base method.
+// XInfoGroups mock base method.
 func (m *MockCmdable) XInfoGroups(arg0 context.Context, arg1 string) *redis.XInfoGroupsCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "XInfoGroups", arg0, arg1)
@@ -6019,7 +6019,7 @@ func (mr *MockCmdableMockRecorder) XInfoGroups(arg0, arg1 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "XInfoGroups", reflect.TypeOf((*MockCmdable)(nil).XInfoGroups), arg0, arg1)
 }
 
-// XInfoStream mocks base method.
+// XInfoStream mock base method.
 func (m *MockCmdable) XInfoStream(arg0 context.Context, arg1 string) *redis.XInfoStreamCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "XInfoStream", arg0, arg1)
@@ -6033,7 +6033,7 @@ func (mr *MockCmdableMockRecorder) XInfoStream(arg0, arg1 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "XInfoStream", reflect.TypeOf((*MockCmdable)(nil).XInfoStream), arg0, arg1)
 }
 
-// XInfoStreamFull mocks base method.
+// XInfoStreamFull mock base method.
 func (m *MockCmdable) XInfoStreamFull(arg0 context.Context, arg1 string, arg2 int) *redis.XInfoStreamFullCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "XInfoStreamFull", arg0, arg1, arg2)
@@ -6047,7 +6047,7 @@ func (mr *MockCmdableMockRecorder) XInfoStreamFull(arg0, arg1, arg2 any) *gomock
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "XInfoStreamFull", reflect.TypeOf((*MockCmdable)(nil).XInfoStreamFull), arg0, arg1, arg2)
 }
 
-// XLen mocks base method.
+// XLen mock base method.
 func (m *MockCmdable) XLen(arg0 context.Context, arg1 string) *redis.IntCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "XLen", arg0, arg1)
@@ -6061,7 +6061,7 @@ func (mr *MockCmdableMockRecorder) XLen(arg0, arg1 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "XLen", reflect.TypeOf((*MockCmdable)(nil).XLen), arg0, arg1)
 }
 
-// XPending mocks base method.
+// XPending mock base method.
 func (m *MockCmdable) XPending(arg0 context.Context, arg1, arg2 string) *redis.XPendingCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "XPending", arg0, arg1, arg2)
@@ -6075,7 +6075,7 @@ func (mr *MockCmdableMockRecorder) XPending(arg0, arg1, arg2 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "XPending", reflect.TypeOf((*MockCmdable)(nil).XPending), arg0, arg1, arg2)
 }
 
-// XPendingExt mocks base method.
+// XPendingExt mock base method.
 func (m *MockCmdable) XPendingExt(arg0 context.Context, arg1 *redis.XPendingExtArgs) *redis.XPendingExtCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "XPendingExt", arg0, arg1)
@@ -6089,7 +6089,7 @@ func (mr *MockCmdableMockRecorder) XPendingExt(arg0, arg1 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "XPendingExt", reflect.TypeOf((*MockCmdable)(nil).XPendingExt), arg0, arg1)
 }
 
-// XRange mocks base method.
+// XRange mock base method.
 func (m *MockCmdable) XRange(arg0 context.Context, arg1, arg2, arg3 string) *redis.XMessageSliceCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "XRange", arg0, arg1, arg2, arg3)
@@ -6103,7 +6103,7 @@ func (mr *MockCmdableMockRecorder) XRange(arg0, arg1, arg2, arg3 any) *gomock.Ca
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "XRange", reflect.TypeOf((*MockCmdable)(nil).XRange), arg0, arg1, arg2, arg3)
 }
 
-// XRangeN mocks base method.
+// XRangeN mock base method.
 func (m *MockCmdable) XRangeN(arg0 context.Context, arg1, arg2, arg3 string, arg4 int64) *redis.XMessageSliceCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "XRangeN", arg0, arg1, arg2, arg3, arg4)
@@ -6117,7 +6117,7 @@ func (mr *MockCmdableMockRecorder) XRangeN(arg0, arg1, arg2, arg3, arg4 any) *go
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "XRangeN", reflect.TypeOf((*MockCmdable)(nil).XRangeN), arg0, arg1, arg2, arg3, arg4)
 }
 
-// XRead mocks base method.
+// XRead mock base method.
 func (m *MockCmdable) XRead(arg0 context.Context, arg1 *redis.XReadArgs) *redis.XStreamSliceCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "XRead", arg0, arg1)
@@ -6131,7 +6131,7 @@ func (mr *MockCmdableMockRecorder) XRead(arg0, arg1 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "XRead", reflect.TypeOf((*MockCmdable)(nil).XRead), arg0, arg1)
 }
 
-// XReadGroup mocks base method.
+// XReadGroup mock base method.
 func (m *MockCmdable) XReadGroup(arg0 context.Context, arg1 *redis.XReadGroupArgs) *redis.XStreamSliceCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "XReadGroup", arg0, arg1)
@@ -6145,7 +6145,7 @@ func (mr *MockCmdableMockRecorder) XReadGroup(arg0, arg1 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "XReadGroup", reflect.TypeOf((*MockCmdable)(nil).XReadGroup), arg0, arg1)
 }
 
-// XReadStreams mocks base method.
+// XReadStreams mock base method.
 func (m *MockCmdable) XReadStreams(arg0 context.Context, arg1 ...string) *redis.XStreamSliceCmd {
 	m.ctrl.T.Helper()
 	varargs := []any{arg0}
@@ -6164,7 +6164,7 @@ func (mr *MockCmdableMockRecorder) XReadStreams(arg0 any, arg1 ...any) *gomock.C
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "XReadStreams", reflect.TypeOf((*MockCmdable)(nil).XReadStreams), varargs...)
 }
 
-// XRevRange mocks base method.
+// XRevRange mock base method.
 func (m *MockCmdable) XRevRange(arg0 context.Context, arg1, arg2, arg3 string) *redis.XMessageSliceCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "XRevRange", arg0, arg1, arg2, arg3)
@@ -6178,7 +6178,7 @@ func (mr *MockCmdableMockRecorder) XRevRange(arg0, arg1, arg2, arg3 any) *gomock
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "XRevRange", reflect.TypeOf((*MockCmdable)(nil).XRevRange), arg0, arg1, arg2, arg3)
 }
 
-// XRevRangeN mocks base method.
+// XRevRangeN mock base method.
 func (m *MockCmdable) XRevRangeN(arg0 context.Context, arg1, arg2, arg3 string, arg4 int64) *redis.XMessageSliceCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "XRevRangeN", arg0, arg1, arg2, arg3, arg4)
@@ -6192,7 +6192,7 @@ func (mr *MockCmdableMockRecorder) XRevRangeN(arg0, arg1, arg2, arg3, arg4 any) 
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "XRevRangeN", reflect.TypeOf((*MockCmdable)(nil).XRevRangeN), arg0, arg1, arg2, arg3, arg4)
 }
 
-// XTrimMaxLen mocks base method.
+// XTrimMaxLen mock base method.
 func (m *MockCmdable) XTrimMaxLen(arg0 context.Context, arg1 string, arg2 int64) *redis.IntCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "XTrimMaxLen", arg0, arg1, arg2)
@@ -6206,7 +6206,7 @@ func (mr *MockCmdableMockRecorder) XTrimMaxLen(arg0, arg1, arg2 any) *gomock.Cal
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "XTrimMaxLen", reflect.TypeOf((*MockCmdable)(nil).XTrimMaxLen), arg0, arg1, arg2)
 }
 
-// XTrimMaxLenApprox mocks base method.
+// XTrimMaxLenApprox mock base method.
 func (m *MockCmdable) XTrimMaxLenApprox(arg0 context.Context, arg1 string, arg2, arg3 int64) *redis.IntCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "XTrimMaxLenApprox", arg0, arg1, arg2, arg3)
@@ -6220,7 +6220,7 @@ func (mr *MockCmdableMockRecorder) XTrimMaxLenApprox(arg0, arg1, arg2, arg3 any)
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "XTrimMaxLenApprox", reflect.TypeOf((*MockCmdable)(nil).XTrimMaxLenApprox), arg0, arg1, arg2, arg3)
 }
 
-// XTrimMinID mocks base method.
+// XTrimMinID mock base method.
 func (m *MockCmdable) XTrimMinID(arg0 context.Context, arg1, arg2 string) *redis.IntCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "XTrimMinID", arg0, arg1, arg2)
@@ -6234,7 +6234,7 @@ func (mr *MockCmdableMockRecorder) XTrimMinID(arg0, arg1, arg2 any) *gomock.Call
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "XTrimMinID", reflect.TypeOf((*MockCmdable)(nil).XTrimMinID), arg0, arg1, arg2)
 }
 
-// XTrimMinIDApprox mocks base method.
+// XTrimMinIDApprox mock base method.
 func (m *MockCmdable) XTrimMinIDApprox(arg0 context.Context, arg1, arg2 string, arg3 int64) *redis.IntCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "XTrimMinIDApprox", arg0, arg1, arg2, arg3)
@@ -6248,7 +6248,7 @@ func (mr *MockCmdableMockRecorder) XTrimMinIDApprox(arg0, arg1, arg2, arg3 any) 
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "XTrimMinIDApprox", reflect.TypeOf((*MockCmdable)(nil).XTrimMinIDApprox), arg0, arg1, arg2, arg3)
 }
 
-// ZAdd mocks base method.
+// ZAdd mock base method.
 func (m *MockCmdable) ZAdd(arg0 context.Context, arg1 string, arg2 ...redis.Z) *redis.IntCmd {
 	m.ctrl.T.Helper()
 	varargs := []any{arg0, arg1}
@@ -6267,7 +6267,7 @@ func (mr *MockCmdableMockRecorder) ZAdd(arg0, arg1 any, arg2 ...any) *gomock.Cal
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ZAdd", reflect.TypeOf((*MockCmdable)(nil).ZAdd), varargs...)
 }
 
-// ZAddArgs mocks base method.
+// ZAddArgs mock base method.
 func (m *MockCmdable) ZAddArgs(arg0 context.Context, arg1 string, arg2 redis.ZAddArgs) *redis.IntCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "ZAddArgs", arg0, arg1, arg2)
@@ -6281,7 +6281,7 @@ func (mr *MockCmdableMockRecorder) ZAddArgs(arg0, arg1, arg2 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ZAddArgs", reflect.TypeOf((*MockCmdable)(nil).ZAddArgs), arg0, arg1, arg2)
 }
 
-// ZAddArgsIncr mocks base method.
+// ZAddArgsIncr mock base method.
 func (m *MockCmdable) ZAddArgsIncr(arg0 context.Context, arg1 string, arg2 redis.ZAddArgs) *redis.FloatCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "ZAddArgsIncr", arg0, arg1, arg2)
@@ -6295,7 +6295,7 @@ func (mr *MockCmdableMockRecorder) ZAddArgsIncr(arg0, arg1, arg2 any) *gomock.Ca
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ZAddArgsIncr", reflect.TypeOf((*MockCmdable)(nil).ZAddArgsIncr), arg0, arg1, arg2)
 }
 
-// ZAddGT mocks base method.
+// ZAddGT mock base method.
 func (m *MockCmdable) ZAddGT(arg0 context.Context, arg1 string, arg2 ...redis.Z) *redis.IntCmd {
 	m.ctrl.T.Helper()
 	varargs := []any{arg0, arg1}
@@ -6314,7 +6314,7 @@ func (mr *MockCmdableMockRecorder) ZAddGT(arg0, arg1 any, arg2 ...any) *gomock.C
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ZAddGT", reflect.TypeOf((*MockCmdable)(nil).ZAddGT), varargs...)
 }
 
-// ZAddLT mocks base method.
+// ZAddLT mock base method.
 func (m *MockCmdable) ZAddLT(arg0 context.Context, arg1 string, arg2 ...redis.Z) *redis.IntCmd {
 	m.ctrl.T.Helper()
 	varargs := []any{arg0, arg1}
@@ -6333,7 +6333,7 @@ func (mr *MockCmdableMockRecorder) ZAddLT(arg0, arg1 any, arg2 ...any) *gomock.C
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ZAddLT", reflect.TypeOf((*MockCmdable)(nil).ZAddLT), varargs...)
 }
 
-// ZAddNX mocks base method.
+// ZAddNX mock base method.
 func (m *MockCmdable) ZAddNX(arg0 context.Context, arg1 string, arg2 ...redis.Z) *redis.IntCmd {
 	m.ctrl.T.Helper()
 	varargs := []any{arg0, arg1}
@@ -6352,7 +6352,7 @@ func (mr *MockCmdableMockRecorder) ZAddNX(arg0, arg1 any, arg2 ...any) *gomock.C
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ZAddNX", reflect.TypeOf((*MockCmdable)(nil).ZAddNX), varargs...)
 }
 
-// ZAddXX mocks base method.
+// ZAddXX mock base method.
 func (m *MockCmdable) ZAddXX(arg0 context.Context, arg1 string, arg2 ...redis.Z) *redis.IntCmd {
 	m.ctrl.T.Helper()
 	varargs := []any{arg0, arg1}
@@ -6371,7 +6371,7 @@ func (mr *MockCmdableMockRecorder) ZAddXX(arg0, arg1 any, arg2 ...any) *gomock.C
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ZAddXX", reflect.TypeOf((*MockCmdable)(nil).ZAddXX), varargs...)
 }
 
-// ZCard mocks base method.
+// ZCard mock base method.
 func (m *MockCmdable) ZCard(arg0 context.Context, arg1 string) *redis.IntCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "ZCard", arg0, arg1)
@@ -6385,7 +6385,7 @@ func (mr *MockCmdableMockRecorder) ZCard(arg0, arg1 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ZCard", reflect.TypeOf((*MockCmdable)(nil).ZCard), arg0, arg1)
 }
 
-// ZCount mocks base method.
+// ZCount mock base method.
 func (m *MockCmdable) ZCount(arg0 context.Context, arg1, arg2, arg3 string) *redis.IntCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "ZCount", arg0, arg1, arg2, arg3)
@@ -6399,7 +6399,7 @@ func (mr *MockCmdableMockRecorder) ZCount(arg0, arg1, arg2, arg3 any) *gomock.Ca
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ZCount", reflect.TypeOf((*MockCmdable)(nil).ZCount), arg0, arg1, arg2, arg3)
 }
 
-// ZDiff mocks base method.
+// ZDiff mock base method.
 func (m *MockCmdable) ZDiff(arg0 context.Context, arg1 ...string) *redis.StringSliceCmd {
 	m.ctrl.T.Helper()
 	varargs := []any{arg0}
@@ -6418,7 +6418,7 @@ func (mr *MockCmdableMockRecorder) ZDiff(arg0 any, arg1 ...any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ZDiff", reflect.TypeOf((*MockCmdable)(nil).ZDiff), varargs...)
 }
 
-// ZDiffStore mocks base method.
+// ZDiffStore mock base method.
 func (m *MockCmdable) ZDiffStore(arg0 context.Context, arg1 string, arg2 ...string) *redis.IntCmd {
 	m.ctrl.T.Helper()
 	varargs := []any{arg0, arg1}
@@ -6437,7 +6437,7 @@ func (mr *MockCmdableMockRecorder) ZDiffStore(arg0, arg1 any, arg2 ...any) *gomo
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ZDiffStore", reflect.TypeOf((*MockCmdable)(nil).ZDiffStore), varargs...)
 }
 
-// ZDiffWithScores mocks base method.
+// ZDiffWithScores mock base method.
 func (m *MockCmdable) ZDiffWithScores(arg0 context.Context, arg1 ...string) *redis.ZSliceCmd {
 	m.ctrl.T.Helper()
 	varargs := []any{arg0}
@@ -6456,7 +6456,7 @@ func (mr *MockCmdableMockRecorder) ZDiffWithScores(arg0 any, arg1 ...any) *gomoc
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ZDiffWithScores", reflect.TypeOf((*MockCmdable)(nil).ZDiffWithScores), varargs...)
 }
 
-// ZIncrBy mocks base method.
+// ZIncrBy mock base method.
 func (m *MockCmdable) ZIncrBy(arg0 context.Context, arg1 string, arg2 float64, arg3 string) *redis.FloatCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "ZIncrBy", arg0, arg1, arg2, arg3)
@@ -6470,7 +6470,7 @@ func (mr *MockCmdableMockRecorder) ZIncrBy(arg0, arg1, arg2, arg3 any) *gomock.C
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ZIncrBy", reflect.TypeOf((*MockCmdable)(nil).ZIncrBy), arg0, arg1, arg2, arg3)
 }
 
-// ZInter mocks base method.
+// ZInter mock base method.
 func (m *MockCmdable) ZInter(arg0 context.Context, arg1 *redis.ZStore) *redis.StringSliceCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "ZInter", arg0, arg1)
@@ -6484,7 +6484,7 @@ func (mr *MockCmdableMockRecorder) ZInter(arg0, arg1 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ZInter", reflect.TypeOf((*MockCmdable)(nil).ZInter), arg0, arg1)
 }
 
-// ZInterCard mocks base method.
+// ZInterCard mock base method.
 func (m *MockCmdable) ZInterCard(arg0 context.Context, arg1 int64, arg2 ...string) *redis.IntCmd {
 	m.ctrl.T.Helper()
 	varargs := []any{arg0, arg1}
@@ -6503,7 +6503,7 @@ func (mr *MockCmdableMockRecorder) ZInterCard(arg0, arg1 any, arg2 ...any) *gomo
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ZInterCard", reflect.TypeOf((*MockCmdable)(nil).ZInterCard), varargs...)
 }
 
-// ZInterStore mocks base method.
+// ZInterStore mock base method.
 func (m *MockCmdable) ZInterStore(arg0 context.Context, arg1 string, arg2 *redis.ZStore) *redis.IntCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "ZInterStore", arg0, arg1, arg2)
@@ -6517,7 +6517,7 @@ func (mr *MockCmdableMockRecorder) ZInterStore(arg0, arg1, arg2 any) *gomock.Cal
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ZInterStore", reflect.TypeOf((*MockCmdable)(nil).ZInterStore), arg0, arg1, arg2)
 }
 
-// ZInterWithScores mocks base method.
+// ZInterWithScores mock base method.
 func (m *MockCmdable) ZInterWithScores(arg0 context.Context, arg1 *redis.ZStore) *redis.ZSliceCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "ZInterWithScores", arg0, arg1)
@@ -6531,7 +6531,7 @@ func (mr *MockCmdableMockRecorder) ZInterWithScores(arg0, arg1 any) *gomock.Call
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ZInterWithScores", reflect.TypeOf((*MockCmdable)(nil).ZInterWithScores), arg0, arg1)
 }
 
-// ZLexCount mocks base method.
+// ZLexCount mock base method.
 func (m *MockCmdable) ZLexCount(arg0 context.Context, arg1, arg2, arg3 string) *redis.IntCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "ZLexCount", arg0, arg1, arg2, arg3)
@@ -6545,7 +6545,7 @@ func (mr *MockCmdableMockRecorder) ZLexCount(arg0, arg1, arg2, arg3 any) *gomock
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ZLexCount", reflect.TypeOf((*MockCmdable)(nil).ZLexCount), arg0, arg1, arg2, arg3)
 }
 
-// ZMPop mocks base method.
+// ZMPop mock base method.
 func (m *MockCmdable) ZMPop(arg0 context.Context, arg1 string, arg2 int64, arg3 ...string) *redis.ZSliceWithKeyCmd {
 	m.ctrl.T.Helper()
 	varargs := []any{arg0, arg1, arg2}
@@ -6564,7 +6564,7 @@ func (mr *MockCmdableMockRecorder) ZMPop(arg0, arg1, arg2 any, arg3 ...any) *gom
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ZMPop", reflect.TypeOf((*MockCmdable)(nil).ZMPop), varargs...)
 }
 
-// ZMScore mocks base method.
+// ZMScore mock base method.
 func (m *MockCmdable) ZMScore(arg0 context.Context, arg1 string, arg2 ...string) *redis.FloatSliceCmd {
 	m.ctrl.T.Helper()
 	varargs := []any{arg0, arg1}
@@ -6583,7 +6583,7 @@ func (mr *MockCmdableMockRecorder) ZMScore(arg0, arg1 any, arg2 ...any) *gomock.
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ZMScore", reflect.TypeOf((*MockCmdable)(nil).ZMScore), varargs...)
 }
 
-// ZPopMax mocks base method.
+// ZPopMax mock base method.
 func (m *MockCmdable) ZPopMax(arg0 context.Context, arg1 string, arg2 ...int64) *redis.ZSliceCmd {
 	m.ctrl.T.Helper()
 	varargs := []any{arg0, arg1}
@@ -6602,7 +6602,7 @@ func (mr *MockCmdableMockRecorder) ZPopMax(arg0, arg1 any, arg2 ...any) *gomock.
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ZPopMax", reflect.TypeOf((*MockCmdable)(nil).ZPopMax), varargs...)
 }
 
-// ZPopMin mocks base method.
+// ZPopMin mock base method.
 func (m *MockCmdable) ZPopMin(arg0 context.Context, arg1 string, arg2 ...int64) *redis.ZSliceCmd {
 	m.ctrl.T.Helper()
 	varargs := []any{arg0, arg1}
@@ -6621,7 +6621,7 @@ func (mr *MockCmdableMockRecorder) ZPopMin(arg0, arg1 any, arg2 ...any) *gomock.
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ZPopMin", reflect.TypeOf((*MockCmdable)(nil).ZPopMin), varargs...)
 }
 
-// ZRandMember mocks base method.
+// ZRandMember mock base method.
 func (m *MockCmdable) ZRandMember(arg0 context.Context, arg1 string, arg2 int) *redis.StringSliceCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "ZRandMember", arg0, arg1, arg2)
@@ -6635,7 +6635,7 @@ func (mr *MockCmdableMockRecorder) ZRandMember(arg0, arg1, arg2 any) *gomock.Cal
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ZRandMember", reflect.TypeOf((*MockCmdable)(nil).ZRandMember), arg0, arg1, arg2)
 }
 
-// ZRandMemberWithScores mocks base method.
+// ZRandMemberWithScores mock base method.
 func (m *MockCmdable) ZRandMemberWithScores(arg0 context.Context, arg1 string, arg2 int) *redis.ZSliceCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "ZRandMemberWithScores", arg0, arg1, arg2)
@@ -6649,7 +6649,7 @@ func (mr *MockCmdableMockRecorder) ZRandMemberWithScores(arg0, arg1, arg2 any) *
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ZRandMemberWithScores", reflect.TypeOf((*MockCmdable)(nil).ZRandMemberWithScores), arg0, arg1, arg2)
 }
 
-// ZRange mocks base method.
+// ZRange mock base method.
 func (m *MockCmdable) ZRange(arg0 context.Context, arg1 string, arg2, arg3 int64) *redis.StringSliceCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "ZRange", arg0, arg1, arg2, arg3)
@@ -6663,7 +6663,7 @@ func (mr *MockCmdableMockRecorder) ZRange(arg0, arg1, arg2, arg3 any) *gomock.Ca
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ZRange", reflect.TypeOf((*MockCmdable)(nil).ZRange), arg0, arg1, arg2, arg3)
 }
 
-// ZRangeArgs mocks base method.
+// ZRangeArgs mock base method.
 func (m *MockCmdable) ZRangeArgs(arg0 context.Context, arg1 redis.ZRangeArgs) *redis.StringSliceCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "ZRangeArgs", arg0, arg1)
@@ -6677,7 +6677,7 @@ func (mr *MockCmdableMockRecorder) ZRangeArgs(arg0, arg1 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ZRangeArgs", reflect.TypeOf((*MockCmdable)(nil).ZRangeArgs), arg0, arg1)
 }
 
-// ZRangeArgsWithScores mocks base method.
+// ZRangeArgsWithScores mock base method.
 func (m *MockCmdable) ZRangeArgsWithScores(arg0 context.Context, arg1 redis.ZRangeArgs) *redis.ZSliceCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "ZRangeArgsWithScores", arg0, arg1)
@@ -6691,7 +6691,7 @@ func (mr *MockCmdableMockRecorder) ZRangeArgsWithScores(arg0, arg1 any) *gomock.
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ZRangeArgsWithScores", reflect.TypeOf((*MockCmdable)(nil).ZRangeArgsWithScores), arg0, arg1)
 }
 
-// ZRangeByLex mocks base method.
+// ZRangeByLex mock base method.
 func (m *MockCmdable) ZRangeByLex(arg0 context.Context, arg1 string, arg2 *redis.ZRangeBy) *redis.StringSliceCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "ZRangeByLex", arg0, arg1, arg2)
@@ -6705,7 +6705,7 @@ func (mr *MockCmdableMockRecorder) ZRangeByLex(arg0, arg1, arg2 any) *gomock.Cal
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ZRangeByLex", reflect.TypeOf((*MockCmdable)(nil).ZRangeByLex), arg0, arg1, arg2)
 }
 
-// ZRangeByScore mocks base method.
+// ZRangeByScore mock base method.
 func (m *MockCmdable) ZRangeByScore(arg0 context.Context, arg1 string, arg2 *redis.ZRangeBy) *redis.StringSliceCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "ZRangeByScore", arg0, arg1, arg2)
@@ -6719,7 +6719,7 @@ func (mr *MockCmdableMockRecorder) ZRangeByScore(arg0, arg1, arg2 any) *gomock.C
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ZRangeByScore", reflect.TypeOf((*MockCmdable)(nil).ZRangeByScore), arg0, arg1, arg2)
 }
 
-// ZRangeByScoreWithScores mocks base method.
+// ZRangeByScoreWithScores mock base method.
 func (m *MockCmdable) ZRangeByScoreWithScores(arg0 context.Context, arg1 string, arg2 *redis.ZRangeBy) *redis.ZSliceCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "ZRangeByScoreWithScores", arg0, arg1, arg2)
@@ -6733,7 +6733,7 @@ func (mr *MockCmdableMockRecorder) ZRangeByScoreWithScores(arg0, arg1, arg2 any)
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ZRangeByScoreWithScores", reflect.TypeOf((*MockCmdable)(nil).ZRangeByScoreWithScores), arg0, arg1, arg2)
 }
 
-// ZRangeStore mocks base method.
+// ZRangeStore mock base method.
 func (m *MockCmdable) ZRangeStore(arg0 context.Context, arg1 string, arg2 redis.ZRangeArgs) *redis.IntCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "ZRangeStore", arg0, arg1, arg2)
@@ -6747,7 +6747,7 @@ func (mr *MockCmdableMockRecorder) ZRangeStore(arg0, arg1, arg2 any) *gomock.Cal
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ZRangeStore", reflect.TypeOf((*MockCmdable)(nil).ZRangeStore), arg0, arg1, arg2)
 }
 
-// ZRangeWithScores mocks base method.
+// ZRangeWithScores mock base method.
 func (m *MockCmdable) ZRangeWithScores(arg0 context.Context, arg1 string, arg2, arg3 int64) *redis.ZSliceCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "ZRangeWithScores", arg0, arg1, arg2, arg3)
@@ -6761,7 +6761,7 @@ func (mr *MockCmdableMockRecorder) ZRangeWithScores(arg0, arg1, arg2, arg3 any) 
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ZRangeWithScores", reflect.TypeOf((*MockCmdable)(nil).ZRangeWithScores), arg0, arg1, arg2, arg3)
 }
 
-// ZRank mocks base method.
+// ZRank mock base method.
 func (m *MockCmdable) ZRank(arg0 context.Context, arg1, arg2 string) *redis.IntCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "ZRank", arg0, arg1, arg2)
@@ -6775,7 +6775,7 @@ func (mr *MockCmdableMockRecorder) ZRank(arg0, arg1, arg2 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ZRank", reflect.TypeOf((*MockCmdable)(nil).ZRank), arg0, arg1, arg2)
 }
 
-// ZRankWithScore mocks base method.
+// ZRankWithScore mock base method.
 func (m *MockCmdable) ZRankWithScore(arg0 context.Context, arg1, arg2 string) *redis.RankWithScoreCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "ZRankWithScore", arg0, arg1, arg2)
@@ -6789,7 +6789,7 @@ func (mr *MockCmdableMockRecorder) ZRankWithScore(arg0, arg1, arg2 any) *gomock.
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ZRankWithScore", reflect.TypeOf((*MockCmdable)(nil).ZRankWithScore), arg0, arg1, arg2)
 }
 
-// ZRem mocks base method.
+// ZRem mock base method.
 func (m *MockCmdable) ZRem(arg0 context.Context, arg1 string, arg2 ...any) *redis.IntCmd {
 	m.ctrl.T.Helper()
 	varargs := []any{arg0, arg1}
@@ -6808,7 +6808,7 @@ func (mr *MockCmdableMockRecorder) ZRem(arg0, arg1 any, arg2 ...any) *gomock.Cal
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ZRem", reflect.TypeOf((*MockCmdable)(nil).ZRem), varargs...)
 }
 
-// ZRemRangeByLex mocks base method.
+// ZRemRangeByLex mock base method.
 func (m *MockCmdable) ZRemRangeByLex(arg0 context.Context, arg1, arg2, arg3 string) *redis.IntCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "ZRemRangeByLex", arg0, arg1, arg2, arg3)
@@ -6822,7 +6822,7 @@ func (mr *MockCmdableMockRecorder) ZRemRangeByLex(arg0, arg1, arg2, arg3 any) *g
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ZRemRangeByLex", reflect.TypeOf((*MockCmdable)(nil).ZRemRangeByLex), arg0, arg1, arg2, arg3)
 }
 
-// ZRemRangeByRank mocks base method.
+// ZRemRangeByRank mock base method.
 func (m *MockCmdable) ZRemRangeByRank(arg0 context.Context, arg1 string, arg2, arg3 int64) *redis.IntCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "ZRemRangeByRank", arg0, arg1, arg2, arg3)
@@ -6836,7 +6836,7 @@ func (mr *MockCmdableMockRecorder) ZRemRangeByRank(arg0, arg1, arg2, arg3 any) *
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ZRemRangeByRank", reflect.TypeOf((*MockCmdable)(nil).ZRemRangeByRank), arg0, arg1, arg2, arg3)
 }
 
-// ZRemRangeByScore mocks base method.
+// ZRemRangeByScore mock base method.
 func (m *MockCmdable) ZRemRangeByScore(arg0 context.Context, arg1, arg2, arg3 string) *redis.IntCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "ZRemRangeByScore", arg0, arg1, arg2, arg3)
@@ -6850,7 +6850,7 @@ func (mr *MockCmdableMockRecorder) ZRemRangeByScore(arg0, arg1, arg2, arg3 any) 
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ZRemRangeByScore", reflect.TypeOf((*MockCmdable)(nil).ZRemRangeByScore), arg0, arg1, arg2, arg3)
 }
 
-// ZRevRange mocks base method.
+// ZRevRange mock base method.
 func (m *MockCmdable) ZRevRange(arg0 context.Context, arg1 string, arg2, arg3 int64) *redis.StringSliceCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "ZRevRange", arg0, arg1, arg2, arg3)
@@ -6864,7 +6864,7 @@ func (mr *MockCmdableMockRecorder) ZRevRange(arg0, arg1, arg2, arg3 any) *gomock
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ZRevRange", reflect.TypeOf((*MockCmdable)(nil).ZRevRange), arg0, arg1, arg2, arg3)
 }
 
-// ZRevRangeByLex mocks base method.
+// ZRevRangeByLex mock base method.
 func (m *MockCmdable) ZRevRangeByLex(arg0 context.Context, arg1 string, arg2 *redis.ZRangeBy) *redis.StringSliceCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "ZRevRangeByLex", arg0, arg1, arg2)
@@ -6878,7 +6878,7 @@ func (mr *MockCmdableMockRecorder) ZRevRangeByLex(arg0, arg1, arg2 any) *gomock.
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ZRevRangeByLex", reflect.TypeOf((*MockCmdable)(nil).ZRevRangeByLex), arg0, arg1, arg2)
 }
 
-// ZRevRangeByScore mocks base method.
+// ZRevRangeByScore mock base method.
 func (m *MockCmdable) ZRevRangeByScore(arg0 context.Context, arg1 string, arg2 *redis.ZRangeBy) *redis.StringSliceCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "ZRevRangeByScore", arg0, arg1, arg2)
@@ -6892,7 +6892,7 @@ func (mr *MockCmdableMockRecorder) ZRevRangeByScore(arg0, arg1, arg2 any) *gomoc
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ZRevRangeByScore", reflect.TypeOf((*MockCmdable)(nil).ZRevRangeByScore), arg0, arg1, arg2)
 }
 
-// ZRevRangeByScoreWithScores mocks base method.
+// ZRevRangeByScoreWithScores mock base method.
 func (m *MockCmdable) ZRevRangeByScoreWithScores(arg0 context.Context, arg1 string, arg2 *redis.ZRangeBy) *redis.ZSliceCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "ZRevRangeByScoreWithScores", arg0, arg1, arg2)
@@ -6906,7 +6906,7 @@ func (mr *MockCmdableMockRecorder) ZRevRangeByScoreWithScores(arg0, arg1, arg2 a
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ZRevRangeByScoreWithScores", reflect.TypeOf((*MockCmdable)(nil).ZRevRangeByScoreWithScores), arg0, arg1, arg2)
 }
 
-// ZRevRangeWithScores mocks base method.
+// ZRevRangeWithScores mock base method.
 func (m *MockCmdable) ZRevRangeWithScores(arg0 context.Context, arg1 string, arg2, arg3 int64) *redis.ZSliceCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "ZRevRangeWithScores", arg0, arg1, arg2, arg3)
@@ -6920,7 +6920,7 @@ func (mr *MockCmdableMockRecorder) ZRevRangeWithScores(arg0, arg1, arg2, arg3 an
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ZRevRangeWithScores", reflect.TypeOf((*MockCmdable)(nil).ZRevRangeWithScores), arg0, arg1, arg2, arg3)
 }
 
-// ZRevRank mocks base method.
+// ZRevRank mock base method.
 func (m *MockCmdable) ZRevRank(arg0 context.Context, arg1, arg2 string) *redis.IntCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "ZRevRank", arg0, arg1, arg2)
@@ -6934,7 +6934,7 @@ func (mr *MockCmdableMockRecorder) ZRevRank(arg0, arg1, arg2 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ZRevRank", reflect.TypeOf((*MockCmdable)(nil).ZRevRank), arg0, arg1, arg2)
 }
 
-// ZRevRankWithScore mocks base method.
+// ZRevRankWithScore mock base method.
 func (m *MockCmdable) ZRevRankWithScore(arg0 context.Context, arg1, arg2 string) *redis.RankWithScoreCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "ZRevRankWithScore", arg0, arg1, arg2)
@@ -6948,7 +6948,7 @@ func (mr *MockCmdableMockRecorder) ZRevRankWithScore(arg0, arg1, arg2 any) *gomo
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ZRevRankWithScore", reflect.TypeOf((*MockCmdable)(nil).ZRevRankWithScore), arg0, arg1, arg2)
 }
 
-// ZScan mocks base method.
+// ZScan mock base method.
 func (m *MockCmdable) ZScan(arg0 context.Context, arg1 string, arg2 uint64, arg3 string, arg4 int64) *redis.ScanCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "ZScan", arg0, arg1, arg2, arg3, arg4)
@@ -6962,7 +6962,7 @@ func (mr *MockCmdableMockRecorder) ZScan(arg0, arg1, arg2, arg3, arg4 any) *gomo
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ZScan", reflect.TypeOf((*MockCmdable)(nil).ZScan), arg0, arg1, arg2, arg3, arg4)
 }
 
-// ZScore mocks base method.
+// ZScore mock base method.
 func (m *MockCmdable) ZScore(arg0 context.Context, arg1, arg2 string) *redis.FloatCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "ZScore", arg0, arg1, arg2)
@@ -6976,7 +6976,7 @@ func (mr *MockCmdableMockRecorder) ZScore(arg0, arg1, arg2 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ZScore", reflect.TypeOf((*MockCmdable)(nil).ZScore), arg0, arg1, arg2)
 }
 
-// ZUnion mocks base method.
+// ZUnion mock base method.
 func (m *MockCmdable) ZUnion(arg0 context.Context, arg1 redis.ZStore) *redis.StringSliceCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "ZUnion", arg0, arg1)
@@ -6990,7 +6990,7 @@ func (mr *MockCmdableMockRecorder) ZUnion(arg0, arg1 any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ZUnion", reflect.TypeOf((*MockCmdable)(nil).ZUnion), arg0, arg1)
 }
 
-// ZUnionStore mocks base method.
+// ZUnionStore mock base method.
 func (m *MockCmdable) ZUnionStore(arg0 context.Context, arg1 string, arg2 *redis.ZStore) *redis.IntCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "ZUnionStore", arg0, arg1, arg2)
@@ -7004,7 +7004,7 @@ func (mr *MockCmdableMockRecorder) ZUnionStore(arg0, arg1, arg2 any) *gomock.Cal
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ZUnionStore", reflect.TypeOf((*MockCmdable)(nil).ZUnionStore), arg0, arg1, arg2)
 }
 
-// ZUnionWithScores mocks base method.
+// ZUnionWithScores mock base method.
 func (m *MockCmdable) ZUnionWithScores(arg0 context.Context, arg1 redis.ZStore) *redis.ZSliceCmd {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "ZUnionWithScores", arg0, arg1)

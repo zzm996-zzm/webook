@@ -10,35 +10,54 @@ import (
 	"webook/internal/repository/dao"
 	"webook/internal/service"
 	"webook/internal/web"
+	ijwt "webook/internal/web/jwt"
 	"webook/ioc"
 )
 
+var thirdPartySet = wire.NewSet( // 第三方依赖
+	InitRedis, InitDB,
+	InitLogger)
+
 func InitWebServer() *gin.Engine {
 	wire.Build(
-		// 第三方依赖
-		ioc.InitRedis, ioc.InitDB,
+		thirdPartySet,
 		// DAO 部分
 		dao.NewUserDAO,
+		dao.NewArticleGORMDAO,
 
 		// cache 部分
 		cache.NewCodeCache, cache.NewUserCache,
+		cache.NewArticleRedisCache,
 
 		// repository 部分
 		repository.NewCachedUserRepository,
 		repository.NewCodeRepository,
+		repository.NewCachedArticleRepository,
 
 		// Service 部分
 		ioc.InitSMSService,
-		ioc.InitWechatService,
 		service.NewUserService,
 		service.NewCodeService,
+		service.NewArticleService,
+		InitWechatService,
 
 		// handler 部分
 		web.NewUserHandler,
+		web.NewArticleHandler,
 		web.NewOAuth2WechatHandler,
-
+		ijwt.NewRedisJWTHandler,
 		ioc.InitGinMiddlewares,
 		ioc.InitWebServer,
 	)
 	return gin.Default()
+}
+
+func InitArticleHandler(dao dao.ArticleDAO) *web.ArticleHandler {
+	wire.Build(
+		thirdPartySet,
+		service.NewArticleService,
+		web.NewArticleHandler,
+		cache.NewArticleRedisCache,
+		repository.NewCachedArticleRepository)
+	return &web.ArticleHandler{}
 }

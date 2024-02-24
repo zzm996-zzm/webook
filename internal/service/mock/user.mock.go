@@ -45,7 +45,7 @@ func (m *MockUserService) EXPECT() *MockUserServiceMockRecorder {
 	return m.recorder
 }
 
-// FindById mocks base method.
+// FindById mock base method.
 func (m *MockUserService) FindById(ctx context.Context, uid int64) (domain.User, error) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "FindById", ctx, uid)
@@ -60,7 +60,7 @@ func (mr *MockUserServiceMockRecorder) FindById(ctx, uid any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "FindById", reflect.TypeOf((*MockUserService)(nil).FindById), ctx, uid)
 }
 
-// FindOrCreate mocks base method.
+// FindOrCreate mock base method.
 func (m *MockUserService) FindOrCreate(ctx context.Context, phone string) (domain.User, error) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "FindOrCreate", ctx, phone)
@@ -75,7 +75,7 @@ func (mr *MockUserServiceMockRecorder) FindOrCreate(ctx, phone any) *gomock.Call
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "FindOrCreate", reflect.TypeOf((*MockUserService)(nil).FindOrCreate), ctx, phone)
 }
 
-// Login mocks base method.
+// Login mock base method.
 func (m *MockUserService) Login(ctx context.Context, email, password string) (domain.User, error) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "Login", ctx, email, password)
@@ -90,7 +90,7 @@ func (mr *MockUserServiceMockRecorder) Login(ctx, email, password any) *gomock.C
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Login", reflect.TypeOf((*MockUserService)(nil).Login), ctx, email, password)
 }
 
-// Signup mocks base method.
+// Signup mock base method.
 func (m *MockUserService) Signup(ctx context.Context, u domain.User) error {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "Signup", ctx, u)
@@ -104,7 +104,7 @@ func (mr *MockUserServiceMockRecorder) Signup(ctx, u any) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Signup", reflect.TypeOf((*MockUserService)(nil).Signup), ctx, u)
 }
 
-// UpdateNonSensitiveInfo mocks base method.
+// UpdateNonSensitiveInfo mock base method.
 func (m *MockUserService) UpdateNonSensitiveInfo(ctx context.Context, user domain.User) error {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "UpdateNonSensitiveInfo", ctx, user)
