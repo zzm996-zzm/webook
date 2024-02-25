@@ -38,7 +38,7 @@ func InitWebServer() *gin.Engine {
 	node := ioc.InitSnowFlake()
 	articleDAO := dao.NewMongoDBArticleDAO(database, node)
 	articleCache := cache.NewArticleRedisCache(cmdable)
-	articleRepository := repository.NewCachedArticleRepository(articleDAO, articleCache)
+	articleRepository := repository.NewCachedArticleRepository(articleDAO, userRepository, articleCache)
 	articleService := service.NewArticleService(articleRepository)
 	articleHandler := web.NewArticleHandler(logger, articleService)
 	wechatService := ioc.InitWechatService()

@@ -4,6 +4,7 @@ import (
 	"github.com/ecodeclub/ekit/slice"
 	"github.com/gin-gonic/gin"
 	"net/http"
+	"strconv"
 	"time"
 	"webook/internal/domain"
 	"webook/internal/service"
@@ -38,6 +39,9 @@ func (h *ArticleHandler) RegisterRoutes(server *gin.Engine) {
 	// 按照道理来说，这边就是 GET 方法
 	// /list?offset=?&limit=?
 	g.POST("/list", h.List)
+
+	pub := g.Group("/pub")
+	pub.GET("/:id", h.PubDetail)
 
 }
 
@@ -137,7 +141,55 @@ func (h *ArticleHandler) Publish(ctx *gin.Context) {
 }
 
 func (h *ArticleHandler) Detail(ctx *gin.Context) {
+	idstr := ctx.Param("id")
+	id, err := strconv.ParseInt(idstr, 10, 64)
+	if err != nil {
+		ctx.JSON(http.StatusOK, ginx.Result{
+			Msg:  "id 参数错误",
+			Code: 4,
+		})
+		h.l.Warn("查询文章失败，id 格式不对",
+			logger.String("id", idstr),
+			logger.Error(err))
+		return
+	}
+	art, err := h.svc.GetById(ctx, id)
+	if err != nil {
+		ctx.JSON(http.StatusOK, ginx.Result{
+			Msg:  "系统错误",
+			Code: 5,
+		})
+		h.l.Error("查询文章失败",
+			logger.Int64("id", id),
+			logger.Error(err))
+		return
+	}
+	uc := ctx.MustGet("user").(jwt.UserClaims)
+	if art.Author.Id != uc.Uid {
+		// 有人在搞鬼
+		ctx.JSON(http.StatusOK, ginx.Result{
+			Msg:  "系统错误",
+			Code: 5,
+		})
+		h.l.Error("非法查询文章",
+			logger.Int64("id", id),
+			logger.Int64("uid", uc.Uid))
+		return
+	}
 
+	vo := ArticleVo{
+		Id:    art.Id,
+		Title: art.Title,
+		//Abstract: art.Abstract(),
+
+		Content:  art.Content,
+		AuthorId: art.Author.Id,
+		// 列表，你不需要
+		Status: art.Status.ToUint8(),
+		Ctime:  art.Ctime.Format(time.DateTime),
+		Utime:  art.Utime.Format(time.DateTime),
+	}
+	ctx.JSON(http.StatusOK, ginx.Result{Data: vo})
 }
 
 func (h *ArticleHandler) List(ctx *gin.Context) {
@@ -175,5 +227,46 @@ func (h *ArticleHandler) List(ctx *gin.Context) {
 				Utime:  src.Utime.Format(time.DateTime),
 			}
 		}),
+	})
+}
+
+func (h *ArticleHandler) PubDetail(ctx *gin.Context) {
+	idstr := ctx.Param("id")
+	id, err := strconv.ParseInt(idstr, 10, 64)
+	if err != nil {
+		ctx.JSON(http.StatusOK, ginx.Result{
+			Msg:  "id 参数错误",
+			Code: 4,
+		})
+		h.l.Warn("查询文章失败，id 格式不对",
+			logger.String("id", idstr),
+			logger.Error(err))
+		return
+	}
+
+	art, err := h.svc.GetPubById(ctx, id)
+	if err != nil {
+		ctx.JSON(http.StatusOK, ginx.Result{
+			Msg:  "系统错误",
+			Code: 5,
+		})
+		h.l.Error("查询文章失败，系统错误",
+			logger.Error(err))
+		return
+	}
+
+	ctx.JSON(http.StatusOK, ginx.Result{
+		Data: ArticleVo{
+			Id:    art.Id,
+			Title: art.Title,
+
+			Content:    art.Content,
+			AuthorId:   art.Author.Id,
+			AuthorName: art.Author.Name,
+
+			Status: art.Status.ToUint8(),
+			Ctime:  art.Ctime.Format(time.DateTime),
+			Utime:  art.Utime.Format(time.DateTime),
+		},
 	})
 }
