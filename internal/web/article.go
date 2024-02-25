@@ -14,15 +14,18 @@ import (
 )
 
 type ArticleHandler struct {
-	svc service.ArticleService
-	l   logger.Logger
+	svc     service.ArticleService
+	intrSvc service.InteractiveService
+	l       logger.Logger
 }
 
 func NewArticleHandler(l logger.Logger,
-	svc service.ArticleService) *ArticleHandler {
+	svc service.ArticleService,
+	intrSvc service.InteractiveService) *ArticleHandler {
 	return &ArticleHandler{
-		l:   l,
-		svc: svc,
+		l:       l,
+		intrSvc: intrSvc,
+		svc:     svc,
 	}
 }
 
@@ -254,6 +257,9 @@ func (h *ArticleHandler) PubDetail(ctx *gin.Context) {
 			logger.Error(err))
 		return
 	}
+
+	// biz article  bizId art.Id
+	err = h.intrSvc.IncrReadCnt(ctx, "articles", art.Id)
 
 	ctx.JSON(http.StatusOK, ginx.Result{
 		Data: ArticleVo{

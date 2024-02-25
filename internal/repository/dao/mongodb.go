@@ -17,13 +17,42 @@ type MongoDBArticleDAO struct {
 }
 
 func (m *MongoDBArticleDAO) GetPubById(ctx context.Context, id int64) (PublishedArticle, error) {
-	//TODO implement me
-	panic("implement me")
+	filter := bson.D{bson.E{"id", id}}
+
+	var art PublishedArticle
+
+	find, err := m.col.Find(ctx, filter)
+
+	if err != nil {
+		return PublishedArticle{}, err
+	}
+
+	err = find.Decode(&art)
+
+	if err != nil {
+		return PublishedArticle{}, err
+	}
+
+	return art, nil
 }
 
 func (m *MongoDBArticleDAO) GetById(ctx context.Context, id int64) (Article, error) {
-	//TODO implement me
-	panic("implement me")
+	filter := bson.D{bson.E{"id", id}}
+	var art Article
+	find, err := m.col.Find(ctx, filter)
+
+	if err != nil {
+		return Article{}, err
+	}
+
+	err = find.Decode(&art)
+
+	if err != nil {
+		return Article{}, err
+	}
+
+	return art, nil
+
 }
 
 func (m *MongoDBArticleDAO) GetByAuthor(ctx context.Context, uid int64, offset int, limit int) ([]Article, error) {
