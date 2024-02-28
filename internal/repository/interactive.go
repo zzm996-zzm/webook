@@ -21,8 +21,7 @@ func (repo *CachedInteractiveRepository) IncrReadCnt(ctx context.Context, biz st
 	if err != nil {
 		return err
 	}
-
-	// TODO: 更新缓存策略问题
+	
 	return repo.cache.IncrReadCntIfPresent(ctx, biz, bizId)
 }
 

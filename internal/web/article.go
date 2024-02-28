@@ -1,6 +1,7 @@
 package web
 
 import (
+	"context"
 	"github.com/ecodeclub/ekit/slice"
 	"github.com/gin-gonic/gin"
 	"net/http"
@@ -17,6 +18,7 @@ type ArticleHandler struct {
 	svc     service.ArticleService
 	intrSvc service.InteractiveService
 	l       logger.Logger
+	biz     string
 }
 
 func NewArticleHandler(l logger.Logger,
@@ -26,6 +28,7 @@ func NewArticleHandler(l logger.Logger,
 		l:       l,
 		intrSvc: intrSvc,
 		svc:     svc,
+		biz:     "article",
 	}
 }
 
@@ -259,7 +262,18 @@ func (h *ArticleHandler) PubDetail(ctx *gin.Context) {
 	}
 
 	// biz article  bizId art.Id
-	err = h.intrSvc.IncrReadCnt(ctx, "articles", art.Id)
+	go func() {
+		// 1. 如果你想摆脱原本主链路的超时控制，你就创建一个新的
+		// 2. 如果你不想，你就用 ctx
+		newCtx, cancel := context.WithTimeout(context.Background(), time.Second)
+		defer cancel()
+		er := h.intrSvc.IncrReadCnt(newCtx, h.biz, art.Id)
+		if er != nil {
+			h.l.Error("更新阅读数失败",
+				logger.Int64("aid", art.Id),
+				logger.Error(err))
+		}
+	}()
 
 	ctx.JSON(http.StatusOK, ginx.Result{
 		Data: ArticleVo{

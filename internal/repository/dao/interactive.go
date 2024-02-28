@@ -21,18 +21,15 @@ func (dao *GORMInteractiveDAO) IncrReadCnt(ctx context.Context, biz string, bizI
 	// upsert 语句，保证并发安全
 	return dao.db.WithContext(ctx).Clauses(clause.OnConflict{
 		DoUpdates: clause.Assignments(map[string]interface{}{
-			"read_cnt": gorm.Expr("read_cnt + 1"),
+			"read_cnt": gorm.Expr("`read_cnt` + 1"),
 			"utime":    now,
 		}),
 	}).Create(&Interactive{
-		Id:         0,
-		BizId:      0,
-		Biz:        "",
-		ReadCnt:    0,
-		LikeCnt:    0,
-		CollectCnt: 0,
-		Utime:      0,
-		Ctime:      0,
+		Biz:     biz,
+		BizId:   bizId,
+		ReadCnt: 1,
+		Ctime:   now,
+		Utime:   now,
 	}).Error
 }
 
@@ -47,7 +44,7 @@ type Interactive struct {
 	// <bizid, biz>
 	BizId int64 `gorm:"uniqueIndex:biz_type_id"`
 	// WHERE biz = ?
-	Biz string `gorm:"uniqueIndex:biz_type_id"`
+	Biz string `gorm:"uniqueIndex:biz_type_id;type:varchar(100)"`
 
 	ReadCnt    int64
 	LikeCnt    int64

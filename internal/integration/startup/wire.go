@@ -18,27 +18,39 @@ var thirdPartySet = wire.NewSet( // 第三方依赖
 	InitRedis, InitDB,
 	InitLogger)
 
+var userSvcProvider = wire.NewSet(
+	dao.NewUserDAO,
+	cache.NewUserCache,
+	repository.NewCachedUserRepository,
+	service.NewUserService)
+
+var articlSvcProvider = wire.NewSet(
+	repository.NewCachedArticleRepository,
+	cache.NewArticleRedisCache,
+	dao.NewArticleGORMDAO,
+	service.NewArticleService)
+
+var interactiveSvcSet = wire.NewSet(dao.NewGORMInteractiveDAO,
+	cache.NewInteractiveRedisCache,
+	repository.NewCachedInteractiveRepository,
+	service.NewInteractiveService,
+)
+
 func InitWebServer() *gin.Engine {
 	wire.Build(
 		thirdPartySet,
-		// DAO 部分
-		dao.NewUserDAO,
-		dao.NewArticleGORMDAO,
-
+		userSvcProvider,
+		articlSvcProvider,
+		interactiveSvcSet,
 		// cache 部分
-		cache.NewCodeCache, cache.NewUserCache,
-		cache.NewArticleRedisCache,
+		cache.NewCodeCache,
 
 		// repository 部分
-		repository.NewCachedUserRepository,
 		repository.NewCodeRepository,
-		repository.NewCachedArticleRepository,
 
 		// Service 部分
 		ioc.InitSMSService,
-		service.NewUserService,
 		service.NewCodeService,
-		service.NewArticleService,
 		InitWechatService,
 
 		// handler 部分
@@ -52,12 +64,27 @@ func InitWebServer() *gin.Engine {
 	return gin.Default()
 }
 
+//func InitAsyncSmsService(svc sms.Service) *async.Service {
+//	wire.Build(thirdPartySet, repository.NewAsyncSMSRepository,
+//		dao.NewGORMAsyncSmsDAO,
+//		async.NewService,
+//	)
+//	return &async.Service{}
+//}
+
 func InitArticleHandler(dao dao.ArticleDAO) *web.ArticleHandler {
 	wire.Build(
 		thirdPartySet,
-		service.NewArticleService,
-		web.NewArticleHandler,
+		userSvcProvider,
+		interactiveSvcSet,
+		repository.NewCachedArticleRepository,
 		cache.NewArticleRedisCache,
-		repository.NewCachedArticleRepository)
+		service.NewArticleService,
+		web.NewArticleHandler)
 	return &web.ArticleHandler{}
+}
+
+func InitInteractiveService() service.InteractiveService {
+	wire.Build(thirdPartySet, interactiveSvcSet)
+	return service.NewInteractiveService(nil)
 }
