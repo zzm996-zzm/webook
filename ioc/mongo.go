@@ -7,6 +7,7 @@ import (
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"
 	"time"
+	"webook/internal/repository/dao"
 )
 
 func InitMongoDB() *mongo.Database {
@@ -25,5 +26,13 @@ func InitMongoDB() *mongo.Database {
 	if err != nil {
 		panic(err)
 	}
-	return client.Database("webook")
+
+	mdb := client.Database("webook")
+
+	err = dao.InitCollection(mdb)
+	if err != nil {
+		panic(err)
+	}
+
+	return mdb
 }
