@@ -21,7 +21,7 @@ func (m *MongoDBArticleDAO) GetPubById(ctx context.Context, id int64) (Published
 
 	var art PublishedArticle
 
-	find, err := m.col.Find(ctx, filter)
+	find, err := m.liveCol.Find(ctx, filter)
 
 	if err != nil {
 		return PublishedArticle{}, err

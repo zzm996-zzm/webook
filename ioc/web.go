@@ -10,6 +10,7 @@ import (
 	"webook/internal/web"
 	ijwt "webook/internal/web/jwt"
 	"webook/internal/web/middleware"
+	"webook/pkg/ginx/middleware/prometheus"
 	"webook/pkg/ginx/middleware/ratelimit"
 	"webook/pkg/limiter"
 	"webook/pkg/logger"
@@ -28,6 +29,12 @@ func InitWebServer(mdls []gin.HandlerFunc,
 }
 
 func InitGinMiddlewares(redisClient redis.Cmdable, hdl ijwt.Handler, l logger.Logger) []gin.HandlerFunc {
+	pb := &prometheus.Builder{
+		Namespace: "zzm",
+		Subsystem: "webook",
+		Name:      "gin_http",
+		Help:      "统计 GIN 的HTTP接口数据",
+	}
 	return []gin.HandlerFunc{
 		cors.New(cors.Config{
 			// 是否允许带上用户认证信息 比如cookie
@@ -45,6 +52,9 @@ func InitGinMiddlewares(redisClient redis.Cmdable, hdl ijwt.Handler, l logger.Lo
 			},
 			MaxAge: 12 * time.Hour,
 		}),
+
+		pb.BuilderResponseTime(),
+		pb.BuilderActiveRequest(),
 
 		ratelimit.NewBuilder(limiter.NewRedisSlidingWindowLimiter(redisClient, time.Second, 1000)).Build(),
 
