@@ -51,8 +51,8 @@ func InitWebServer() *App {
 	wechatService := ioc.InitWechatService()
 	oAuth2WechatHandler := web.NewOAuth2WechatHandler(wechatService, userService, handler)
 	engine := ioc.InitWebServer(v, userHandler, articleHandler, oAuth2WechatHandler)
-	interactiveReadEventConsumer := article.NewInteractiveReadEventConsumer(interactiveRepository, client, logger)
-	v2 := ioc.InitConsumers(interactiveReadEventConsumer)
+	interactiveReadEventBatchConsumer := article.NewInteractiveReadEventBatchConsumer(interactiveRepository, client, logger)
+	v2 := ioc.InitConsumers(interactiveReadEventBatchConsumer)
 	app := &App{
 		server:    engine,
 		consumers: v2,

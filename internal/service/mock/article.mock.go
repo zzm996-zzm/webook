@@ -38,6 +38,10 @@ func (m *MockArticleService) Withdraw(ctx context.Context, uid int64, id int64) 
 	panic("implement me")
 }
 
+
+
+
+
 // MockArticleServiceMockRecorder is the mock recorder for MockArticleService.
 type MockArticleServiceMockRecorder struct {
 	mock *MockArticleService

@@ -24,7 +24,8 @@ func InitWebServer() *App {
 		ioc.InitSnowFlake,
 		ioc.InitSyncProducer,
 		ioc.InitConsumers,
-		article.NewInteractiveReadEventConsumer,
+		//article.NewInteractiveReadEventConsumer,
+		article.NewInteractiveReadEventBatchConsumer,
 		article.NewSaramaSyncProducer,
 
 		// DAO 部分

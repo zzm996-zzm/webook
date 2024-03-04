@@ -17,10 +17,27 @@ type InteractiveDAO interface {
 	GetCollectInfo(ctx context.Context,
 		biz string, id int64, uid int64) (UserCollectionBiz, error)
 	Get(ctx context.Context, biz string, id int64) (Interactive, error)
+	BatchIncrReadCnt(ctx context.Context, biz []string, id []int64) error
 }
 
 type GORMInteractiveDAO struct {
 	db *gorm.DB
+}
+
+func (dao *GORMInteractiveDAO) BatchIncrReadCnt(ctx context.Context, biz []string, id []int64) error {
+	return dao.db.WithContext(ctx).Transaction(func(tx *gorm.DB) error {
+		txDao := NewGORMInteractiveDAO(tx)
+
+		for i := 0; i < len(biz); i++ {
+			err := txDao.IncrReadCnt(ctx, biz[i], id[i])
+			if err != nil {
+				return err
+			}
+		}
+
+		return nil
+	})
+
 }
 
 func (dao *GORMInteractiveDAO) Get(ctx context.Context, biz string, id int64) (Interactive, error) {
