@@ -26,11 +26,11 @@ func (m *MongoDBArticleDAO) GetPubById(ctx context.Context, id int64) (Published
 	if err != nil {
 		return PublishedArticle{}, err
 	}
-
-	err = find.Decode(&art)
-
-	if err != nil {
-		return PublishedArticle{}, err
+	for find.Next(ctx) {
+		err = find.Decode(&art)
+		if err != nil {
+			return PublishedArticle{}, err
+		}
 	}
 
 	return art, nil

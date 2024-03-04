@@ -52,7 +52,7 @@ func (i *InteractiveReadEventBatchConsumer) Consume(msg []*sarama.ConsumerMessag
 	ctx, cancel := context.WithTimeout(context.Background(), time.Second*5)
 	defer cancel()
 
-	i.l.Info("我开始异步消费处理了，这一批数据有：", logger.Int64("数据量", int64(len(msg))))
+	//i.l.Info("我开始异步消费处理了，这一批数据有：", logger.Int64("数据量", int64(len(msg))))
 	return i.repo.BatchIncrReadCnt(ctx, bizs, bizIds)
 
 }
