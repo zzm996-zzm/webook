@@ -3,8 +3,8 @@
 package main
 
 import (
-	"github.com/gin-gonic/gin"
 	"github.com/google/wire"
+	"webook/internal/events/article"
 	"webook/internal/repository"
 	"webook/internal/repository/cache"
 	"webook/internal/repository/dao"
@@ -14,20 +14,24 @@ import (
 	"webook/ioc"
 )
 
-func InitWebServer() *gin.Engine {
+func InitWebServer() *App {
 	wire.Build(
 		// 第三方依赖
+		ioc.InitSaramaClient,
 		ioc.InitRedis, ioc.InitDB,
 		ioc.InitLogger,
 		ioc.InitMongoDB,
 		ioc.InitSnowFlake,
+		ioc.InitSyncProducer,
+		ioc.InitConsumers,
+		article.NewInteractiveReadEventConsumer,
+		article.NewSaramaSyncProducer,
 
 		// DAO 部分
 		dao.NewUserDAO,
 		//dao.NewArticleGORMDAO,
 		dao.NewMongoDBArticleDAO,
 		dao.NewGORMInteractiveDAO,
-
 
 		// cache 部分
 		cache.NewCodeCache, cache.NewUserCache,
@@ -55,6 +59,8 @@ func InitWebServer() *gin.Engine {
 		web.NewOAuth2WechatHandler,
 		ioc.InitGinMiddlewares,
 		ioc.InitWebServer,
+
+		wire.Struct(new(App), "*"),
 	)
-	return gin.Default()
+	return new(App)
 }

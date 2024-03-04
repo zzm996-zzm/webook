@@ -62,7 +62,7 @@ func (o *Options) init() {
 }
 
 func (s *Service) needAsync(errCnt, successCnt int64, stop chan int) bool {
-	// 如果外部开启异步策略则直接返回
+	// 如果外部开启异步策略则直接返回，则不会进行 同步与异步之间的互相转换
 	if s.option.Async {
 		return true
 	}
@@ -195,8 +195,11 @@ func (s *Service) AsyncSend() {
 }
 
 func (s *Service) Send(ctx context.Context, tplId string, args []string, numbers ...string) error {
+	// 停止异步的chan
 	stop := s.stop
+	// err次数
 	errCnt := s.errCnt
+	// 成功次数
 	sucCnt := s.successCnt
 	if s.needAsync(errCnt, sucCnt, stop) {
 

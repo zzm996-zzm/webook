@@ -7,7 +7,7 @@
 package main
 
 import (
-	"github.com/gin-gonic/gin"
+	"webook/internal/events/article"
 	"webook/internal/repository"
 	"webook/internal/repository/cache"
 	"webook/internal/repository/dao"
@@ -19,7 +19,7 @@ import (
 
 // Injectors from wire.go:
 
-func InitWebServer() *gin.Engine {
+func InitWebServer() *App {
 	cmdable := ioc.InitRedis()
 	handler := jwt.NewRedisJWTHandler(cmdable)
 	logger := ioc.InitLogger()
@@ -39,14 +39,23 @@ func InitWebServer() *gin.Engine {
 	articleDAO := dao.NewMongoDBArticleDAO(database, node)
 	articleCache := cache.NewArticleRedisCache(cmdable)
 	articleRepository := repository.NewCachedArticleRepository(articleDAO, userRepository, articleCache)
-	articleService := service.NewArticleService(articleRepository)
+	client := ioc.InitSaramaClient()
+	syncProducer := ioc.InitSyncProducer(client)
+	producer := article.NewSaramaSyncProducer(syncProducer)
+	articleService := service.NewArticleService(articleRepository, producer)
 	interactiveDAO := dao.NewGORMInteractiveDAO(db)
 	interactiveCache := cache.NewInteractiveRedisCache(cmdable)
-	interactiveRepository := repository.NewCachedInteractiveRepository(interactiveDAO, interactiveCache)
+	interactiveRepository := repository.NewCachedInteractiveRepository(interactiveDAO, logger, interactiveCache)
 	interactiveService := service.NewInteractiveService(interactiveRepository)
 	articleHandler := web.NewArticleHandler(logger, articleService, interactiveService)
 	wechatService := ioc.InitWechatService()
 	oAuth2WechatHandler := web.NewOAuth2WechatHandler(wechatService, userService, handler)
 	engine := ioc.InitWebServer(v, userHandler, articleHandler, oAuth2WechatHandler)
-	return engine
+	interactiveReadEventConsumer := article.NewInteractiveReadEventConsumer(interactiveRepository, client, logger)
+	v2 := ioc.InitConsumers(interactiveReadEventConsumer)
+	app := &App{
+		server:    engine,
+		consumers: v2,
+	}
+	return app
 }

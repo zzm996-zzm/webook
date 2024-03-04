@@ -125,7 +125,7 @@ func (m *MongoDBArticleDAO) Sync(ctx context.Context, art Article) (int64, error
 	art.Id = id
 	now := time.Now().UnixMilli()
 	art.Utime = now
-	// liveCol 是 INSERT or Update 语义
+	//liveCol 是 INSERT or Update 语义
 	filter := bson.D{bson.E{"id", art.Id},
 		bson.E{"author_id", art.AuthorId}}
 	set := bson.D{bson.E{"$set", art},

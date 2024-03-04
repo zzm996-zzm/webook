@@ -1,9 +1,9 @@
 package web
 
 import (
-	"context"
 	"github.com/ecodeclub/ekit/slice"
 	"github.com/gin-gonic/gin"
+	"golang.org/x/sync/errgroup"
 	"net/http"
 	"strconv"
 	"time"
@@ -152,7 +152,8 @@ func (h *ArticleHandler) Edit(ctx *gin.Context) {
 
 func (h *ArticleHandler) Publish(ctx *gin.Context) {
 	type Req struct {
-		Id      int64
+		// 这个地方要兼容 mongo db
+		Id      int64  `json:"id"`
 		Title   string `json:"title"`
 		Content string `json:"content"`
 	}
@@ -289,7 +290,26 @@ func (h *ArticleHandler) PubDetail(ctx *gin.Context) {
 		return
 	}
 
-	art, err := h.svc.GetPubById(ctx, id)
+	var (
+		eg   errgroup.Group
+		art  domain.Article
+		intr domain.Interactive
+	)
+
+	uc := ctx.MustGet("user").(jwt.UserClaims)
+
+	eg.Go(func() error {
+		var er error
+		art, er = h.svc.GetPubById(ctx, id, uc.Uid)
+		return er
+	})
+
+	eg.Go(func() error {
+		var er error
+		intr, er = h.intrSvc.Get(ctx, h.biz, id, uc.Uid)
+		return er
+	})
+
 	if err != nil {
 		ctx.JSON(http.StatusOK, ginx.Result{
 			Msg:  "系统错误",
@@ -300,19 +320,22 @@ func (h *ArticleHandler) PubDetail(ctx *gin.Context) {
 		return
 	}
 
-	// biz article  bizId art.Id
-	go func() {
-		// 1. 如果你想摆脱原本主链路的超时控制，你就创建一个新的
-		// 2. 如果你不想，你就用 ctx
-		newCtx, cancel := context.WithTimeout(context.Background(), time.Second)
-		defer cancel()
-		er := h.intrSvc.IncrReadCnt(newCtx, h.biz, art.Id)
-		if er != nil {
-			h.l.Error("更新阅读数失败",
-				logger.Int64("aid", art.Id),
-				logger.Error(err))
-		}
-	}()
+	err = eg.Wait()
+
+	//// biz article  bizId art.Id
+	//go func() {
+	//	// 1. 如果你想摆脱原本主链路的超时控制，你就创建一个新的
+	//	// 2. 如果你不想，你就用 ctx
+	//	newCtx, cancel := context.WithTimeout(context.Background(), time.Second)
+	//	defer cancel()
+	//	er := h.intrSvc.IncrReadCnt(newCtx, h.biz, art.Id)
+	//	if er != nil {
+	//		h.l.Error("更新阅读数失败",
+	//			logger.Int64("aid", art.Id),
+	//			logger.Int64("uid", uc.Uid),
+	//			logger.Error(err))
+	//	}
+	//}()
 
 	ctx.JSON(http.StatusOK, ginx.Result{
 		Data: ArticleVo{
@@ -322,6 +345,12 @@ func (h *ArticleHandler) PubDetail(ctx *gin.Context) {
 			Content:    art.Content,
 			AuthorId:   art.Author.Id,
 			AuthorName: art.Author.Name,
+
+			ReadCnt:    intr.ReadCnt,
+			CollectCnt: intr.CollectCnt,
+			LikeCnt:    intr.LikeCnt,
+			Liked:      intr.Liked,
+			Collected:  intr.Collected,
 
 			Status: art.Status.ToUint8(),
 			Ctime:  art.Ctime.Format(time.DateTime),
@@ -357,3 +386,5 @@ func (h *ArticleHandler) Collect(ctx *gin.Context) {
 		Msg: "OK",
 	})
 }
+
+//TODO: 取消收藏

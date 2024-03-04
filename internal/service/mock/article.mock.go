@@ -23,6 +23,16 @@ type MockArticleService struct {
 	recorder *MockArticleServiceMockRecorder
 }
 
+func (m *MockArticleService) GetById(ctx context.Context, id int64) (domain.Article, error) {
+	//TODO implement me
+	panic("implement me")
+}
+
+func (m *MockArticleService) GetPubById(ctx context.Context, id int64) (domain.Article, error) {
+	//TODO implement me
+	panic("implement me")
+}
+
 func (m *MockArticleService) Withdraw(ctx context.Context, uid int64, id int64) error {
 	//TODO implement me
 	panic("implement me")

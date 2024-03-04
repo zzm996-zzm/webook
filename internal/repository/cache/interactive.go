@@ -5,6 +5,9 @@ import (
 	_ "embed"
 	"fmt"
 	"github.com/redis/go-redis/v9"
+	"strconv"
+	"time"
+	"webook/internal/domain"
 )
 
 var (
@@ -21,10 +24,42 @@ type InteractiveCache interface {
 	IncrLikeCntIfPresent(ctx context.Context, biz string, id int64) error
 	DecrLikeCntIfPresent(ctx context.Context, biz string, id int64) error
 	IncrCollectCntIfPresent(ctx context.Context, biz string, id int64) error
+	Get(ctx context.Context, biz string, id int64) (domain.Interactive, error)
+	Set(ctx context.Context, biz string, id int64, res domain.Interactive) error
 }
 
 type InteractiveRedisCache struct {
 	client redis.Cmdable
+}
+
+func (i *InteractiveRedisCache) Get(ctx context.Context, biz string, id int64) (domain.Interactive, error) {
+	key := i.key(biz, id)
+	res, err := i.client.HGetAll(ctx, key).Result()
+	if err != nil {
+		return domain.Interactive{}, err
+	}
+	if len(res) == 0 {
+		return domain.Interactive{}, ErrKeyNotExist
+	}
+	var intr domain.Interactive
+	// 这边是可以忽略错误的
+	intr.CollectCnt, _ = strconv.ParseInt(res[fieldCollectCnt], 10, 64)
+	intr.LikeCnt, _ = strconv.ParseInt(res[fieldLikeCnt], 10, 64)
+	intr.ReadCnt, _ = strconv.ParseInt(res[fieldReadCnt], 10, 64)
+	return intr, nil
+}
+
+func (i *InteractiveRedisCache) Set(ctx context.Context, biz string, id int64, res domain.Interactive) error {
+	key := i.key(biz, id)
+	err := i.client.HSet(ctx, key, fieldCollectCnt, res.CollectCnt,
+		fieldReadCnt, res.ReadCnt,
+		fieldLikeCnt, res.LikeCnt,
+	).Err()
+	if err != nil {
+		return err
+	}
+	// 设置15分钟过期时间
+	return i.client.Expire(ctx, key, time.Minute*15).Err()
 }
 
 func (i *InteractiveRedisCache) IncrLikeCntIfPresent(ctx context.Context,
