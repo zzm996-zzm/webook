@@ -2,6 +2,7 @@ package domain
 
 import "time"
 
+// article
 type Article struct {
 	Id      int64
 	Title   string
