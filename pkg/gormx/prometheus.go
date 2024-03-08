@@ -104,3 +104,12 @@ func (c *Callbacks) After(typ string) func(db *gorm.DB) {
 		}
 	}
 }
+
+func NewCallbacks(opts prometheus.SummaryOpts) *Callbacks {
+	vector := prometheus.NewSummaryVec(opts,
+		[]string{"type", "table"})
+	prometheus.MustRegister(vector)
+	return &Callbacks{
+		vector: vector,
+	}
+}

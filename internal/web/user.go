@@ -1,6 +1,7 @@
 package web
 
 import (
+	"errors"
 	"fmt"
 	regexp "github.com/dlclark/regexp2"
 	"github.com/gin-contrib/sessions"
@@ -43,7 +44,10 @@ func (h *UserHandler) RegisterRoutes(server *gin.Engine) {
 	ug := server.Group("/users")
 	//ug.POST("/login", c.Login)
 	ug.POST("/login", h.LoginJWT)
-	ug.POST("/signup", h.SignUp)
+
+	//TODO: 所有的都修改
+	ug.POST("/signup", ginx.WrapBody(h.SignUp))
+
 	ug.POST("/edit", h.Edit)
 	ug.POST("/login_sms/code/send", h.SendSMSLoginCode)
 	ug.POST("/login_sms", h.LoginSMS)
@@ -92,43 +96,48 @@ func (h *UserHandler) Login(ctx *gin.Context) {
 }
 
 // SignUp 注册
-func (h *UserHandler) SignUp(ctx *gin.Context) {
-	type SignupReq struct {
-		Email           string `json:"email"`
-		Password        string `json:"password"`
-		ConfirmPassword string `json:"confirmpassword"`
-	}
-	var req SignupReq
-	if err := ctx.Bind(&req); err != nil {
-		ctx.String(http.StatusOK, "系统错误")
-		return
-	}
+func (h *UserHandler) SignUp(ctx *gin.Context, req SignUpReq) (ginx.Result, error) {
 
 	isEmail, err := h.emailRexExp.MatchString(req.Email)
 	if err != nil {
-		return
+		return ginx.Result{
+			Code: 5,
+			Msg:  "系统错误",
+		}, err
 	}
 
 	if !isEmail {
 		ctx.String(http.StatusOK, "邮箱格式错误")
-		return
+		return ginx.Result{
+			Code: 4,
+			Msg:  "非法邮箱格式",
+		}, nil
 	}
 
 	if req.Password != req.ConfirmPassword {
 		ctx.String(http.StatusOK, "两次密码不正确")
-		return
+		return ginx.Result{
+			Code: 4,
+			Msg:  "两次输入的密码不相等",
+		}, nil
 	}
 
 	isPassword, err := h.passwordRexExp.MatchString(req.Password)
 
 	if err != nil {
 		ctx.String(http.StatusOK, "系统错误")
-		return
+		return ginx.Result{
+			Code: 5,
+			Msg:  "系统错误",
+		}, err
 	}
 
 	if !isPassword {
 		ctx.String(http.StatusOK, "密码必须包含数字、特殊字符、并且长度不能小于 8 位")
-		return
+		return ginx.Result{
+			Code: 4,
+			Msg:  "密码必须包含字母、数字、特殊字符",
+		}, nil
 	}
 
 	err = h.svc.Signup(ctx, domain.User{
@@ -136,13 +145,20 @@ func (h *UserHandler) SignUp(ctx *gin.Context) {
 		Password: req.Password,
 	})
 
-	switch err {
-	case nil:
-		ctx.String(http.StatusOK, "注册成功")
-	case service.ErrDuplicateEmail:
-		ctx.String(http.StatusOK, "邮箱冲突，请换一个")
+	switch {
+	case err == nil:
+		return ginx.Result{
+			Msg: "OK",
+		}, nil
+	case errors.Is(err, service.ErrDuplicateEmail):
+		return ginx.Result{
+			Code: 200,
+			Msg:  "邮箱冲突",
+		}, nil
 	default:
-		ctx.String(http.StatusOK, "注册失败")
+		return ginx.Result{
+			Msg: "系统错误",
+		}, err
 	}
 }
 
