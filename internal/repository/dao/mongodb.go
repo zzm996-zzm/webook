@@ -3,11 +3,12 @@ package dao
 import (
 	"context"
 	"errors"
+	"time"
+
 	"github.com/bwmarrin/snowflake"
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"
-	"time"
 )
 
 type MongoDBArticleDAO struct {
@@ -26,12 +27,12 @@ func (m *MongoDBArticleDAO) GetPubById(ctx context.Context, id int64) (Published
 	if err != nil {
 		return PublishedArticle{}, err
 	}
-	//for find.Next(ctx) {
-	err = find.Decode(&art)
-	if err != nil {
-		return PublishedArticle{}, err
+	for find.Next(ctx) {
+		err = find.Decode(&art)
+		if err != nil {
+			return PublishedArticle{}, err
+		}
 	}
-	//}
 
 	return art, nil
 }

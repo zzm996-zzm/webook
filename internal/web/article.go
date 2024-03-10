@@ -1,9 +1,6 @@
 package web
 
 import (
-	"github.com/ecodeclub/ekit/slice"
-	"github.com/gin-gonic/gin"
-	"golang.org/x/sync/errgroup"
 	"net/http"
 	"strconv"
 	"time"
@@ -12,6 +9,10 @@ import (
 	"webook/internal/web/jwt"
 	"webook/pkg/ginx"
 	"webook/pkg/logger"
+
+	"github.com/ecodeclub/ekit/slice"
+	"github.com/gin-gonic/gin"
+	"golang.org/x/sync/errgroup"
 )
 
 type ArticleHandler struct {
@@ -310,6 +311,8 @@ func (h *ArticleHandler) PubDetail(ctx *gin.Context) {
 		return er
 	})
 
+	err = eg.Wait()
+
 	if err != nil {
 		ctx.JSON(http.StatusOK, ginx.Result{
 			Msg:  "系统错误",
@@ -319,8 +322,6 @@ func (h *ArticleHandler) PubDetail(ctx *gin.Context) {
 			logger.Error(err))
 		return
 	}
-
-	err = eg.Wait()
 
 	//// biz article  bizId art.Id
 	//go func() {

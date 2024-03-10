@@ -2,11 +2,13 @@ package article
 
 import (
 	"context"
-	"github.com/IBM/sarama"
 	"time"
 	"webook/internal/repository"
 	"webook/pkg/logger"
 	"webook/pkg/saramax"
+
+	"github.com/IBM/sarama"
+	"github.com/prometheus/client_golang/prometheus"
 )
 
 type InteractiveReadEventConsumer struct {
@@ -28,9 +30,26 @@ func (i *InteractiveReadEventConsumer) Start() error {
 		return err
 	}
 
+	opts := prometheus.SummaryOpts{
+		Namespace: "webook_kafka",
+		Subsystem: "webook",
+		Name:      "interactive",
+		Help:      "统计 interactive 事件交互",
+		ConstLabels: map[string]string{
+			"instance_id": "my_kafka",
+		},
+		Objectives: map[float64]float64{
+			0.5:   0.01,
+			0.75:  0.01,
+			0.9:   0.01,
+			0.99:  0.001,
+			0.999: 0.0001,
+		},
+	}
+
 	// 异步执行消费逻辑
 	go func() {
-		er := cg.Consume(context.Background(), []string{TopicReadEvent}, saramax.NewHandler[ReadEvent](i.l, i.Consume))
+		er := cg.Consume(context.Background(), []string{TopicReadEvent}, saramax.NewHandler[ReadEvent](i.l, i.Consume, opts, "article_read_event"))
 
 		if er != nil {
 			i.l.Error("退出消费", logger.Error(er))

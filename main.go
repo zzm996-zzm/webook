@@ -1,14 +1,15 @@
 package main
 
 import (
+	"log"
+	"net/http"
+	"time"
+
 	"github.com/fsnotify/fsnotify"
 	"github.com/gin-gonic/gin"
 	"github.com/prometheus/client_golang/prometheus/promhttp"
 	"github.com/spf13/pflag"
 	"github.com/spf13/viper"
-	"log"
-	"net/http"
-	"time"
 )
 
 func main() {
@@ -16,6 +17,9 @@ func main() {
 	app := InitWebServer()
 	// 添加prometheus 监控
 	initPrometheus()
+	// 添加kafka 监控
+	app.kafkaMonitor.Register()
+
 	for _, c := range app.consumers {
 		err := c.Start()
 		if err != nil {

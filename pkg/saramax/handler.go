@@ -2,17 +2,35 @@ package saramax
 
 import (
 	"encoding/json"
-	"github.com/IBM/sarama"
+	"errors"
+	"time"
 	"webook/pkg/logger"
+
+	"github.com/IBM/sarama"
+	"github.com/prometheus/client_golang/prometheus"
 )
 
 type Handler[T any] struct {
-	l  logger.Logger
-	fn func(msg *sarama.ConsumerMessage, event T) error
+	l      logger.Logger
+	vector *prometheus.SummaryVec
+	fn     func(msg *sarama.ConsumerMessage, event T) error
+	event  string
 }
 
-func NewHandler[T any](l logger.Logger, fn func(msg *sarama.ConsumerMessage, event T) error) *Handler[T] {
-	return &Handler[T]{l: l, fn: fn}
+// options
+func InitSummaryVec(opts prometheus.SummaryOpts) *prometheus.SummaryVec {
+	vector := prometheus.NewSummaryVec(opts, []string{"error", "event"})
+	prometheus.MustRegister(vector)
+	return vector
+}
+
+func NewHandler[T any](l logger.Logger, fn func(msg *sarama.ConsumerMessage, event T) error, opts prometheus.SummaryOpts, event string) *Handler[T] {
+	return &Handler[T]{
+		l:      l,
+		fn:     fn,
+		vector: InitSummaryVec(opts),
+		event:  event,
+	}
 }
 
 func (h *Handler[T]) Setup(session sarama.ConsumerGroupSession) error {
@@ -40,8 +58,17 @@ func (h *Handler[T]) ConsumeClaim(session sarama.ConsumerGroupSession, claim sar
 				logger.Error(err))
 		}
 
-		// do something
+		// kafka添加监控
+		start := time.Now()
 		err = h.fn(msg, t)
+
+		// 暂时同步
+		duration := time.Since(start).Milliseconds()
+		if err == nil {
+			err = errors.New("no error")
+			h.vector.WithLabelValues(err.Error(), h.event).Observe(float64(duration))
+			err = nil
+		}
 
 		if err != nil {
 			h.l.Error("处理消息失败",

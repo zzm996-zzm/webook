@@ -3,7 +3,6 @@
 package main
 
 import (
-	"github.com/google/wire"
 	"webook/internal/events/article"
 	"webook/internal/repository"
 	"webook/internal/repository/cache"
@@ -12,6 +11,8 @@ import (
 	"webook/internal/web"
 	ijwt "webook/internal/web/jwt"
 	"webook/ioc"
+
+	"github.com/google/wire"
 )
 
 func InitWebServer() *App {
@@ -24,8 +25,9 @@ func InitWebServer() *App {
 		ioc.InitSnowFlake,
 		ioc.InitSyncProducer,
 		ioc.InitConsumers,
-		//article.NewInteractiveReadEventConsumer,
-		article.NewInteractiveReadEventBatchConsumer,
+		ioc.InitKafkaPrometheus,
+		article.NewInteractiveReadEventConsumer,
+		// article.NewInteractiveReadEventBatchConsumer,
 		article.NewSaramaSyncProducer,
 
 		// DAO 部分
