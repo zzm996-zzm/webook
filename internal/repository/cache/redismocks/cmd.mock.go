@@ -24,6 +24,11 @@ type MockCmdable struct {
 	recorder *MockCmdableMockRecorder
 }
 
+func (m *MockCmdable) ObjectFreq(ctx context.Context, key string) *redis.IntCmd {
+	//TODO implement me
+	panic("implement me")
+}
+
 // MockCmdableMockRecorder is the mock recorder for MockCmdable.
 type MockCmdableMockRecorder struct {
 	mock *MockCmdable

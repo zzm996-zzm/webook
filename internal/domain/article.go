@@ -7,6 +7,7 @@ type Article struct {
 	Id      int64
 	Title   string
 	Content string
+	LikeCnt int64
 	Author  Author
 	Status  ArticleStatus
 	Ctime   time.Time
