@@ -132,6 +132,7 @@ func (c *CachedInteractiveRepository) IncrReadCnt(ctx context.Context, biz strin
 	}
 
 	return c.cache.IncrReadCntIfPresent(ctx, biz, bizId)
+
 }
 
 func (c *CachedInteractiveRepository) AddCollectionItem(ctx context.Context,

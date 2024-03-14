@@ -26,7 +26,11 @@ func InitWebServer() *App {
 		ioc.InitSyncProducer,
 		ioc.InitConsumers,
 		ioc.InitKafkaPrometheus,
+
 		article.NewInteractiveReadEventConsumer,
+		article.NewInteractiveLikeEventConsumer,
+		article.NewInteractiveUnLikeEventConsumer,
+
 		// article.NewInteractiveReadEventBatchConsumer,
 		article.NewSaramaSyncProducer,
 

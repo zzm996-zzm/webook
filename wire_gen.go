@@ -46,13 +46,15 @@ func InitWebServer() *App {
 	interactiveDAO := dao.NewGORMInteractiveDAO(db)
 	interactiveCache := cache.NewInteractiveRedisCache(cmdable)
 	interactiveRepository := repository.NewCachedInteractiveRepository(interactiveDAO, logger, interactiveCache)
-	interactiveService := service.NewInteractiveService(interactiveRepository)
+	interactiveService := service.NewInteractiveService(interactiveRepository, producer, logger)
 	articleHandler := web.NewArticleHandler(logger, articleService, interactiveService)
 	wechatService := ioc.InitWechatService()
 	oAuth2WechatHandler := web.NewOAuth2WechatHandler(wechatService, userService, handler)
 	engine := ioc.InitWebServer(v, userHandler, articleHandler, oAuth2WechatHandler)
 	interactiveReadEventConsumer := article.NewInteractiveReadEventConsumer(interactiveRepository, client, logger)
-	v2 := ioc.InitConsumers(interactiveReadEventConsumer)
+	interactiveLikeEventConsumer := article.NewInteractiveLikeEventConsumer(interactiveRepository, client, logger)
+	interactiveUnLikeEventConsumer := article.NewInteractiveUnLikeEventConsumer(interactiveRepository, client, logger)
+	v2 := ioc.InitConsumers(interactiveReadEventConsumer, interactiveLikeEventConsumer, interactiveUnLikeEventConsumer)
 	monitorMessage := ioc.InitKafkaPrometheus(client)
 	app := &App{
 		server:       engine,

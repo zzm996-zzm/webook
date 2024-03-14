@@ -32,6 +32,11 @@ type InteractiveRedisCache struct {
 	client redis.Cmdable
 }
 
+// 将文章插入到topN
+func (i *InteractiveRedisCache) SetTopN(ctx context.Context, biz string, id int64, score float64) error {
+	panic("implement me")
+}
+
 func (i *InteractiveRedisCache) Get(ctx context.Context, biz string, id int64) (domain.Interactive, error) {
 	key := i.key(biz, id)
 	res, err := i.client.HGetAll(ctx, key).Result()

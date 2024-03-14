@@ -19,7 +19,6 @@ type ArticleRepository interface {
 	GetByAuthor(ctx context.Context, uid int64, offset int, limit int) ([]domain.Article, error)
 	GetById(ctx context.Context, id int64) (domain.Article, error)
 	GetPubById(ctx context.Context, id int64) (domain.Article, error)
-	GetTopNLikes(ctx context.Context, biz string) ([]domain.Article, error)
 }
 
 type CachedArticleRepository struct {
@@ -28,33 +27,6 @@ type CachedArticleRepository struct {
 	userRepo UserRepository
 
 	cache cache.ArticleCache
-
-	topN cache.InteractiveTopN[domain.Article]
-}
-
-// 获取点赞前N的数据
-func (c *CachedArticleRepository) GetTopNLikes(ctx context.Context, biz string) ([]domain.Article,
-	error) {
-	// 首先获取本地缓存
-	var articles []domain.Article
-	var err error
-
-	articles, err = c.topN.GetLocal(ctx)
-
-	if err == nil {
-		return articles, nil
-	}
-
-	// 本地没有从redis取，并且同步到本地缓存2@
-	articles, err = c.topN.GetCache(ctx, TopNLikeKey)
-	if err != nil {
-		return []domain.Article{}, err
-	}
-
-	// TODO:回写本地缓存
-	//c.topN.SetLocal()
-
-	return articles, err
 }
 
 func (c *CachedArticleRepository) GetPubById(ctx context.Context, id int64) (domain.Article, error) {
