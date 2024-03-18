@@ -7,6 +7,7 @@ import (
 	"sync/atomic"
 	"time"
 	"unsafe"
+	"webook/internal/domain"
 	"webook/internal/repository"
 	"webook/internal/service/sms"
 )
@@ -44,6 +45,12 @@ type Options struct {
 	// 异步情况支持几个goroutine
 	GoroutineMax int
 	//TODO: 其他配置
+}
+
+func NewOptions() Options {
+	return Options{
+		Async: true,
+	}
 }
 
 func (o *Options) init() {
@@ -203,8 +210,14 @@ func (s *Service) Send(ctx context.Context, tplId string, args []string, numbers
 	sucCnt := s.successCnt
 	if s.needAsync(errCnt, sucCnt, stop) {
 
-		//TODO: 将短信数据插入到数据库，再基于异步调度
-		// 调用ADD方法了
+		// 如果需要异步发送则直接插入数据库，等待异步调度结果
+		err := s.repo.Add(ctx, domain.AsyncSms{
+			TplId:    tplId,
+			Args:     args,
+			Numbers:  numbers,
+			RetryMax: 3,
+		})
+		return err
 	}
 	return s.svc.Send(ctx, tplId, args, numbers...)
 }

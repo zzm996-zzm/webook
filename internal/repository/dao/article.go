@@ -16,10 +16,40 @@ type ArticleDAO interface {
 	GetByAuthor(ctx context.Context, uid int64, offset int, limit int) ([]Article, error)
 	GetById(ctx context.Context, id int64) (Article, error)
 	GetPubById(ctx context.Context, id int64) (PublishedArticle, error)
+	//GetPubListByLikeCnt(ctx context.Context, limit int64) ([]PublishedArticle, error)
 }
 
 type ArticleGORMDAO struct {
 	db *gorm.DB
+}
+
+func (a *ArticleGORMDAO) GetPubListByLikeCnt(ctx context.Context, limit int64) ([]PublishedArticle, error) {
+	// 先查询出topN的数据
+	var intrs []int64
+	var articles []PublishedArticle
+	var res []PublishedArticle
+	err := a.db.WithContext(ctx).Transaction(func(tx *gorm.DB) error {
+		err := tx.Model(&Interactive{}).Select("biz_id").Where("biz = ? AND status = ?", "article", 1).Order("like_cnt desc").Limit(int(limit)).Find(&intrs).Error
+		if err != nil {
+			return err
+		}
+		return tx.Model(&PublishedArticle{}).Select("id,title").Where("id IN ?", intrs).Find(&articles).Error
+	})
+
+	if err != nil {
+		return articles, err
+	}
+
+	for _, iv := range intrs {
+		for _, av := range articles {
+			if av.Id == iv {
+				res = append(res, av)
+				break
+			}
+		}
+	}
+
+	return res, nil
 }
 
 func (a *ArticleGORMDAO) GetPubById(ctx context.Context, id int64) (PublishedArticle, error) {

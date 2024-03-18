@@ -9,8 +9,6 @@ import (
 	"webook/internal/repository/dao"
 )
 
-const TopNLikeKey = "alike"
-
 type ArticleRepository interface {
 	Create(ctx context.Context, art domain.Article) (int64, error)
 	Update(ctx context.Context, art domain.Article) error
